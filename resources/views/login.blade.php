@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<<<<<<< HEAD
+    <head>
+		<title>Авторизация</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		@vite(['resources/scss/style.scss', 'resources/js/main.min.js'])
+    </head>
+   
+   <body>
+   
+   <div class="popup-form">
+=======
 
 <head>
   <title>Авторизация</title>
@@ -11,6 +23,7 @@
 <body>
 
   <div class="popup-form">
+>>>>>>> 04a3606990099c4c400dc0c2162bcfae3de67b6e
     <div class="popup-form__wrapper">
       <h2 class="popup-form__title">Войти</h2>
       <span class="popup-form__subtitle">Введите данные для авторизации.</span>
