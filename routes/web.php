@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Post\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('dashboard/posts', ['PostController::class', 'index'])->name('dashboard.posts.post-list');
+
+Route::get('dashboard/posts/add-post', function () {
+	return view('dashboard.posts.add-post');
 });
