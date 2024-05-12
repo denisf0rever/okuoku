@@ -1226,7 +1226,7 @@ body{
 
 .popup-form{
   &__wrapper{
-    width: 500px;
+    max-width: 500px;
     margin: 100px auto 0;
     background-color: #fff;
     border-radius: 15px;
@@ -1267,6 +1267,9 @@ body{
   }
   &__submit-disabled{
     background-color: #f8f8f8;
+  }
+  &__password{
+    padding-right: 40px;
   }
   &__password-img{
     position: absolute;
