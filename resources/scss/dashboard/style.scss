@@ -335,13 +335,13 @@ body{
   &__rotate-arrow{
     transform: translateY(-50%) rotate(180deg);
   }
-  &__status-current{
+  &__currnt-text{
     border: none;
     cursor: pointer;
     padding-top: 5px;
-    &:focus {
-      outline: none;
-     }
+  }
+  &__status-current{
+     display: none;
   }
   &__status-select{
     overflow: auto;

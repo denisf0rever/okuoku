@@ -27,6 +27,7 @@ window.onload = () => {
   const selectArrow = document.querySelector('.form__status-arrow');
   const selectOptions = document.querySelectorAll('.form__status-option');
   const selectInput = document.querySelector('.form__status-current');
+  const selectInputText = document.querySelector('.form__status-current-text');
 
   selectOptions.forEach((el, key) => {
     if (selectInput.value === el.innerHTML) {
@@ -44,7 +45,8 @@ window.onload = () => {
       selectOptions.forEach((innerEl, innerKey) => {
         if (key === innerKey) {
           innerEl.classList.add('form__status-option-active');
-          selectInput.value = innerEl.innerHTML;
+          selectInput.value = innerEl.value;
+          selectInputText.innerHTML = innerEl.innerHTML;
         }
         else {
           innerEl.classList.remove('form__status-option-active');

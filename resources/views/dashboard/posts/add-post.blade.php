@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-		<title>Добавление поста</title>
-		@include('dashboard.settings')
-    </head>
-   
-   <body>
-   
-   @include('dashboard.parts.header')
-   
-   <div class="wrapper">
+
+<head>
+  <title>Добавление поста</title>
+  @include('dashboard.settings')
+</head>
+
+<body>
+
+  @include('dashboard.parts.header')
+
+  <div class="wrapper">
     <div class="wrapper__wrapper container">
-	@include('dashboard.parts.sidebar')
-	   
+      @include('dashboard.parts.sidebar')
+
       <main class="wrapper__main main">
         <div class="main__wrapper">
           <h1 class="main__title">Добавить статью</h1>
           <section class="main__form form">
             <div class="form__wrapper">
               <form action="{{ route('dashboard.posts.create-post') }}" method="post" class="form__inner-form">
-			  @csrf
-			  
+                @csrf
+
                 <div class="form__tabs-buttons">
                   <div class="form__tab-button form__tab-button-active">Основные</div>
                   <div class="form__tab-button">Дополнительные</div>
@@ -66,6 +67,7 @@
                     <div class="form__select-wrapper">
                       <span class="form__status-title" for="status">Текущий статус</span>
                       <img src="images/expand-more.svg" alt="" class="form__status-arrow">
+                      <div class="form__status-current-text">Placeholder</div>
                       <input class="form__status-current" name="category" type="text" value="Работает" readonly>
                       <ul id="status" class="form__status-select form__status-hide">
                         <li class="form__status-option" value="0">Категория</li>
