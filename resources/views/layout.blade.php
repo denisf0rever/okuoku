@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Консультация офтальмолога онлайн</title>
   @vite(['resources/scss/style.scss', 'resources/js/main.min.js'])
 </head>
 

@@ -5,7 +5,7 @@ use App\Http\Controllers\Post\PostController;
 use App\Http\Controllers\Auth\AuthController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout');
 });
 
 Route::get('/login', [\App\Http\Controllers\Auth\AuthController::class, 'index'])->name('login');

@@ -48,7 +48,7 @@
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="authorID">ID Автора</label>
-                          <input class="form__input" type="text" id="authorID" name="authorID">
+                          <input class="form__input" type="text" id="author-id" name="author_id">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="reading-time">Время прочтения</label>
@@ -67,10 +67,11 @@
                     <div class="form__select-wrapper">
                       <span class="form__status-title" for="status">Текущий статус</span>
                       <img src="images/expand-more.svg" alt="" class="form__status-arrow">
-                      <div class="form__status-current-text">Категория</div>
+                      <div class="form__status-current-text">Выберите категорию</div>
                       <input class="form__status-current" name="category" type="text" value="0" readonly>
                       <ul id="status" class="form__status-select form__status-hide">
-                        <li class="form__status-option" value="0">Категория</li>
+                        <li class="form__status-option" value="1">Категория</li>
+                        <li class="form__status-option" value="2">Категория</li>
                       </ul>
                     </div>
                   </div>

@@ -29,8 +29,8 @@ class PostRequest extends FormRequest
             'authorID' => ['required', 'integer', 'max:5'],
             'reading-time' => ['required', 'integer', 'max:3'],
             'category' => ['required', 'integer', 'max:2'],
-            'short-text' => ['required', 'string', 'max:500'],
-            'full-text' => ['required', 'string', 'max:100000'],
+            'short-text' => ['required', 'string'],
+            'full-text' => ['required', 'string'],
         ];
     }
 }

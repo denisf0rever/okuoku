@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Post;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
-//use Illuminate\Http\Requests\PostRequest;
+use App\Models\Post;
 use Illuminate\Support\Facades\View;
 
 class PostController extends Controller
@@ -28,12 +28,21 @@ class PostController extends Controller
      */
     public function create(Request $request)
     {
-        //$post = Post::query()
-			//->create($request->all());
-			
-		//return redirect()->route('dashboard.posts');
+		$validated = $request->validate([
+            'title' => ['required', 'string', 'max:255'],
+            'subtitle' => ['required', 'string', 'max:255'],
+            'metadescription' => ['required', 'string', 'max:255'],
+            'metakeys' => ['required', 'string', 'max:255'],
+            'author_id' => ['required', 'integer', 'max:5'],
+            'reading-time' => ['required', 'integer', 'max:3'],
+            'category' => ['required', 'integer', 'max:2'],
+            'short-text' => ['required', 'string'],
+            'full-text' => ['required', 'string'],
+        ]);
 		
-		dd($request->all());
+	   $post = Post::create($validated);
+			
+		return redirect()->route('dashboard.posts');
     }
 
     /**
