@@ -140,9 +140,14 @@ body{
     background-color: #f7f8fa;
     border-radius: 15px;
     padding: 30px 25px;
+    margin: 0 auto;
+    width: 98%;
   }
   &__title{
     font-size: 22px;
+    margin-bottom: 20px;
+  }
+  &__info{
     margin-bottom: 20px;
   }
 }
