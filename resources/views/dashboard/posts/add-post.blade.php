@@ -67,8 +67,8 @@
                     <div class="form__select-wrapper">
                       <span class="form__status-title" for="status">Текущий статус</span>
                       <img src="images/expand-more.svg" alt="" class="form__status-arrow">
-                      <div class="form__status-current-text">Placeholder</div>
-                      <input class="form__status-current" name="category" type="text" value="Работает" readonly>
+                      <div class="form__status-current-text">Категория</div>
+                      <input class="form__status-current" name="category" type="text" value="0" readonly>
                       <ul id="status" class="form__status-select form__status-hide">
                         <li class="form__status-option" value="0">Категория</li>
                       </ul>
