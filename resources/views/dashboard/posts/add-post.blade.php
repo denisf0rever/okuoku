@@ -18,7 +18,9 @@
           <h1 class="main__title">Добавить статью</h1>
           <section class="main__form form">
             <div class="form__wrapper">
-              <form action="POST" class="form__inner-form">
+              <form action="{{ route('dashboard.posts.create-post') }}" method="post" class="form__inner-form">
+			  @csrf
+			  
                 <div class="form__tabs-buttons">
                   <div class="form__tab-button form__tab-button-active">Основные</div>
                   <div class="form__tab-button">Дополнительные</div>
@@ -37,11 +39,11 @@
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="Meta-description">Метаописание</label>
-                          <input class="form__input" type="text" id="Meta-description" name="Meta-description">
+                          <input class="form__input" type="text" id="Meta-description" name="metadescription">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="Metakeys">Метаключи</label>
-                          <input class="form__input" type="text" id="Metakeys" name="Metakeys">
+                          <input class="form__input" type="text" id="Metakeys" name="metakeys">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="authorID">ID Автора</label>
@@ -64,34 +66,20 @@
                     <div class="form__select-wrapper">
                       <span class="form__status-title" for="status">Текущий статус</span>
                       <img src="images/expand-more.svg" alt="" class="form__status-arrow">
-                      <input class="form__status-current" name="select" type="text" value="Работает" readonly>
+                      <input class="form__status-current" name="category" type="text" value="Работает" readonly>
                       <ul id="status" class="form__status-select form__status-hide">
-                        <li class="form__status-option" value="Работает">Работает</li>
-                        <li class="form__status-option" value="saab">Больше не работает</li>
-                        <li class="form__status-option" value="mercedes">Временно не работает</li>
-                        <li class="form__status-option" value="volvo">Работает2</li>
-                        <li class="form__status-option" value="saab">Больше не работает</li>
-                        <li class="form__status-option" value="mercedes">Временно не работает</li>
-                        <li class="form__status-option" value="volvo">Работает3</li>
-                        <li class="form__status-option" value="saab">Больше не работает</li>
-                        <li class="form__status-option" value="mercedes">Временно не работает</li>
-                        <li class="form__status-option" value="volvo">Работает4</li>
-                        <li class="form__status-option" value="saab">Больше не работает</li>
-                        <li class="form__status-option" value="mercedes">Временно не работает</li>
-                        <li class="form__status-option" value="volvo">Работает5</li>
-                        <li class="form__status-option" value="saab">Больше не работает</li>
-                        <li class="form__status-option" value="mercedes">Временно не работает</li>
+                        <li class="form__status-option" value="0">Категория</li>
                       </ul>
                     </div>
                   </div>
                 </div>
                 <div class="form__textarea-wrapper">
-                  <div class="form__textarea-title">Запрос</div>
-                  <textarea name="" id="" class="form__textarea"></textarea>
+                  <div class="form__textarea-title">Краткое описание</div>
+                  <textarea name="short-text" id="" class="form__textarea"></textarea>
                 </div>
                 <div class="form__textarea-wrapper">
-                  <div class="form__textarea-title">Запрос</div>
-                  <textarea name="" id="" class="form__textarea"></textarea>
+                  <div class="form__textarea-title">Полный текст</div>
+                  <textarea name="full-text" id="" class="form__textarea"></textarea>
                   <input class="form__submit" type="submit"> </input>
                 </div>
               </form>

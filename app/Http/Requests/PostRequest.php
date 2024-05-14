@@ -11,7 +11,7 @@ class PostRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,15 @@ class PostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => ['required', 'string', 'max:255'],
+            'subtitle' => ['required', 'string', 'max:255'],
+            'metadescription' => ['required', 'string', 'max:255'],
+            'metakeys' => ['required', 'string', 'max:255'],
+            'authorID' => ['required', 'integer', 'max:5'],
+            'reading-time' => ['required', 'integer', 'max:3'],
+            'category' => ['required', 'integer', 'max:2'],
+            'short-text' => ['required', 'string', 'max:500'],
+            'full-text' => ['required', 'string', 'max:100000'],
         ];
     }
 }

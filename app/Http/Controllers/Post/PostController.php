@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Post;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
+//use Illuminate\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\View;
 
 class PostController extends Controller
@@ -25,9 +26,14 @@ class PostController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        //$post = Post::query()
+			//->create($request->all());
+			
+		//return redirect()->route('dashboard.posts');
+		
+		dd($request->all());
     }
 
     /**
