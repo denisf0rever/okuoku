@@ -14,7 +14,9 @@
         <div class="header__button-icon">
           <img src="images/lightning-bolt-black-shape.svg" alt="" class="header__button-img">
         </div>
-        <div class="header__button">Добавить</div>
+        <div class="header__button"><a href="{{ route('logout') }}">{{ Auth::user()->name }} Выйти</a></div>
       </div>
     </div>
   </header>
+  
+  

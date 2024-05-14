@@ -18,9 +18,11 @@ Route::middleware(['auth'])->group(function () {
 	
 	Route::get('dashboard/posts/add-post', function () {
 		return view('dashboard.posts.add-post');
-	});
+	})->name('dashboard.posts.add-post');
 	
-	Route::get('dashboard/posts', ['AuthController::class', 'index'])->name('dashboard.posts.post-list');
+	Route::get('dashboard/posts', function () {
+		return view('dashboard.posts.post-list');
+	})->name('dashboard.posts');
 		
 });
 

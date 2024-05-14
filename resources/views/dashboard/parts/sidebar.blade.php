@@ -2,16 +2,7 @@
         <div class="menu__wrapper">
           <ul class="menu__list">
             <li class="menu__item">
-              <a href="#" class="menu__link">Советы по</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Советы по оптимизации</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Советы по</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Советы по</a>
+              <a href="{{ route('dashboard.posts') }}" class="menu__link">Статьи</a>
             </li>
           </ul>
         </div>
@@ -20,17 +11,9 @@
         <div class="menu-mobile__wrapper menu-mobile__hide">
           <ul class="menu-mobile__list">
             <li class="menu-mobile__item">
-              <a href="#" class="menu-mobile__link">Советы по</a>
+              <a href="{{ route('dashboard.posts') }}" class="menu-mobile__link">Статьи</a>
             </li>
-            <li class="menu-mobile__item">
-              <a href="#" class="menu-mobile__link">Советы по оптимизации</a>
-            </li>
-            <li class="menu-mobile__item">
-              <a href="#" class="menu-mobile__link">Советы по</a>
-            </li>
-            <li class="menu-mobile__item">
-              <a href="#" class="menu-mobile__link">Советы по</a>
-            </li>
+           
           </ul>
         </div>
       </nav>
