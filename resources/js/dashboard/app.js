@@ -45,7 +45,7 @@ window.onload = () => {
       selectOptions.forEach((innerEl, innerKey) => {
         if (key === innerKey) {
           innerEl.classList.add('form__status-option-active');
-          selectInput.value = innerEl.getAttribute("value");
+          selectInput.setAttribute("value", innerEl.value);
           selectInputText.innerHTML = innerEl.innerHTML;
         }
         else {
