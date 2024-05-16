@@ -116,10 +116,7 @@
     &__wrapper{
       grid-template-rows: auto auto auto auto;
       padding: 16px;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 15px;
-      border-bottom-left-radius: 15px;
+      border-radius: 0;
     }
     &__titles{
       grid-row: 1 / 2;
