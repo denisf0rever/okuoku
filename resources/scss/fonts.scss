@@ -28,6 +28,40 @@
 }
 
 @font-face {
+  font-family: 'YS Display';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Yandex Sans'), url('../fonts/YandexSansDisplay-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'YS Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Yandex Sans'), url('../fonts/YandexSansDisplay-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'YS Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Yandex Sans'), url('../fonts/YandexSansDisplay-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'YS Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Yandex Sans'), url('../fonts/YandexSansDisplay-Bold.woff2') format('woff2');
+}
+
+
+
+@font-face {
   font-family: 'Segoe UI';
   font-style: normal;
   font-weight: 400;
