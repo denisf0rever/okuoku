@@ -187,9 +187,9 @@
           <section class="main__banner banner">
             <div class="banner__wrapper">
               <div class="banner__titles">
-                <h2 class="banner__title">Получайте доход <br class="banner__br">от своего сайта</h2>
-                <span class="banner__subtitle">с релевантной рекламой</span>
-                <span class="banner__subtitle"> и проверенными обновлениями</span>
+                <h2 class="banner__title">Консультация офтальмолога <br class="banner__br">онлайн</h2>
+                <span class="banner__subtitle">офтальмолог для детей и взрослых</span>
+                <span class="banner__subtitle">круглосуточно в чате и по телефону</span>>
               </div>
               <div class="banner__buttons">
                 <div class="banner__join-btn banner__btn">Присоединиться</div>
