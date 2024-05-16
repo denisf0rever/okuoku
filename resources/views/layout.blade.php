@@ -2,10 +2,23 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Консультация офтальмолога онлайн</title>
-  @vite(['resources/scss/style.scss', 'resources/js/main.min.js'])
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Консультация офтальмолога онлайн: круглосуточно по телефону и в чате</title>
+	<meta name="keywords" content="Консультация офтальмолога онлайн" />
+	<meta name="description" content=" " />
+	<meta name="title" content="Консультация офтальмолога онлайн: круглосуточно по телефону и в чате" />
+
+	<meta property="og:title" content="Консультация офтальмолога онлайн: круглосуточно по телефону и в чате"/>
+	<meta property="og:description" content="OkuOku: онлайн сервис офтальмологов, консультации, истории, статьи, врачи">
+	<meta property="og:image" content="/logoimage.jpg">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://okuoku.ru/">
+	<meta property="og:site_name" content="Консультация офтальмолога онлайн: круглосуточно по телефону и в чате">
+	<link rel="image_src" href="/logoimage.jpg" />
+	<meta name="theme-color" content="#fff">
+
+	@vite(['resources/scss/style.scss', 'resources/js/main.min.js'])
 </head>
 
 <body>
@@ -187,9 +200,9 @@
           <section class="main__banner banner">
             <div class="banner__wrapper">
               <div class="banner__titles">
-                <h2 class="banner__title">Получайте доход от своего сайта</h2>
-                <span class="banner__subtitle">с релевантной рекламой</span>
-                <span class="banner__subtitle"> и проверенными обновлениями</span>
+                <h2 class="banner__title">Консультация офтальмолога онлайн</h2>
+                <span class="banner__subtitle">офтальмолог для детей и взрослых</span>
+                <span class="banner__subtitle">круглосуточно в чате и по телефону</span>
               </div>
               <div class="banner__buttons">
                 <div class="banner__join-btn banner__btn">Присоединиться</div>
