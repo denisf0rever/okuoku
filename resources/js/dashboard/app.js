@@ -66,13 +66,23 @@ window.onload = () => {
 
   // ANALYZE TEXT
 
-  const timeToReadInput = document.querySelector('#time-to-read');
+  const timeToReadInput = document.querySelector('#reading-time');
   const fullText = document.querySelector('#full-text');
 
   const stripHTML = (html) => {
     let div = document.createElement("div");
     div.innerHTML = html;
     return div.textContent || div.innerText || "";
+  }
+
+  const getMinuteDeclension = (minutes) => {
+    if (minutes % 10 === 1 && minutes % 100 !== 11) {
+      return 'минута';
+    } else if ([2, 3, 4].includes(minutes % 10) && ![12, 13, 14].includes(minutes % 100)) {
+      return 'минуты';
+    } else {
+      return 'минут';
+    }
   }
 
   const analyzeText = () => {
@@ -84,7 +94,7 @@ window.onload = () => {
     // Средняя скорость чтения: 200 слов в минуту, 5 символов на слово -> 1000 символов в минуту
     const readingSpeed = 1000; // символов в минуту
     const readingTime = Math.ceil(charCount / readingSpeed);
-    timeToReadInput.setAttribute("value", readingTime);
+    timeToReadInput.setAttribute("value", `${readingTime} ${getMinuteDeclension(resadingTime)}`);
   }
 
   fullText.addEventListener("input", analyzeText);
