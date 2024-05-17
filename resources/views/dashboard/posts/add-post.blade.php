@@ -81,8 +81,9 @@
                   <textarea name="short-text" id="" class="form__textarea"></textarea>
                 </div>
                 <div class="form__textarea-wrapper">
+                  <input type="hidden" value="0" id="time-to-read" class="form__textarea-time-to-read">
                   <div class="form__textarea-title">Полный текст</div>
-                  <textarea name="full-text" id="" class="form__textarea"></textarea>
+                  <textarea name="full-text" id="full-text" class="form__textarea"></textarea>
                   <input class="form__submit" type="submit"> </input>
                 </div>
               </form>

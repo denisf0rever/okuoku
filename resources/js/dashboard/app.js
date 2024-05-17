@@ -64,4 +64,29 @@ window.onload = () => {
     menuMobile.classList.toggle('menu-mobile__hide');
   }
 
+  // ANALYZE TEXT
+
+  const timeToReadInput = document.querySelector('#time-to-read');
+  const fullText = document.querySelector('#full-text');
+
+  const stripHTML = (html) => {
+    let div = document.createElement("div");
+    div.innerHTML = html;
+    return div.textContent || div.innerText || "";
+  }
+
+  const analyzeText = () => {
+    const plainText = stripHTML(fullText.value);
+
+    // Подсчитываем количество символов без учета пробелов
+    const charCount = plainText.replace(/\s+/g, '').length;
+
+    // Средняя скорость чтения: 200 слов в минуту, 5 символов на слово -> 1000 символов в минуту
+    const readingSpeed = 1000; // символов в минуту
+    const readingTime = Math.ceil(charCount / readingSpeed);
+    timeToReadInput.setAttribute("value", readingTime);
+  }
+
+  fullText.addEventListener("input", analyzeText);
+
 }
