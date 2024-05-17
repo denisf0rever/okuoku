@@ -94,7 +94,7 @@ window.onload = () => {
     // Средняя скорость чтения: 200 слов в минуту, 5 символов на слово -> 1000 символов в минуту
     const readingSpeed = 1000; // символов в минуту
     const readingTime = Math.ceil(charCount / readingSpeed);
-    timeToReadInput.setAttribute("value", `${readingTime} ${getMinuteDeclension(resadingTime)}`);
+    timeToReadInput.setAttribute("value", `${readingTime} ${getMinuteDeclension(readingTime)}`);
   }
 
   fullText.addEventListener("input", analyzeText);
