@@ -6,7 +6,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegistrationController;
 
 Route::get('/', function () {
-    return view('layout');
+    return view('layout')->name('main');
 });
 
 Route::get('/home', function () {
