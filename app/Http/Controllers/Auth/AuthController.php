@@ -10,11 +10,7 @@ class AuthController extends Controller
 {
 	public function index()
     {
-        if (Auth::guard('admin')->check()) {
-            return redirect(route('dashboard.main'));
-        }
-
-        return view('login');
+        return view('user.login');
     }
 	
 	public function authenticate(AuthRequest $request)
@@ -24,18 +20,14 @@ class AuthController extends Controller
             'password' => ['required']
         ]);
 		
-		if (Auth::guard('admin')->attempt($credentials)) {
-            $request->session()->regenerate();
-			
-			if (Auth::attempt($credentials)) {
+		if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
 
             return redirect(route('dashboard.main'));
-        }
-
-        return redirect(route('login'))->withErrors(['email' => 'Пользователь не найден']);
 		}
+		
+        return redirect(route('login'))->withErrors(['email' => 'Пользователь не найден']);
 	}
 
     public function logout(AuthRequest $request)

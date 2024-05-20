@@ -2,23 +2,23 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Консультация офтальмолога онлайн: круглосуточно по телефону и в чате</title>
-  <meta name="keywords" content="Консультация офтальмолога онлайн" />
-  <meta name="description" content=" " />
-  <meta name="title" content="Консультация офтальмолога онлайн: круглосуточно по телефону и в чате" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Консультация офтальмолога онлайн: круглосуточно по телефону и в чате</title>
+	<meta name="keywords" content="Консультация офтальмолога онлайн" />
+	<meta name="description" content=" " />
+	<meta name="title" content="Консультация офтальмолога онлайн: круглосуточно по телефону и в чате" />
 
-  <meta property="og:title" content="Консультация офтальмолога онлайн: круглосуточно по телефону и в чате" />
-  <meta property="og:description" content="OkuOku: онлайн сервис офтальмологов, консультации, истории, статьи, врачи">
-  <meta property="og:image" content="/logoimage.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://okuoku.ru/">
-  <meta property="og:site_name" content="Консультация офтальмолога онлайн: круглосуточно по телефону и в чате">
-  <link rel="image_src" href="/logoimage.jpg" />
-  <meta name="theme-color" content="#fff">
+	<meta property="og:title" content="Консультация офтальмолога онлайн: круглосуточно по телефону и в чате"/>
+	<meta property="og:description" content="OkuOku: онлайн сервис офтальмологов, консультации, истории, статьи, врачи">
+	<meta property="og:image" content="/logoimage.jpg">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://okuoku.ru/">
+	<meta property="og:site_name" content="Консультация офтальмолога онлайн: круглосуточно по телефону и в чате">
+	<link rel="image_src" href="/logoimage.jpg" />
+	<meta name="theme-color" content="#fff">
 
-  @vite(['resources/scss/style.scss', 'resources/js/main.min.js'])
+	@vite(['resources/scss/style.scss', 'resources/js/main.min.js'])
 </head>
 
 <body>
@@ -237,803 +237,800 @@
               </div>
             </div>
           </section>
-          <div class="main__field-wrapper">
-            <section class="main__stories stories ">
-              <div class="swiper stories__wrapper">
-                <h2 class="stories__title">ИСТОРИИ</h2>
-                <ul class="stories__list swiper-wrapper">
-                  <li class="stories__story story swiper-slide">
-                    <div class="story__wrapper">
-                      <img src="images/nature1.jpg" alt="" class="story__content">
-                      <a href="#" class="story__avatar-link">
-                        <img src="images/avatar.jpg" alt="" class="story__avatar">
-                      </a>
+          <section class="main__stories stories ">
+            <div class="swiper stories__wrapper">
+              <h2 class="stories__title">ИСТОРИИ</h2>
+              <ul class="stories__list swiper-wrapper">
+                <li class="stories__story story swiper-slide">
+                  <div class="story__wrapper">
+                    <img src="images/nature1.jpg" alt="" class="story__content">
+                    <a href="#" class="story__avatar-link">
+                      <img src="images/avatar.jpg" alt="" class="story__avatar">
+                    </a>
+                  </div>
+                  <span class="story__title">Где искать темную тему Хабра</span>
+                </li>
+                <li class="stories__story story swiper-slide">
+                  <div class="story__wrapper">
+                    <img src="images/nature2.jpg" alt="" class="story__content">
+                    <a href="#" class="story__avatar-link">
+                      <img src="images/avatar.jpg" alt="" class="story__avatar">
+                    </a>
+                  </div>
+                  <span class="story__title">Где искать темную тему Хабра</span>
+                </li>
+                <li class="stories__story story swiper-slide">
+                  <div class="story__wrapper">
+                    <img src="images/nature1.jpg" alt="" class="story__content">
+                    <a href="#" class="story__avatar-link">
+                      <img src="images/avatar.jpg" alt="" class="story__avatar">
+                    </a>
+                  </div>
+                  <span class="story__title">Где искать темную тему Хабра</span>
+                </li>
+                <li class="stories__story story swiper-slide">
+                  <div class="story__wrapper">
+                    <img src="images/nature1.jpg" alt="" class="story__content">
+                    <a href="#" class="story__avatar-link">
+                      <img src="images/avatar.jpg" alt="" class="story__avatar">
+                    </a>
+                  </div>
+                  <span class="story__title">Где искать темную тему Хабра</span>
+                </li>
+                <li class="stories__story story swiper-slide">
+                  <div class="story__wrapper">
+                    <img src="images/nature1.jpg" alt="" class="story__content">
+                    <a href="#" class="story__avatar-link">
+                      <img src="images/avatar.jpg" alt="" class="story__avatar">
+                    </a>
+                  </div>
+                  <span class="story__title">Где искать темную тему Хабра</span>
+                </li>
+                <li class="stories__story story swiper-slide">
+                  <div class="story__wrapper">
+                    <img src="images/nature1.jpg" alt="" class="story__content">
+                    <a href="#" class="story__avatar-link">
+                      <img src="images/avatar.jpg" alt="" class="story__avatar">
+                    </a>
+                  </div>
+                  <span class="story__title">Где искать темную тему Хабра</span>
+                </li>
+                <li class="stories__story story swiper-slide">
+                  <div class="story__wrapper">
+                    <img src="images/nature1.jpg" alt="" class="story__content">
+                    <a href="#" class="story__avatar-link">
+                      <img src="images/avatar.jpg" alt="" class="story__avatar">
+                    </a>
+                  </div>
+                  <span class="story__title">Где искать темную тему Хабра</span>
+                </li>
+                <li class="stories__story story swiper-slide">
+                  <div class="story__wrapper">
+                    <img src="images/nature1.jpg" alt="" class="story__content">
+                    <a href="#" class="story__avatar-link">
+                      <img src="images/avatar.jpg" alt="" class="story__avatar">
+                    </a>
+                  </div>
+                  <span class="story__title">Где искать темную тему Хабра</span>
+                </li>
+                <li class="stories__story story swiper-slide">
+                  <div class="story__wrapper">
+                    <img src="images/nature1.jpg" alt="" class="story__content">
+                    <a href="#" class="story__avatar-link">
+                      <img src="images/avatar.jpg" alt="" class="story__avatar">
+                    </a>
+                  </div>
+                  <span class="story__title">Где искать темную тему Хабра</span>
+                </li>
+                <li class="stories__story story swiper-slide">
+                  <div class="story__wrapper">
+                    <img src="images/nature1.jpg" alt="" class="story__content">
+                    <a href="#" class="story__avatar-link">
+                      <img src="images/avatar.jpg" alt="" class="story__avatar">
+                    </a>
+                  </div>
+                  <span class="story__title">Где искать темную тему Хабра</span>
+                </li>
+                <li class="stories__story story swiper-slide">
+                  <div class="story__wrapper">
+                    <img src="images/nature1.jpg" alt="" class="story__content">
+                    <a href="#" class="story__avatar-link">
+                      <img src="images/avatar.jpg" alt="" class="story__avatar">
+                    </a>
+                  </div>
+                  <span class="story__title">Где искать темную тему Хабра</span>
+                </li>
+                <li class="stories__story story swiper-slide">
+                  <div class="story__wrapper">
+                    <img src="images/nature1.jpg" alt="" class="story__content">
+                    <a href="#" class="story__avatar-link">
+                      <img src="images/avatar.jpg" alt="" class="story__avatar">
+                    </a>
+                  </div>
+                  <span class="story__title">Где искать темную тему Хабра</span>
+                </li>
+              </ul>
+            </div>
+            <div class="stories__reveal stories-reveal hide">
+              <div class="swiper stories-reveal__wrapper">
+                <div class="stories-reveal__close">
+                  <img src="images/cross.svg" alt="" class="stories-reveal__close-img">
+                </div>
+                <ul class="stories-reveal__list swiper-wrapper">
+                  <li class="stories-reveal__story-revealed story-revealed swiper-slide">
+                    <div class="story-revealed__wrapper">
+                      <div class="story-revealed__button-next">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="story-revealed__button-prev hide">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="swiper story-revealed__nested-swiper">
+                        <div class="story-revealed__panel">
+                          <div class="story-revealed__block"></div>
+                          <div class="story-revealed__top-gradient"></div>
+                          <div class="story-revealed__left-gradient"></div>
+                          <div class="story-revealed__right-gradient"></div>
+                          <div class="story-revealed__user">
+                            <a href="#" class="story-revealed__avatar-link">
+                              <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
+                            </a>
+                            <span class="story-revealed__username">Автор</span>
+                          </div>
+                        </div>
+                        <ul class="swiper-wrapper story-revealed__list">
+                          <li class="swiper-slide story-revealed__item">
+                            <img class="story-revealed__img" src="images/nature1.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature2.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature3.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature4.jpg" />
+                          </li>
+                        </ul>
+                        <div class="story-revealed__pagination"></div>
+                      </div>
                     </div>
-                    <span class="story__title">Где искать темную тему Хабра</span>
                   </li>
-                  <li class="stories__story story swiper-slide">
-                    <div class="story__wrapper">
-                      <img src="images/nature2.jpg" alt="" class="story__content">
-                      <a href="#" class="story__avatar-link">
-                        <img src="images/avatar.jpg" alt="" class="story__avatar">
-                      </a>
+                  <li class="stories-reveal__story-revealed story-revealed swiper-slide">
+                    <div class="story-revealed__wrapper">
+                      <div class="story-revealed__button-next">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="story-revealed__button-prev">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="swiper story-revealed__nested-swiper">
+                        <div class="story-revealed__panel">
+                          <div class="story-revealed__block"></div>
+                          <div class="story-revealed__top-gradient"></div>
+                          <div class="story-revealed__left-gradient"></div>
+                          <div class="story-revealed__right-gradient"></div>
+                          <div class="story-revealed__user">
+                            <a href="#" class="story-revealed__avatar-link">
+                              <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
+                            </a>
+                            <span class="story-revealed__username">Автор</span>
+                          </div>
+                        </div>
+                        <ul class="swiper-wrapper story-revealed__list">
+                          <li class="swiper-slide story-revealed__item">
+                            <img class="story-revealed__img" src="images/nature2.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature1.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature3.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature4.jpg" />
+                          </li>
+                        </ul>
+                        <div class="story-revealed__pagination"></div>
+                      </div>
                     </div>
-                    <span class="story__title">Где искать темную тему Хабра</span>
                   </li>
-                  <li class="stories__story story swiper-slide">
-                    <div class="story__wrapper">
-                      <img src="images/nature1.jpg" alt="" class="story__content">
-                      <a href="#" class="story__avatar-link">
-                        <img src="images/avatar.jpg" alt="" class="story__avatar">
-                      </a>
+                  <li class="stories-reveal__story-revealed story-revealed swiper-slide">
+                    <div class="story-revealed__wrapper">
+                      <div class="story-revealed__button-next">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="story-revealed__button-prev">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="swiper story-revealed__nested-swiper">
+                        <div class="story-revealed__panel">
+                          <div class="story-revealed__block"></div>
+                          <div class="story-revealed__top-gradient"></div>
+                          <div class="story-revealed__left-gradient"></div>
+                          <div class="story-revealed__right-gradient"></div>
+                          <div class="story-revealed__user">
+                            <a href="#" class="story-revealed__avatar-link">
+                              <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
+                            </a>
+                            <span class="story-revealed__username">Автор</span>
+                          </div>
+                        </div>
+                        <ul class="swiper-wrapper story-revealed__list">
+                          <li class="swiper-slide story-revealed__item">
+                            <img class="story-revealed__img" src="images/nature1.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature2.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature3.jpg" />
+                          </li>
+                        </ul>
+                        <div class="story-revealed__pagination"></div>
+                      </div>
                     </div>
-                    <span class="story__title">Где искать темную тему Хабра</span>
                   </li>
-                  <li class="stories__story story swiper-slide">
-                    <div class="story__wrapper">
-                      <img src="images/nature1.jpg" alt="" class="story__content">
-                      <a href="#" class="story__avatar-link">
-                        <img src="images/avatar.jpg" alt="" class="story__avatar">
-                      </a>
+                  <li class="stories-reveal__story-revealed story-revealed swiper-slide">
+                    <div class="story-revealed__wrapper">
+                      <div class="story-revealed__button-next">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="story-revealed__button-prev">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="swiper story-revealed__nested-swiper">
+                        <div class="story-revealed__panel">
+                          <div class="story-revealed__block"></div>
+                          <div class="story-revealed__top-gradient"></div>
+                          <div class="story-revealed__left-gradient"></div>
+                          <div class="story-revealed__right-gradient"></div>
+                          <div class="story-revealed__user">
+                            <a href="#" class="story-revealed__avatar-link">
+                              <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
+                            </a>
+                            <span class="story-revealed__username">Автор</span>
+                          </div>
+                        </div>
+                        <ul class="swiper-wrapper story-revealed__list">
+                          <li class="swiper-slide story-revealed__item">
+                            <img class="story-revealed__img" src="images/nature1.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature2.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature3.jpg" />
+                          </li>
+                        </ul>
+                        <div class="story-revealed__pagination"></div>
+                      </div>
                     </div>
-                    <span class="story__title">Где искать темную тему Хабра</span>
                   </li>
-                  <li class="stories__story story swiper-slide">
-                    <div class="story__wrapper">
-                      <img src="images/nature1.jpg" alt="" class="story__content">
-                      <a href="#" class="story__avatar-link">
-                        <img src="images/avatar.jpg" alt="" class="story__avatar">
-                      </a>
+                  <li class="stories-reveal__story-revealed story-revealed swiper-slide">
+                    <div class="story-revealed__wrapper">
+                      <div class="story-revealed__button-next">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="story-revealed__button-prev">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="swiper story-revealed__nested-swiper">
+                        <div class="story-revealed__panel">
+                          <div class="story-revealed__block"></div>
+                          <div class="story-revealed__top-gradient"></div>
+                          <div class="story-revealed__left-gradient"></div>
+                          <div class="story-revealed__right-gradient"></div>
+                          <div class="story-revealed__user">
+                            <a href="#" class="story-revealed__avatar-link">
+                              <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
+                            </a>
+                            <span class="story-revealed__username">Автор</span>
+                          </div>
+                        </div>
+                        <ul class="swiper-wrapper story-revealed__list">
+                          <li class="swiper-slide story-revealed__item">
+                            <img class="story-revealed__img" src="images/nature1.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature2.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature3.jpg" />
+                          </li>
+                        </ul>
+                        <div class="story-revealed__pagination"></div>
+                      </div>
                     </div>
-                    <span class="story__title">Где искать темную тему Хабра</span>
                   </li>
-                  <li class="stories__story story swiper-slide">
-                    <div class="story__wrapper">
-                      <img src="images/nature1.jpg" alt="" class="story__content">
-                      <a href="#" class="story__avatar-link">
-                        <img src="images/avatar.jpg" alt="" class="story__avatar">
-                      </a>
+                  <li class="stories-reveal__story-revealed story-revealed swiper-slide">
+                    <div class="story-revealed__wrapper">
+                      <div class="story-revealed__button-next">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="story-revealed__button-prev">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="swiper story-revealed__nested-swiper">
+                        <div class="story-revealed__panel">
+                          <div class="story-revealed__block"></div>
+                          <div class="story-revealed__top-gradient"></div>
+                          <div class="story-revealed__left-gradient"></div>
+                          <div class="story-revealed__right-gradient"></div>
+                          <div class="story-revealed__user">
+                            <a href="#" class="story-revealed__avatar-link">
+                              <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
+                            </a>
+                            <span class="story-revealed__username">Автор</span>
+                          </div>
+                        </div>
+                        <ul class="swiper-wrapper story-revealed__list">
+                          <li class="swiper-slide story-revealed__item">
+                            <img class="story-revealed__img" src="images/nature1.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature2.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature3.jpg" />
+                          </li>
+                        </ul>
+                        <div class="story-revealed__pagination"></div>
+                      </div>
                     </div>
-                    <span class="story__title">Где искать темную тему Хабра</span>
                   </li>
-                  <li class="stories__story story swiper-slide">
-                    <div class="story__wrapper">
-                      <img src="images/nature1.jpg" alt="" class="story__content">
-                      <a href="#" class="story__avatar-link">
-                        <img src="images/avatar.jpg" alt="" class="story__avatar">
-                      </a>
+                  <li class="stories-reveal__story-revealed story-revealed swiper-slide">
+                    <div class="story-revealed__wrapper">
+                      <div class="story-revealed__button-next">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="story-revealed__button-prev">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="swiper story-revealed__nested-swiper">
+                        <div class="story-revealed__panel">
+                          <div class="story-revealed__block"></div>
+                          <div class="story-revealed__top-gradient"></div>
+                          <div class="story-revealed__left-gradient"></div>
+                          <div class="story-revealed__right-gradient"></div>
+                          <div class="story-revealed__user">
+                            <a href="#" class="story-revealed__avatar-link">
+                              <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
+                            </a>
+                            <span class="story-revealed__username">Автор</span>
+                          </div>
+                        </div>
+                        <ul class="swiper-wrapper story-revealed__list">
+                          <li class="swiper-slide story-revealed__item">
+                            <img class="story-revealed__img" src="images/nature1.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature2.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature3.jpg" />
+                          </li>
+                        </ul>
+                        <div class="story-revealed__pagination"></div>
+                      </div>
                     </div>
-                    <span class="story__title">Где искать темную тему Хабра</span>
                   </li>
-                  <li class="stories__story story swiper-slide">
-                    <div class="story__wrapper">
-                      <img src="images/nature1.jpg" alt="" class="story__content">
-                      <a href="#" class="story__avatar-link">
-                        <img src="images/avatar.jpg" alt="" class="story__avatar">
-                      </a>
+                  <li class="stories-reveal__story-revealed story-revealed swiper-slide">
+                    <div class="story-revealed__wrapper">
+                      <div class="story-revealed__button-next">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="story-revealed__button-prev">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="swiper story-revealed__nested-swiper">
+                        <div class="story-revealed__panel">
+                          <div class="story-revealed__block"></div>
+                          <div class="story-revealed__top-gradient"></div>
+                          <div class="story-revealed__left-gradient"></div>
+                          <div class="story-revealed__right-gradient"></div>
+                          <div class="story-revealed__user">
+                            <a href="#" class="story-revealed__avatar-link">
+                              <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
+                            </a>
+                            <span class="story-revealed__username">Автор</span>
+                          </div>
+                        </div>
+                        <ul class="swiper-wrapper story-revealed__list">
+                          <li class="swiper-slide story-revealed__item">
+                            <img class="story-revealed__img" src="images/nature1.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature2.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature3.jpg" />
+                          </li>
+                        </ul>
+                        <div class="story-revealed__pagination"></div>
+                      </div>
                     </div>
-                    <span class="story__title">Где искать темную тему Хабра</span>
                   </li>
-                  <li class="stories__story story swiper-slide">
-                    <div class="story__wrapper">
-                      <img src="images/nature1.jpg" alt="" class="story__content">
-                      <a href="#" class="story__avatar-link">
-                        <img src="images/avatar.jpg" alt="" class="story__avatar">
-                      </a>
+                  <li class="stories-reveal__story-revealed story-revealed swiper-slide">
+                    <div class="story-revealed__wrapper">
+                      <div class="story-revealed__button-next">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="story-revealed__button-prev">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="swiper story-revealed__nested-swiper">
+                        <div class="story-revealed__panel">
+                          <div class="story-revealed__block"></div>
+                          <div class="story-revealed__top-gradient"></div>
+                          <div class="story-revealed__left-gradient"></div>
+                          <div class="story-revealed__right-gradient"></div>
+                          <div class="story-revealed__user">
+                            <a href="#" class="story-revealed__avatar-link">
+                              <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
+                            </a>
+                            <span class="story-revealed__username">Автор</span>
+                          </div>
+                        </div>
+                        <ul class="swiper-wrapper story-revealed__list">
+                          <li class="swiper-slide story-revealed__item">
+                            <img class="story-revealed__img" src="images/nature1.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature2.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature3.jpg" />
+                          </li>
+                        </ul>
+                        <div class="story-revealed__pagination"></div>
+                      </div>
                     </div>
-                    <span class="story__title">Где искать темную тему Хабра</span>
                   </li>
-                  <li class="stories__story story swiper-slide">
-                    <div class="story__wrapper">
-                      <img src="images/nature1.jpg" alt="" class="story__content">
-                      <a href="#" class="story__avatar-link">
-                        <img src="images/avatar.jpg" alt="" class="story__avatar">
-                      </a>
+                  <li class="stories-reveal__story-revealed story-revealed swiper-slide">
+                    <div class="story-revealed__wrapper">
+                      <div class="story-revealed__button-next">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="story-revealed__button-prev">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="swiper story-revealed__nested-swiper">
+                        <div class="story-revealed__panel">
+                          <div class="story-revealed__block"></div>
+                          <div class="story-revealed__top-gradient"></div>
+                          <div class="story-revealed__left-gradient"></div>
+                          <div class="story-revealed__right-gradient"></div>
+                          <div class="story-revealed__user">
+                            <a href="#" class="story-revealed__avatar-link">
+                              <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
+                            </a>
+                            <span class="story-revealed__username">Автор</span>
+                          </div>
+                        </div>
+                        <ul class="swiper-wrapper story-revealed__list">
+                          <li class="swiper-slide story-revealed__item">
+                            <img class="story-revealed__img" src="images/nature1.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature2.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature3.jpg" />
+                          </li>
+                        </ul>
+                        <div class="story-revealed__pagination"></div>
+                      </div>
                     </div>
-                    <span class="story__title">Где искать темную тему Хабра</span>
                   </li>
-                  <li class="stories__story story swiper-slide">
-                    <div class="story__wrapper">
-                      <img src="images/nature1.jpg" alt="" class="story__content">
-                      <a href="#" class="story__avatar-link">
-                        <img src="images/avatar.jpg" alt="" class="story__avatar">
-                      </a>
+                  <li class="stories-reveal__story-revealed story-revealed swiper-slide">
+                    <div class="story-revealed__wrapper">
+                      <div class="story-revealed__button-next">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="story-revealed__button-prev">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="swiper story-revealed__nested-swiper">
+                        <div class="story-revealed__panel">
+                          <div class="story-revealed__block"></div>
+                          <div class="story-revealed__top-gradient"></div>
+                          <div class="story-revealed__left-gradient"></div>
+                          <div class="story-revealed__right-gradient"></div>
+                          <div class="story-revealed__user">
+                            <a href="#" class="story-revealed__avatar-link">
+                              <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
+                            </a>
+                            <span class="story-revealed__username">Автор</span>
+                          </div>
+                        </div>
+                        <ul class="swiper-wrapper story-revealed__list">
+                          <li class="swiper-slide story-revealed__item">
+                            <img class="story-revealed__img" src="images/nature1.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature2.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature3.jpg" />
+                          </li>
+                        </ul>
+                        <div class="story-revealed__pagination"></div>
+                      </div>
                     </div>
-                    <span class="story__title">Где искать темную тему Хабра</span>
                   </li>
-                  <li class="stories__story story swiper-slide">
-                    <div class="story__wrapper">
-                      <img src="images/nature1.jpg" alt="" class="story__content">
-                      <a href="#" class="story__avatar-link">
-                        <img src="images/avatar.jpg" alt="" class="story__avatar">
-                      </a>
+                  <li class="stories-reveal__story-revealed story-revealed swiper-slide">
+                    <div class="story-revealed__wrapper">
+                      <div class="story-revealed__button-next hide">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="story-revealed__button-prev">
+                        <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
+                      </div>
+                      <div class="swiper story-revealed__nested-swiper">
+                        <div class="story-revealed__panel">
+                          <div class="story-revealed__block"></div>
+                          <div class="story-revealed__top-gradient"></div>
+                          <div class="story-revealed__left-gradient"></div>
+                          <div class="story-revealed__right-gradient"></div>
+                          <div class="story-revealed__user">
+                            <a href="#" class="story-revealed__avatar-link">
+                              <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
+                            </a>
+                            <span class="story-revealed__username">Автор</span>
+                          </div>
+                        </div>
+                        <ul class="swiper-wrapper story-revealed__list">
+                          <li class="swiper-slide story-revealed__item">
+                            <img class="story-revealed__img" src="images/nature1.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature2.jpg" />
+                          </li>
+                          <li class="story-revealed__slide swiper-slide">
+                            <img class="story-revealed__img" src="images/nature3.jpg" />
+                          </li>
+                        </ul>
+                        <div class="story-revealed__pagination"></div>
+                      </div>
                     </div>
-                    <span class="story__title">Где искать темную тему Хабра</span>
                   </li>
                 </ul>
               </div>
-              <div class="stories__reveal stories-reveal hide">
-                <div class="swiper stories-reveal__wrapper">
-                  <div class="stories-reveal__close">
-                    <img src="images/cross.svg" alt="" class="stories-reveal__close-img">
-                  </div>
-                  <ul class="stories-reveal__list swiper-wrapper">
-                    <li class="stories-reveal__story-revealed story-revealed swiper-slide">
-                      <div class="story-revealed__wrapper">
-                        <div class="story-revealed__button-next">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="story-revealed__button-prev hide">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="swiper story-revealed__nested-swiper">
-                          <div class="story-revealed__panel">
-                            <div class="story-revealed__block"></div>
-                            <div class="story-revealed__top-gradient"></div>
-                            <div class="story-revealed__left-gradient"></div>
-                            <div class="story-revealed__right-gradient"></div>
-                            <div class="story-revealed__user">
-                              <a href="#" class="story-revealed__avatar-link">
-                                <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
-                              </a>
-                              <span class="story-revealed__username">Автор</span>
-                            </div>
-                          </div>
-                          <ul class="swiper-wrapper story-revealed__list">
-                            <li class="swiper-slide story-revealed__item">
-                              <img class="story-revealed__img" src="images/nature1.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature2.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature3.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature4.jpg" />
-                            </li>
-                          </ul>
-                          <div class="story-revealed__pagination"></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="stories-reveal__story-revealed story-revealed swiper-slide">
-                      <div class="story-revealed__wrapper">
-                        <div class="story-revealed__button-next">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="story-revealed__button-prev">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="swiper story-revealed__nested-swiper">
-                          <div class="story-revealed__panel">
-                            <div class="story-revealed__block"></div>
-                            <div class="story-revealed__top-gradient"></div>
-                            <div class="story-revealed__left-gradient"></div>
-                            <div class="story-revealed__right-gradient"></div>
-                            <div class="story-revealed__user">
-                              <a href="#" class="story-revealed__avatar-link">
-                                <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
-                              </a>
-                              <span class="story-revealed__username">Автор</span>
-                            </div>
-                          </div>
-                          <ul class="swiper-wrapper story-revealed__list">
-                            <li class="swiper-slide story-revealed__item">
-                              <img class="story-revealed__img" src="images/nature2.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature1.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature3.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature4.jpg" />
-                            </li>
-                          </ul>
-                          <div class="story-revealed__pagination"></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="stories-reveal__story-revealed story-revealed swiper-slide">
-                      <div class="story-revealed__wrapper">
-                        <div class="story-revealed__button-next">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="story-revealed__button-prev">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="swiper story-revealed__nested-swiper">
-                          <div class="story-revealed__panel">
-                            <div class="story-revealed__block"></div>
-                            <div class="story-revealed__top-gradient"></div>
-                            <div class="story-revealed__left-gradient"></div>
-                            <div class="story-revealed__right-gradient"></div>
-                            <div class="story-revealed__user">
-                              <a href="#" class="story-revealed__avatar-link">
-                                <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
-                              </a>
-                              <span class="story-revealed__username">Автор</span>
-                            </div>
-                          </div>
-                          <ul class="swiper-wrapper story-revealed__list">
-                            <li class="swiper-slide story-revealed__item">
-                              <img class="story-revealed__img" src="images/nature1.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature2.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature3.jpg" />
-                            </li>
-                          </ul>
-                          <div class="story-revealed__pagination"></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="stories-reveal__story-revealed story-revealed swiper-slide">
-                      <div class="story-revealed__wrapper">
-                        <div class="story-revealed__button-next">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="story-revealed__button-prev">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="swiper story-revealed__nested-swiper">
-                          <div class="story-revealed__panel">
-                            <div class="story-revealed__block"></div>
-                            <div class="story-revealed__top-gradient"></div>
-                            <div class="story-revealed__left-gradient"></div>
-                            <div class="story-revealed__right-gradient"></div>
-                            <div class="story-revealed__user">
-                              <a href="#" class="story-revealed__avatar-link">
-                                <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
-                              </a>
-                              <span class="story-revealed__username">Автор</span>
-                            </div>
-                          </div>
-                          <ul class="swiper-wrapper story-revealed__list">
-                            <li class="swiper-slide story-revealed__item">
-                              <img class="story-revealed__img" src="images/nature1.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature2.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature3.jpg" />
-                            </li>
-                          </ul>
-                          <div class="story-revealed__pagination"></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="stories-reveal__story-revealed story-revealed swiper-slide">
-                      <div class="story-revealed__wrapper">
-                        <div class="story-revealed__button-next">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="story-revealed__button-prev">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="swiper story-revealed__nested-swiper">
-                          <div class="story-revealed__panel">
-                            <div class="story-revealed__block"></div>
-                            <div class="story-revealed__top-gradient"></div>
-                            <div class="story-revealed__left-gradient"></div>
-                            <div class="story-revealed__right-gradient"></div>
-                            <div class="story-revealed__user">
-                              <a href="#" class="story-revealed__avatar-link">
-                                <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
-                              </a>
-                              <span class="story-revealed__username">Автор</span>
-                            </div>
-                          </div>
-                          <ul class="swiper-wrapper story-revealed__list">
-                            <li class="swiper-slide story-revealed__item">
-                              <img class="story-revealed__img" src="images/nature1.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature2.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature3.jpg" />
-                            </li>
-                          </ul>
-                          <div class="story-revealed__pagination"></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="stories-reveal__story-revealed story-revealed swiper-slide">
-                      <div class="story-revealed__wrapper">
-                        <div class="story-revealed__button-next">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="story-revealed__button-prev">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="swiper story-revealed__nested-swiper">
-                          <div class="story-revealed__panel">
-                            <div class="story-revealed__block"></div>
-                            <div class="story-revealed__top-gradient"></div>
-                            <div class="story-revealed__left-gradient"></div>
-                            <div class="story-revealed__right-gradient"></div>
-                            <div class="story-revealed__user">
-                              <a href="#" class="story-revealed__avatar-link">
-                                <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
-                              </a>
-                              <span class="story-revealed__username">Автор</span>
-                            </div>
-                          </div>
-                          <ul class="swiper-wrapper story-revealed__list">
-                            <li class="swiper-slide story-revealed__item">
-                              <img class="story-revealed__img" src="images/nature1.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature2.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature3.jpg" />
-                            </li>
-                          </ul>
-                          <div class="story-revealed__pagination"></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="stories-reveal__story-revealed story-revealed swiper-slide">
-                      <div class="story-revealed__wrapper">
-                        <div class="story-revealed__button-next">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="story-revealed__button-prev">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="swiper story-revealed__nested-swiper">
-                          <div class="story-revealed__panel">
-                            <div class="story-revealed__block"></div>
-                            <div class="story-revealed__top-gradient"></div>
-                            <div class="story-revealed__left-gradient"></div>
-                            <div class="story-revealed__right-gradient"></div>
-                            <div class="story-revealed__user">
-                              <a href="#" class="story-revealed__avatar-link">
-                                <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
-                              </a>
-                              <span class="story-revealed__username">Автор</span>
-                            </div>
-                          </div>
-                          <ul class="swiper-wrapper story-revealed__list">
-                            <li class="swiper-slide story-revealed__item">
-                              <img class="story-revealed__img" src="images/nature1.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature2.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature3.jpg" />
-                            </li>
-                          </ul>
-                          <div class="story-revealed__pagination"></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="stories-reveal__story-revealed story-revealed swiper-slide">
-                      <div class="story-revealed__wrapper">
-                        <div class="story-revealed__button-next">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="story-revealed__button-prev">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="swiper story-revealed__nested-swiper">
-                          <div class="story-revealed__panel">
-                            <div class="story-revealed__block"></div>
-                            <div class="story-revealed__top-gradient"></div>
-                            <div class="story-revealed__left-gradient"></div>
-                            <div class="story-revealed__right-gradient"></div>
-                            <div class="story-revealed__user">
-                              <a href="#" class="story-revealed__avatar-link">
-                                <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
-                              </a>
-                              <span class="story-revealed__username">Автор</span>
-                            </div>
-                          </div>
-                          <ul class="swiper-wrapper story-revealed__list">
-                            <li class="swiper-slide story-revealed__item">
-                              <img class="story-revealed__img" src="images/nature1.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature2.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature3.jpg" />
-                            </li>
-                          </ul>
-                          <div class="story-revealed__pagination"></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="stories-reveal__story-revealed story-revealed swiper-slide">
-                      <div class="story-revealed__wrapper">
-                        <div class="story-revealed__button-next">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="story-revealed__button-prev">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="swiper story-revealed__nested-swiper">
-                          <div class="story-revealed__panel">
-                            <div class="story-revealed__block"></div>
-                            <div class="story-revealed__top-gradient"></div>
-                            <div class="story-revealed__left-gradient"></div>
-                            <div class="story-revealed__right-gradient"></div>
-                            <div class="story-revealed__user">
-                              <a href="#" class="story-revealed__avatar-link">
-                                <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
-                              </a>
-                              <span class="story-revealed__username">Автор</span>
-                            </div>
-                          </div>
-                          <ul class="swiper-wrapper story-revealed__list">
-                            <li class="swiper-slide story-revealed__item">
-                              <img class="story-revealed__img" src="images/nature1.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature2.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature3.jpg" />
-                            </li>
-                          </ul>
-                          <div class="story-revealed__pagination"></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="stories-reveal__story-revealed story-revealed swiper-slide">
-                      <div class="story-revealed__wrapper">
-                        <div class="story-revealed__button-next">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="story-revealed__button-prev">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="swiper story-revealed__nested-swiper">
-                          <div class="story-revealed__panel">
-                            <div class="story-revealed__block"></div>
-                            <div class="story-revealed__top-gradient"></div>
-                            <div class="story-revealed__left-gradient"></div>
-                            <div class="story-revealed__right-gradient"></div>
-                            <div class="story-revealed__user">
-                              <a href="#" class="story-revealed__avatar-link">
-                                <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
-                              </a>
-                              <span class="story-revealed__username">Автор</span>
-                            </div>
-                          </div>
-                          <ul class="swiper-wrapper story-revealed__list">
-                            <li class="swiper-slide story-revealed__item">
-                              <img class="story-revealed__img" src="images/nature1.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature2.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature3.jpg" />
-                            </li>
-                          </ul>
-                          <div class="story-revealed__pagination"></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="stories-reveal__story-revealed story-revealed swiper-slide">
-                      <div class="story-revealed__wrapper">
-                        <div class="story-revealed__button-next">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="story-revealed__button-prev">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="swiper story-revealed__nested-swiper">
-                          <div class="story-revealed__panel">
-                            <div class="story-revealed__block"></div>
-                            <div class="story-revealed__top-gradient"></div>
-                            <div class="story-revealed__left-gradient"></div>
-                            <div class="story-revealed__right-gradient"></div>
-                            <div class="story-revealed__user">
-                              <a href="#" class="story-revealed__avatar-link">
-                                <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
-                              </a>
-                              <span class="story-revealed__username">Автор</span>
-                            </div>
-                          </div>
-                          <ul class="swiper-wrapper story-revealed__list">
-                            <li class="swiper-slide story-revealed__item">
-                              <img class="story-revealed__img" src="images/nature1.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature2.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature3.jpg" />
-                            </li>
-                          </ul>
-                          <div class="story-revealed__pagination"></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="stories-reveal__story-revealed story-revealed swiper-slide">
-                      <div class="story-revealed__wrapper">
-                        <div class="story-revealed__button-next hide">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="story-revealed__button-prev">
-                          <img src="images/arrow.svg" alt="" class="story-revealed__button-img">
-                        </div>
-                        <div class="swiper story-revealed__nested-swiper">
-                          <div class="story-revealed__panel">
-                            <div class="story-revealed__block"></div>
-                            <div class="story-revealed__top-gradient"></div>
-                            <div class="story-revealed__left-gradient"></div>
-                            <div class="story-revealed__right-gradient"></div>
-                            <div class="story-revealed__user">
-                              <a href="#" class="story-revealed__avatar-link">
-                                <img src="images/avatar.jpg" alt="" class="story-revealed__avatar">
-                              </a>
-                              <span class="story-revealed__username">Автор</span>
-                            </div>
-                          </div>
-                          <ul class="swiper-wrapper story-revealed__list">
-                            <li class="swiper-slide story-revealed__item">
-                              <img class="story-revealed__img" src="images/nature1.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature2.jpg" />
-                            </li>
-                            <li class="story-revealed__slide swiper-slide">
-                              <img class="story-revealed__img" src="images/nature3.jpg" />
-                            </li>
-                          </ul>
-                          <div class="story-revealed__pagination"></div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+            </div>
+          </section>
+          <section class="main__products products">
+            <ul class="products__wrapper">
+              <li class="products__product product product__large">
+                <a href="#" class="product__link ">
+                  <div class="product__title">Авто</div>
+                  <img src="images/placeholder2.png" alt="" class="product__img">
+                </a>
+              </li>
+              <li class="products__product product product__normal">
+                <a href="#" class="product__link ">
+                  <div class="product__title">Авто</div>
+                  <img src="images/placeholder.png" alt="" class="product__img">
+                </a>
+              </li>
+              <li class="products__product product product__normal">
+                <a href="#" class="product__link">
+                  <div class="product__title">Авто</div>
+                  <img src="images/placeholder.png" alt="" class="product__img">
+                </a>
+              </li>
+              <li class="products__product product product__large">
+                <a href="#" class="product__link ">
+                  <div class="product__title">Одежда, обувь,
+                    аксессуары</div>
+                  <img src="images/placeholder2.png" alt="" class="product__img">
+                </a>
+              </li>
+              <li class="products__product product product__normal">
+                <a href="#" class="product__link ">
+                  <div class="product__title">Авто</div>
+                  <img src="images/placeholder.png" alt="" class="product__img">
+                </a>
+              </li>
+              <li class="products__product product product__normal">
+                <a href="#" class="product__link">
+                  <div class="product__title">Авто</div>
+                  <img src="images/placeholder.png" alt="" class="product__img">
+                </a>
+              </li>
+              <li class="products__product product product__large">
+                <a href="#" class="product__link ">
+                  <div class="product__title">Готовый бизнес и оборудование</div>
+                  <img src="images/placeholder2.png" alt="" class="product__img">
+                </a>
+              </li>
+              <li class="products__product product product__normal">
+                <a href="#" class="product__link ">
+                  <div class="product__title">Авто</div>
+                  <img src="images/placeholder.png" alt="" class="product__img">
+                </a>
+              </li>
+              <li class="products__product product product__normal">
+                <a href="#" class="product__link">
+                  <div class="product__title">Авто</div>
+                  <img src="images/placeholder.png" alt="" class="product__img">
+                </a>
+              </li>
+              <li class="products__product product product__normal">
+                <a href="#" class="product__link ">
+                  <div class="product__title">Авто</div>
+                  <img src="images/placeholder2.png" alt="" class="product__img">
+                </a>
+              </li>
+              <li class="products__product product product__normal">
+                <a href="#" class="product__link ">
+                  <div class="product__title">Авто</div>
+                  <img src="images/placeholder.png" alt="" class="product__img">
+                </a>
+              </li>
+              <li class="products__product product product__large">
+                <a href="#" class="product__link">
+                  <div class="product__title">Авто</div>
+                  <img src="images/placeholder.png" alt="" class="product__img">
+                </a>
+              </li>
+              <li class="products__product product product__large">
+                <a href="#" class="product__link ">
+                  <div class="product__title">Авто</div>
+                  <img src="images/placeholder2.png" alt="" class="product__img">
+                </a>
+              </li>
+              <li class="products__product product product__large">
+                <a href="#" class="product__link ">
+                  <div class="product__title">Авто</div>
+                  <img src="images/placeholder.png" alt="" class="product__img">
+                </a>
+              </li>
+            </ul>
+          </section>
+          <section class="main__news news">
+            <div class="news__wrapper">
+              <div class="news__top">
+                <h2 class="news__title">Новости</h2>
+                <div class="news__filter">
+                  <input class="news__filter-item" type="radio" id="news-filter-1" name="news-filter" checked value="0">
+                  <label class="news__filter-label" for="news-filter-1">
+                    По дате
+                  </label>
+                  <input class="news__filter-item" type="radio" id="news-filter-2" name="news-filter" value="0">
+                  <label class="news__filter-label" for="news-filter-2">
+                    По просмотрам
+                  </label>
                 </div>
               </div>
-            </section>
-            <section class="main__products products">
-              <ul class="products__wrapper">
-                <li class="products__product product product__large">
-                  <a href="#" class="product__link ">
-                    <div class="product__title">Авто</div>
-                    <img src="images/placeholder2.png" alt="" class="product__img">
+              <span class="news__current-date">05 апреля</span>
+              <ul class="news__list">
+                <li class="news__item news-item">
+                  <div class="news-item__wrapper">
+                    <div class="news-item__time">20:47</div>
+                    <span class="news-item__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <span
+                        class="news-item__comment">
+                        <img src="images/bubble.svg" alt="" class="news-item__comment-img">
+                        <span class="news-item__comment-number">1</span>
+                      </span></span>
+                  </div>
+                </li>
+                <li class="news__item news-item">
+                  <div class="news-item__wrapper">
+                    <div class="news-item__time">20:47</div>
+                    <span class="news-item__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <span
+                        class="news-item__comment hide">
+                        <img src="images/bubble.svg" alt="" class="news-item__comment-img">
+                        <span class="news-item__comment-number">1</span>
+                      </span></span>
+                  </div>
+                </li>
+                <li class="news__item news-item">
+                  <div class="news-item__wrapper">
+                    <div class="news-item__time">20:47</div>
+                    <span class="news-item__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quas
+                      voluptas ipsa, vitae deserunt adipisci a earum esse, itaque consectetur veritatis cumque facere
+                      sit tempora. A soluta reiciendis reprehenderit placeat! <span class="news-item__comment">
+                        <img src="images/bubble.svg" alt="" class="news-item__comment-img">
+                        <span class="news-item__comment-number">3</span>
+                      </span></span>
+                  </div>
+                </li>
+                <li class="news__item news-item">
+                  <div class="news-item__wrapper">
+                    <div class="news-item__time">20:47</div>
+                    <span class="news-item__text">Lorem ipsum dolor, sit amet <span class="news-item__comment">
+                        <img src="images/bubble.svg" alt="" class="news-item__comment-img">
+                        <span class="news-item__comment-number">3</span>
+                      </span></span>
+                  </div>
+                </li>
+                <li class="news__item news-item">
+                  <div class="news-item__wrapper">
+                    <div class="news-item__time">20:47</div>
+                    <span class="news-item__text">Lorem ipsuma earum esse, itaque consectetur veritatis cumque facere
+                      sit tempora. A soluta reiciendis reprehenderit placeat! <span class="news-item__comment">
+                        <img src="images/bubble.svg" alt="" class="news-item__comment-img">
+                        <span class="news-item__comment-number">3</span>
+                      </span></span>
+                  </div>
+                </li>
+              </ul>
+              <div class="news__load-more">
+                <img src="images/load-more.svg" alt="" class="news__load-more-img">
+                <span class="news__load-more-text">Загрузить еще</span>
+              </div>
+            </div>
+          </section>
+          <section class="main__companies companies">
+            <div class="companies__wrapper">
+              <h2 class="companies__title">Компании</h2>
+              <span class="companies__number">40</span>
+              <ul class="companies__list">
+                <li class="companies__item">
+                  <a href="#" class="companies__link">
+                    <img src="images/placeholder.png" alt="" class="companies__img">
+                    <span class="companies__name">Тинькофф</span>
                   </a>
                 </li>
-                <li class="products__product product product__normal">
-                  <a href="#" class="product__link ">
-                    <div class="product__title">Авто</div>
-                    <img src="images/placeholder.png" alt="" class="product__img">
+                <li class="companies__item">
+                  <a href="#" class="companies__link">
+                    <img src="images/placeholder.png" alt="" class="companies__img">
+                    <span class="companies__name">Авито </span>
                   </a>
                 </li>
-                <li class="products__product product product__normal">
-                  <a href="#" class="product__link">
-                    <div class="product__title">Авто</div>
-                    <img src="images/placeholder.png" alt="" class="product__img">
+                <li class="companies__item">
+                  <a href="#" class="companies__link">
+                    <img src="images/placeholder.png" alt="" class="companies__img">
+                    <span class="companies__name">Тинькофф</span>
                   </a>
                 </li>
-                <li class="products__product product product__large">
-                  <a href="#" class="product__link ">
-                    <div class="product__title">Одежда, обувь,
-                      аксессуары</div>
-                    <img src="images/placeholder2.png" alt="" class="product__img">
+                <li class="companies__item">
+                  <a href="#" class="companies__link">
+                    <img src="images/placeholder.png" alt="" class="companies__img">
+                    <span class="companies__name">Авито </span>
                   </a>
                 </li>
-                <li class="products__product product product__normal">
-                  <a href="#" class="product__link ">
-                    <div class="product__title">Авто</div>
-                    <img src="images/placeholder.png" alt="" class="product__img">
+                <li class="companies__item">
+                  <a href="#" class="companies__link">
+                    <img src="images/placeholder.png" alt="" class="companies__img">
+                    <span class="companies__name">Тинькофф</span>
                   </a>
                 </li>
-                <li class="products__product product product__normal">
-                  <a href="#" class="product__link">
-                    <div class="product__title">Авто</div>
-                    <img src="images/placeholder.png" alt="" class="product__img">
+                <li class="companies__item">
+                  <a href="#" class="companies__link">
+                    <img src="images/placeholder.png" alt="" class="companies__img">
+                    <span class="companies__name">Авито </span>
                   </a>
                 </li>
-                <li class="products__product product product__large">
-                  <a href="#" class="product__link ">
-                    <div class="product__title">Готовый бизнес и оборудование</div>
-                    <img src="images/placeholder2.png" alt="" class="product__img">
+                <li class="companies__item">
+                  <a href="#" class="companies__link">
+                    <img src="images/placeholder.png" alt="" class="companies__img">
+                    <span class="companies__name">Тинькофф</span>
                   </a>
                 </li>
-                <li class="products__product product product__normal">
-                  <a href="#" class="product__link ">
-                    <div class="product__title">Авто</div>
-                    <img src="images/placeholder.png" alt="" class="product__img">
+                <li class="companies__item">
+                  <a href="#" class="companies__link">
+                    <img src="images/placeholder.png" alt="" class="companies__img">
+                    <span class="companies__name">Авито </span>
                   </a>
                 </li>
-                <li class="products__product product product__normal">
-                  <a href="#" class="product__link">
-                    <div class="product__title">Авто</div>
-                    <img src="images/placeholder.png" alt="" class="product__img">
+                <li class="companies__item">
+                  <a href="#" class="companies__link">
+                    <img src="images/placeholder.png" alt="" class="companies__img">
+                    <span class="companies__name">Тинькофф</span>
                   </a>
                 </li>
-                <li class="products__product product product__normal">
-                  <a href="#" class="product__link ">
-                    <div class="product__title">Авто</div>
-                    <img src="images/placeholder2.png" alt="" class="product__img">
-                  </a>
-                </li>
-                <li class="products__product product product__normal">
-                  <a href="#" class="product__link ">
-                    <div class="product__title">Авто</div>
-                    <img src="images/placeholder.png" alt="" class="product__img">
-                  </a>
-                </li>
-                <li class="products__product product product__large">
-                  <a href="#" class="product__link">
-                    <div class="product__title">Авто</div>
-                    <img src="images/placeholder.png" alt="" class="product__img">
-                  </a>
-                </li>
-                <li class="products__product product product__large">
-                  <a href="#" class="product__link ">
-                    <div class="product__title">Авто</div>
-                    <img src="images/placeholder2.png" alt="" class="product__img">
-                  </a>
-                </li>
-                <li class="products__product product product__large">
-                  <a href="#" class="product__link ">
-                    <div class="product__title">Авто</div>
-                    <img src="images/placeholder.png" alt="" class="product__img">
+                <li class="companies__item">
+                  <a href="#" class="companies__link">
+                    <img src="images/placeholder.png" alt="" class="companies__img">
+                    <span class="companies__name">Авито </span>
                   </a>
                 </li>
               </ul>
-            </section>
-            <section class="main__news news">
-              <div class="news__wrapper">
-                <div class="news__top">
-                  <h2 class="news__title">Новости</h2>
-                  <div class="news__filter">
-                    <input class="news__filter-item" type="radio" id="news-filter-1" name="news-filter" checked
-                      value="0">
-                    <label class="news__filter-label" for="news-filter-1">
-                      По дате
-                    </label>
-                    <input class="news__filter-item" type="radio" id="news-filter-2" name="news-filter" value="0">
-                    <label class="news__filter-label" for="news-filter-2">
-                      По просмотрам
-                    </label>
-                  </div>
-                </div>
-                <span class="news__current-date">05 апреля</span>
-                <ul class="news__list">
-                  <li class="news__item news-item">
-                    <div class="news-item__wrapper">
-                      <div class="news-item__time">20:47</div>
-                      <span class="news-item__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <span
-                          class="news-item__comment">
-                          <img src="images/bubble.svg" alt="" class="news-item__comment-img">
-                          <span class="news-item__comment-number">1</span>
-                        </span></span>
-                    </div>
-                  </li>
-                  <li class="news__item news-item">
-                    <div class="news-item__wrapper">
-                      <div class="news-item__time">20:47</div>
-                      <span class="news-item__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <span
-                          class="news-item__comment hide">
-                          <img src="images/bubble.svg" alt="" class="news-item__comment-img">
-                          <span class="news-item__comment-number">1</span>
-                        </span></span>
-                    </div>
-                  </li>
-                  <li class="news__item news-item">
-                    <div class="news-item__wrapper">
-                      <div class="news-item__time">20:47</div>
-                      <span class="news-item__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quas
-                        voluptas ipsa, vitae deserunt adipisci a earum esse, itaque consectetur veritatis cumque facere
-                        sit tempora. A soluta reiciendis reprehenderit placeat! <span class="news-item__comment">
-                          <img src="images/bubble.svg" alt="" class="news-item__comment-img">
-                          <span class="news-item__comment-number">3</span>
-                        </span></span>
-                    </div>
-                  </li>
-                  <li class="news__item news-item">
-                    <div class="news-item__wrapper">
-                      <div class="news-item__time">20:47</div>
-                      <span class="news-item__text">Lorem ipsum dolor, sit amet <span class="news-item__comment">
-                          <img src="images/bubble.svg" alt="" class="news-item__comment-img">
-                          <span class="news-item__comment-number">3</span>
-                        </span></span>
-                    </div>
-                  </li>
-                  <li class="news__item news-item">
-                    <div class="news-item__wrapper">
-                      <div class="news-item__time">20:47</div>
-                      <span class="news-item__text">Lorem ipsuma earum esse, itaque consectetur veritatis cumque facere
-                        sit tempora. A soluta reiciendis reprehenderit placeat! <span class="news-item__comment">
-                          <img src="images/bubble.svg" alt="" class="news-item__comment-img">
-                          <span class="news-item__comment-number">3</span>
-                        </span></span>
-                    </div>
-                  </li>
-                </ul>
-                <div class="news__load-more">
-                  <img src="images/load-more.svg" alt="" class="news__load-more-img">
-                  <span class="news__load-more-text">Загрузить еще</span>
-                </div>
-              </div>
-            </section>
-            <section class="main__companies companies">
-              <div class="companies__wrapper">
-                <h2 class="companies__title">Компании</h2>
-                <span class="companies__number">40</span>
-                <ul class="companies__list">
-                  <li class="companies__item">
-                    <a href="#" class="companies__link">
-                      <img src="images/placeholder.png" alt="" class="companies__img">
-                      <span class="companies__name">Тинькофф</span>
-                    </a>
-                  </li>
-                  <li class="companies__item">
-                    <a href="#" class="companies__link">
-                      <img src="images/placeholder.png" alt="" class="companies__img">
-                      <span class="companies__name">Авито </span>
-                    </a>
-                  </li>
-                  <li class="companies__item">
-                    <a href="#" class="companies__link">
-                      <img src="images/placeholder.png" alt="" class="companies__img">
-                      <span class="companies__name">Тинькофф</span>
-                    </a>
-                  </li>
-                  <li class="companies__item">
-                    <a href="#" class="companies__link">
-                      <img src="images/placeholder.png" alt="" class="companies__img">
-                      <span class="companies__name">Авито </span>
-                    </a>
-                  </li>
-                  <li class="companies__item">
-                    <a href="#" class="companies__link">
-                      <img src="images/placeholder.png" alt="" class="companies__img">
-                      <span class="companies__name">Тинькофф</span>
-                    </a>
-                  </li>
-                  <li class="companies__item">
-                    <a href="#" class="companies__link">
-                      <img src="images/placeholder.png" alt="" class="companies__img">
-                      <span class="companies__name">Авито </span>
-                    </a>
-                  </li>
-                  <li class="companies__item">
-                    <a href="#" class="companies__link">
-                      <img src="images/placeholder.png" alt="" class="companies__img">
-                      <span class="companies__name">Тинькофф</span>
-                    </a>
-                  </li>
-                  <li class="companies__item">
-                    <a href="#" class="companies__link">
-                      <img src="images/placeholder.png" alt="" class="companies__img">
-                      <span class="companies__name">Авито </span>
-                    </a>
-                  </li>
-                  <li class="companies__item">
-                    <a href="#" class="companies__link">
-                      <img src="images/placeholder.png" alt="" class="companies__img">
-                      <span class="companies__name">Тинькофф</span>
-                    </a>
-                  </li>
-                  <li class="companies__item">
-                    <a href="#" class="companies__link">
-                      <img src="images/placeholder.png" alt="" class="companies__img">
-                      <span class="companies__name">Авито </span>
-                    </a>
-                  </li>
-                </ul>
-                <span class="companies__show-all">Показать все</span>
-              </div>
-            </section>
-          </div>
+              <span class="companies__show-all">Показать все</span>
+            </div>
+          </section>
         </div>
         <section class="main__community community">
           <h2 class="community__title">Community contributors</h2>
@@ -1487,5 +1484,23 @@
   @endauth
 </div>
 @endif
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(97323142, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/97323142" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 
 </html>
