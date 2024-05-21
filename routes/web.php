@@ -41,6 +41,9 @@ Route::middleware(['auth'])->group(function () {
 	
 	// Запросы: статьи
 	Route::post('/article/create', [\App\Http\Controllers\Post\PostController::class, 'create'])->name('dashboard.posts.create-post');
+	
+	// Чат: оператор
+	Route::get('/dashboard/chat', [\App\Http\Controllers\Chat\ChatController::class, 'index'])->name('dashboard.chat');
 });
 
 
