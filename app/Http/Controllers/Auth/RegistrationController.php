@@ -39,13 +39,12 @@ class RegistrationController extends Controller
                 'middle_name' => $data['middle_name']
             ]);
 			
-		
 		if ($user) {
-            Auth::guard('admin')->login($user);
+			
+            Auth::login($user);
             $request->session()->regenerate();
-			
-			
-        return redirect(route('home'));
+		
+			return redirect(route('home'));
 		}
 		
        // return redirect(route('registration'))->withErrors();
