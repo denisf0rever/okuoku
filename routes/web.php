@@ -6,7 +6,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegistrationController;
 
 Route::get('/', function () {
-    return view('layout')->name('main');
+    return view('layout');
 });
 
 Route::get('/home', function () {
@@ -20,6 +20,9 @@ Route::middleware(['guest'])->group(function () {
 	Route::get('/register', [\App\Http\Controllers\Auth\RegistrationController::class, 'show'])->name('registration');
 	Route::post('/register', [\App\Http\Controllers\Auth\RegistrationController::class, 'register'])->name('register.post');
 	Route::get('/logout', [\App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
+	
+	// Статьи
+	Route::get('/article/{id}', [\App\Http\Controllers\Post\PostController::class, 'show'])->name('dashboard.posts.item');
 	
 });
 	

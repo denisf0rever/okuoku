@@ -18,7 +18,7 @@ class PostController extends Controller
         $posts = Post::query()
 			->orderBy('ASC')
             ->take(10)
-            ->get();;
+            ->get();
 		
 		return view('dashboard.posts.post-list', ['posts' => $posts]);
     }
@@ -40,7 +40,7 @@ class PostController extends Controller
             'full-text' => ['required', 'string'],
         ]);
 		
-	   $post = Post::create($validated);
+		$post = Post::create($validated);
 			
 		return redirect()->route('dashboard.posts');
     }
@@ -58,7 +58,11 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $article = Post::query()
+            ->where('id', '=', $id)
+            ->firstOrFail();
+
+     return view('article.item', ['article' => $article]);
     }
 
     /**
