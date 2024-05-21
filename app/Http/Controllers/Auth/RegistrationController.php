@@ -21,9 +21,9 @@ class RegistrationController extends Controller
 		
 		$data = $request->validate([
             'name' => 'required|string',
-            'email' => 'required|email|string',
+            'email' => 'required|email|unique:user|string',
             'password' => 'required|min:6',
-            'username' => 'required|string',
+            'username' => 'required|unique:user|string',
             'last_name' => 'required|string',
             'middle_name' => 'required|string'
         ]);
@@ -44,10 +44,8 @@ class RegistrationController extends Controller
             Auth::login($user);
             $request->session()->regenerate();
 		
-			return redirect(route('home'));
+			return redirect(route('dashboard.main'));
 		}
 		
-       // return redirect(route('registration'))->withErrors();
-
     }
 }

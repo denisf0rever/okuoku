@@ -19,8 +19,13 @@
           <h1 class="main__title">Добавить статью</h1>
           <section class="main__form form">
             <div class="form__wrapper">
-              <form action="{{ route('dashboard.posts.create-post') }}" method="post" class="form__inner-form">
+              <form action="{{ route('dashboard.posts.create-post') }}" method="post" class="form__inner-form" enctype="multipart/form-data">
                 @csrf
+ <ul>
+		@foreach($errors->all() as $error)
+			<li>{{ $error }}</li>
+		@endforeach
+	  </ul>
                 <div class="form__tabs-buttons">
                   <div class="form__tab-button form__tab-button-active">Основные</div>
                   <div class="form__tab-button">Дополнительные</div>
@@ -51,13 +56,13 @@
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="reading-time">Время прочтения</label>
-                          <input class="form__input" type="text" id="reading-time" name="reading-time" readonly>
+                          <input class="form__input" type="text" id="reading-time" name="reading-time">
                         </li>
                       </ul>
                       <label class="form__label-photo">
                         <img src="images/photo-camera.svg" alt="" class="form__input-photo-img">
                         <span class="form__input-photo-text">Загрузить фото</span>
-                        <input class="form__input-photo" type="file" accept="image/*">
+                        <input class="form__input-photo" type="file" name="image" accept="image/*">
                       </label>
                     </div>
                     <div class="form__tab">placeholder</div>
@@ -81,7 +86,7 @@
                 </div>
                 <div class="form__textarea-wrapper">
                   <div class="form__textarea-title">Полный текст</div>
-                  <textarea name="full-text" id="full-text" class="form__textarea"></textarea>
+                  <textarea name="full-text" id="" class="form__textarea"></textarea>
                   <input class="form__submit" type="submit"> </input>
                 </div>
               </form>

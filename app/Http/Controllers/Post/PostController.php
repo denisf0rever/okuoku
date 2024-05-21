@@ -28,21 +28,39 @@ class PostController extends Controller
      */
     public function create(Request $request)
     {
-		$validated = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
-            'subtitle' => ['required', 'string', 'max:255'],
-            'metadescription' => ['required', 'string', 'max:255'],
-            'metakeys' => ['required', 'string', 'max:255'],
-            'author_id' => ['required', 'integer', 'max:5'],
-            'reading-time' => ['required', 'integer', 'max:3'],
-            'category' => ['required', 'integer', 'max:2'],
-            'short-text' => ['required', 'string'],
-            'full-text' => ['required', 'string'],
+		$data = $request->validate([
+            'title' => 'required|string|max:255',
+            'subtitle' => 'required|string|max:255',
+            'metadescription' => 'required|string|max:255',
+            'metakeys' => 'required|string|max:255',
+            'author_id' => 'required|integer|max:5',
+            'reading-time' => 'required|integer',
+            'category' => 'required|integer|max:2',
+            'short-text' => 'required|string',
+            'full-text' => 'required|string',
+			'image' =>  'required|image'
         ]);
 		
-		$post = Post::create($validated);
+		$path = $request->file('image')->store('post');
+		
+		$post = Post::create([
+                'title' => $data['title'],
+				'subtitle' => $data['subtitle'],
+				'metadescription' => $data['metadescription'],
+				'metakeys' => $data['metakeys'],
+				'author_id' => $data['author_id'],
+				'reading-time' => $data['reading-time'],
+				'category' => $data['category'],
+				'short-text' => $data['full-text'],
+				'full-text' => $data['full-text'],
+				'thumb' => $path
+            ]);
+		
+		
+		if ($post) {
 			
-		return redirect()->route('dashboard.posts');
+			return redirect()->route('dashboard.posts');
+		}
     }
 
     /**

@@ -14,6 +14,11 @@
     <div class="popup-form__wrapper">
       <h2 class="popup-form__title">Регистрация</h2>
       <span class="popup-form__subtitle">Введите данные для регистрации</span>
+	  <ul>
+		@foreach($errors->all() as $error)
+			<li>{{ $error }}</li>
+		@endforeach
+	  </ul>
       <form action="{{ route('register.post') }}" method="post" class="popup-form__form">
         @csrf
         <label for="username" class="popup-form__label">Логин:</label>
