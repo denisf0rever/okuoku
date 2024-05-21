@@ -154,12 +154,38 @@
     }
   }
   .footer{
+    &__wrapper{
+      padding: 30px;
+    }
+    &__title{
+      font-size: 20px;
+    }
     &__lists{
-      max-width: 100%;
       flex-wrap: wrap;
+      gap: 15px;
+      max-width: 100%;
     }
     &__list{
-      width: 50%;
+      width: 53%;
+      margin: 0;
+      font-size: 18px;
+    }
+    &__list-contacts{
+      order: 1;
+      gap: 15px;
+      width: 100%;
+      max-width: 380px;
+      flex-direction: row;
+      font-size: 17px;
+    }
+    &__list-login{
+      order: 2;
+    }
+    &__list-second{
+      order: 3;
+    }
+    &__list-third{
+      order: 4;
     }
     &__information{
       max-width: 100%;
@@ -229,12 +255,17 @@
     }
   }
   .footer{
-    &__lists,
-    &__title{
-      text-align: center;
+    &__wrapper{
+      padding: 20px;
     }
     &__list{
       width: 100%;
+    }
+    &__list-contacts{
+      font-size: 13px;
+    }
+    &__list-item{
+      gap: 5px;
     }
     &__img{
       width: 30px;
