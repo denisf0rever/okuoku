@@ -4,7 +4,8 @@
 @section('keywords', '3')
 @section('canonical', 'profile/'. '4')
 
-@section('content')
+	@section('content')
+    @include('parts.sidebar')
 	<div class="main-profile__field">
           <section class="main-profile__profile profile">
             <div class="profile__wrapper">
