@@ -15,8 +15,10 @@ const chatBottom = (props) => {
 
   return <div className="active-chat__bottom-form bottom-form">
     <div className="bottom-form__wrapper">
-      <input type="text" value={newMessageText} onChange={(e) => handleChange(e,)} />
-      <button onClick={sendMessage}>Send</button>
+      <img src="../../../images/avatar.jpg" alt="" className="bottom-form__smiles" />
+      <img src="../../../images/avatar.jpg" alt="" className="bottom-form__add-file" />
+      <input type="text" value={newMessageText} onChange={(e) => handleChange(e,)} className="bottom-form__input" />
+      <img src="../../../images/avatar.jpg" alt="" onClick={sendMessage} className="bottom-form__send-button" />
     </div>
   </div>
 }

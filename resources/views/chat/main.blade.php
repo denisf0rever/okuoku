@@ -11,9 +11,7 @@
 
 <body>
 
-  <div id="operator-chat"></div>
-  тут магия чата
-
+  <div class="operator-chat" id="operator-chat"></div>
 </body>
 
 </html>
