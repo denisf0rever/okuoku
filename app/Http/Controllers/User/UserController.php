@@ -36,11 +36,13 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show(string $id)
     {
-        
+        $user = User::query()
+            ->where('id', '=', $id)
+            ->firstOrFail();
 
-		return view('user.profile.item');
+		return view('user.profile.item', ['user' => $user]);
     }
 	
 	/**public function show(string $id)

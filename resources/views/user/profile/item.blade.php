@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', '1')
+@section('title', $user->name)
 @section('description', '2')
 @section('keywords', '3')
 @section('canonical', 'profile/'. '4')
