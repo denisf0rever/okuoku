@@ -20,6 +20,22 @@
   }
 }
 
+@media (max-width: 1150px) {
+  .profile{
+    &__wrapper{
+      grid-template-rows: auto auto auto;
+    }
+    &__stat{
+      grid-column: 1 / 4;
+      grid-row: 2 / 3;
+    }
+    &__categories{
+      grid-column: 1 / 4;
+      grid-row: 3 / 4;
+    }
+  }
+}
+
 @media (max-width: 992px) {
   .header{
     &__nav{
@@ -48,6 +64,14 @@
       grid-column: 1 / 3;
       grid-row: 5 / 6;
     }
+  }
+  .main-profile{
+    &__navigation{
+      display: none;
+    }
+    &__field{
+      grid-column: 1 / 3;
+    } 
   }
   .banner{
     &__wrapper{
@@ -91,41 +115,19 @@
 }
 
 @media (max-width: 768px) {
-  .main{
-    &__container{
-      padding: 0;
-    }
-    &__field-wrapper,
-    &__community,
-    &__article,
-    &__comments,
-    &__reviews{
-      padding: 0 20px;
-    }
-  }
-
   .comments{
     &__wrapper{
       padding: 40px 50px;
     }
   }
   .banner{
-    &__br{
-      display: block;
-    }
     &__wrapper{
       grid-template-rows: auto auto auto auto;
-      padding: 16px;
-      border-radius: 0;
     }
     &__titles{
       grid-row: 1 / 2;
       grid-column: 1 / 3;
-    }
-    &__title{
-      font-size: 40px;
-      letter-spacing: -1px;
-      line-height: 48px;
+      text-align: center;
     }
     &__buttons{
       grid-row: 2 / 3;
@@ -154,41 +156,24 @@
     }
   }
   .footer{
-    &__wrapper{
-      padding: 30px;
-    }
-    &__title{
-      font-size: 20px;
-    }
     &__lists{
-      flex-wrap: wrap;
-      gap: 15px;
       max-width: 100%;
+      flex-wrap: wrap;
     }
     &__list{
-      width: 53%;
-      margin: 0;
-      font-size: 18px;
-    }
-    &__list-contacts{
-      order: 1;
-      gap: 15px;
-      width: 100%;
-      max-width: 380px;
-      flex-direction: row;
-      font-size: 17px;
-    }
-    &__list-login{
-      order: 2;
-    }
-    &__list-second{
-      order: 3;
-    }
-    &__list-third{
-      order: 4;
+      width: 50%;
     }
     &__information{
       max-width: 100%;
+    }
+  }
+  .profile{
+    &__name{
+      font-size: 20px;
+    }
+    &__text{
+      flex-direction: column;
+      gap: 5px;
     }
   }
 }
@@ -225,6 +210,9 @@
     }
   }
   .banner{
+    &__title{
+      font-size: 42px;
+    }
     &__buttons{
       flex-direction: column;
       text-align: center;
@@ -255,21 +243,46 @@
     }
   }
   .footer{
-    &__wrapper{
-      padding: 20px;
+    &__lists,
+    &__title{
+      text-align: center;
     }
     &__list{
       width: 100%;
     }
-    &__list-contacts{
-      font-size: 13px;
-    }
-    &__list-item{
-      gap: 5px;
-    }
     &__img{
       width: 30px;
       height: 30px;
+    }
+  }
+  .profile{
+    &__wrapper{
+      gap: 15px;
+      grid-template-rows: auto auto auto auto;
+    }
+    &__avatar{
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+      margin: 0 auto;
+    }
+    &__info{
+      grid-column: 1 / 4;
+      grid-row: 2 / 3;
+      margin: 0 auto;
+      text-align: center;
+    }
+    &__stat{
+      grid-column: 1 / 4;
+      grid-row: 3 / 4;
+      margin: 0 auto;
+    }
+    &__categories{
+      grid-column: 1 / 4;
+      grid-row: 4 / 5;
+      justify-content: center;
+    }
+    &__online{
+      justify-content: center;
     }
   }
 }
@@ -277,7 +290,7 @@
 @media (max-width: 450px) {
   .banner{
     &__subtitle{
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 }
@@ -289,6 +302,21 @@
     }
     &__button-img{
       display: none;
+    }
+  }
+  .banner{
+    &__subtitle{
+      font-size: 18px;
+    }
+  }
+  .documents{
+    &__wrapper{
+      max-width: 245px;
+    }
+  }
+  .profile{
+    &__categories{
+      max-width: 245px;
     }
   }
 }
