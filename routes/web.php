@@ -24,6 +24,9 @@ Route::middleware(['guest'])->group(function () {
 	// Статьи
 	Route::get('/article/{id}', [\App\Http\Controllers\Post\PostController::class, 'show'])->name('dashboard.posts.item');
 	
+	// Профиль
+	Route::get('/profile/{id}', [\App\Http\Controllers\User\UserController::class, 'show'])->name('user.profile.item');
+	
 });
 	
 Route::middleware(['auth'])->group(function () {

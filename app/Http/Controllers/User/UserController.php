@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+
 
 class UserController extends Controller
 {
@@ -34,12 +36,23 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        
+
+		return view('user.profile.item');
+    }
+	
+	/**public function show(string $id)
+    {
+        $user = User::query()
+            ->where('id', '=', $id)
+            ->firstOrFail();
+
+		return view('user.profile.item', ['user' => $user]);
     }
 
-    /**
+    
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)

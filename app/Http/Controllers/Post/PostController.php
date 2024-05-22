@@ -80,7 +80,7 @@ class PostController extends Controller
             ->where('id', '=', $id)
             ->firstOrFail();
 
-     return view('article.item', ['article' => $article]);
+		return view('article.item', ['article' => $article]);
     }
 
     /**
