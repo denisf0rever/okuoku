@@ -1,3 +1,4 @@
+import avatar from '../../../images/avatar.jpg';
 
 
 const Chat = (props) => {
@@ -8,8 +9,10 @@ const Chat = (props) => {
 
   return <li className="chats-list__item chat-item" onClick={chooseChat}>
     <div className="chat-item__wrapper">
-      <div className="chat-item__user">{props.user}</div>
-      <div className="chat-item__last-message">{props.lastMessage}</div>
+      <img src={avatar} alt="" className="chat-item__avatar" />
+      <div className="chat-item__username">{props.user}</div>
+      <div className="chat-item__last-message">Последнее сообщение</div>
+      <div className="chat-item__time">12:34</div>
     </div>
   </li>
 }
