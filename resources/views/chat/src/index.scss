@@ -35,7 +35,7 @@ body{
   }
   &__active-chat-wrapper{
     flex: 75%;
-    border-left: 1px solid #000;
+    border-left: 2px solid #f1f2f6;
   }
 }
 
@@ -111,6 +111,7 @@ body{
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
   &__list{
     flex-grow: 1;
@@ -133,13 +134,31 @@ body{
     width: 30px;
     border-radius: 50%;
   }
+  &__menu-btn{
+    width: 15px;
+    height: 30px;
+    align-self: center;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: inherit;
+    transition: all .2s linear;
+    justify-self: flex-end;
+    margin-left: auto;
+    &:hover{
+      opacity: .5;
+    }
+  }
+  &__menu-btn-svg{
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .chat-list{
   &__wrapper{
     min-height: 100%;
     background-color: #fff;
-    border-top: 1px solid #000;
+    border-top: 2px solid #f1f2f6;
     padding: 20px 10px 20px 50px;
   }
   &__list{
@@ -194,5 +213,33 @@ body{
     resize: none;
     height: 45px;
     padding: 5px 5px 5px 20px;
+  }
+}
+
+.active-chat-menu{
+  &__hide{
+    display: none;
+  }
+  &__wrapper{
+    position: absolute;
+    right: 10px;
+    top: 45px;
+    box-shadow: 0 2px 5px 0 rgba(11,20,26, .26), 0 2px 10px 0 rgba(11,20,26, .16);
+    background-color: #fff;
+    z-index: 10;
+    border-radius: 10px;
+    padding: 10px 0;
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+  }
+  &__item{
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 20px;
+    &:hover{
+      background-color: #f5f6f6;
+    }
   }
 }
