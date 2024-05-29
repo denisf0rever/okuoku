@@ -11,9 +11,9 @@ const ActiveChat = (props) => {
 
   return <div className="operator-chat__active-chat-wrapper active-chat">
     <div className="active-chat__wrapper">
-      <ChatHeader activeChatName={props.activeChat} isMenuHidden={isMenuHidden} setIsMenuHidden={setIsMenuHidden} />
+      <ChatHeader activeChatName={props.activeChat.name} isMenuHidden={isMenuHidden} setIsMenuHidden={setIsMenuHidden} />
       <ChatList activeChatMessages={props.activeChatMessages} />
-      <ChatBottom socket={props.socket} />
+      <ChatBottom sendMessage={props.sendMessage} />
       <ChatMenu isMenuHidden={isMenuHidden} />
     </div>
 

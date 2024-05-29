@@ -5,12 +5,13 @@ const chatBottom = (props) => {
 
   const [newMessageText, setNewMessageText] = useState('');
 
-  const sendMessage = () => {
-    props.socket.emit('sendMessage', props.activeChat, newMessageText, 'Operator', 'Operator');
-  }
-
   const handleChange = (e) => {
     setNewMessageText(e.target.value);
+  }
+
+  const sendNewMessage = () => {
+    props.sendMessage(newMessageText);
+    setNewMessageText('')
   }
 
   return <div className="active-chat__bottom-form bottom-form">
@@ -18,7 +19,7 @@ const chatBottom = (props) => {
       <img src="../../../images/avatar.jpg" alt="" className="bottom-form__smiles" />
       <img src="../../../images/avatar.jpg" alt="" className="bottom-form__add-file" />
       <input type="text" value={newMessageText} onChange={(e) => handleChange(e,)} className="bottom-form__input" />
-      <img src="../../../images/avatar.jpg" alt="" onClick={sendMessage} className="bottom-form__send-button" />
+      <img src="../../../images/avatar.jpg" alt="" onClick={sendNewMessage} className="bottom-form__send-button" />
     </div>
   </div>
 }
