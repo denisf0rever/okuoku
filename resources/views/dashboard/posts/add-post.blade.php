@@ -21,11 +21,11 @@
             <div class="form__wrapper">
               <form action="{{ route('dashboard.posts.create-post') }}" method="post" class="form__inner-form" enctype="multipart/form-data">
                 @csrf
- <ul>
-		@foreach($errors->all() as $error)
-			<li>{{ $error }}</li>
-		@endforeach
-	  </ul>
+				<ul>
+					@foreach($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
                 <div class="form__tabs-buttons">
                   <div class="form__tab-button form__tab-button-active">Основные</div>
                   <div class="form__tab-button">Дополнительные</div>
@@ -35,8 +35,12 @@
                     <div class="form__tab form__tab-active">
                       <ul class="form__inputs">
                         <li class="form__input-wrapper">
-                          <label class="form__label" for="title">Заголовок</label>
+                          <label class="form__label" for="title">Заголовок документа</label>
                           <input class="form__input" type="text" id="title" name="title">
+                        </li>
+                        <li class="form__input-wrapper">
+                          <label class="form__label" for="title">Заголовок статьи</label>
+                          <input class="form__input" type="text" id="h1" name="h1">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="subtitle">Подзаголовок</label>
@@ -48,7 +52,7 @@
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="Metakeys">Метаключи</label>
-                          <input class="form__input" type="text" id="Metakeys" name="metakeys">
+                          <input class="form__input" type="text" id="Metakeys" name="metakey">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="authorID">ID Автора</label>

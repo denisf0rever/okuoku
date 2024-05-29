@@ -7,6 +7,8 @@ use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManager;
 
 class PostController extends Controller
 {
@@ -29,10 +31,11 @@ class PostController extends Controller
     public function create(Request $request)
     {
 		$data = $request->validate([
+            'h1' => 'required|string|max:255',
             'title' => 'required|string|max:255',
             'subtitle' => 'required|string|max:255',
             'metadescription' => 'required|string|max:255',
-            'metakeys' => 'required|string|max:255',
+            'metakey' => 'required|string|max:255',
             'author_id' => 'required|integer|max:5',
             'reading-time' => 'required|integer',
             'category' => 'required|integer|max:2',
@@ -41,13 +44,18 @@ class PostController extends Controller
 			'image' =>  'required|image'
         ]);
 		
-		$path = $request->file('image')->store('post');
+		
+		$year = date('Y');
+		$mounth = date('m');
+			
+		$path = $request->file('image')->store('public/post/' . $year .'/' . $mounth);
 		
 		$post = Post::create([
+                'h1' => $data['h1'],
                 'title' => $data['title'],
 				'subtitle' => $data['subtitle'],
 				'metadescription' => $data['metadescription'],
-				'metakeys' => $data['metakeys'],
+				'metakey' => $data['metakey'],
 				'author_id' => $data['author_id'],
 				'reading-time' => $data['reading-time'],
 				'category' => $data['category'],

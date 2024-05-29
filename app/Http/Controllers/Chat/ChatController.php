@@ -11,4 +11,9 @@ class ChatController extends Controller
 	{
 		return view('chat.main');
 	}
+	
+	public function endPoint(Request $request)
+	{
+		return 'ok';
+	}
 }
