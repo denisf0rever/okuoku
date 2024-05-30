@@ -14,6 +14,8 @@ function App() {
 
   const [activeChatMessages, setActiveChatMessages] = useState([]);
 
+  //test
+
   const setNewChat = (chat) => {
     setActiveChat(chat);
     if (socket) {
