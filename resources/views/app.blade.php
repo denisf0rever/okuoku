@@ -7,7 +7,7 @@
     <meta name="description" content="@yield('description')" />
     <meta name="keywords" content="@yield('keywords')" />
 
-    <link rel="canonical" href="https://consjurist.ru/@yield('canonical')"/>
+    <link rel="canonical" href="https://{{}}.ru/@yield('canonical')"/>
 
 	<meta name="keywords" content="@yield('keywords', 'Консультация офтальмолога онлайн')" />
 	<meta name="description" content="@yield('description', 'Консультация офтальмолога онлайн: круглосуточно по телефону и в чате')" />
@@ -23,6 +23,7 @@
 	<meta name="theme-color" content="#fff">
 
 	@vite(['resources/scss/style.scss', 'resources/js/main.min.js'])
+	@yield('chat')
 	@include('parts.header')
 	
     <main class="main">

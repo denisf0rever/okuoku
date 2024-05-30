@@ -1,67 +1,38 @@
 @extends('app')
-@section('title', $user->name)
-@section('description', '2')
-@section('keywords', '3')
-@section('canonical', 'profile/'. '4')
+@section('title', $article->title)
+@section('description', $article->metadescription)
+@section('keywords', $article->metakey)
+@section('canonical', 'article/'. $article->id)
+@section('chat', @vite(['resources/views/user/profile/main.jsx']))
+
 
 	@section('content')
     @include('parts.sidebar')
-	<div class="main-profile__field">
-          <section class="main-profile__profile profile">
-            <div class="profile__wrapper">
-              <img src="images/avatar.jpg" alt="" class="profile__avatar">
-              <div class="profile__info">
-                <h1 class="profile__name">Пузачева Анна Александровна</h1>
-                <div class="profile__text">
-                  <span class="profile__location">Россия, г. Чебоксары</span>
-                  <span class="profile__on-site-time">На сайте с <strong>14 апреля 2023 г.</strong></span>
-                </div>
-                <div class="profile__online">
-                  <div class="profile__online-indicator profile__online-indicator-green"></div>
-                  <span class="profile__online-text">Онлайн</span>
-                </div>
-                <a href="#" class="profile__consultation">Получить консультацию</a>
-              </div>
-              <div class="profile__stat">
-                <div class="profile__documents documents">
-                  <div class="documents__wrapper">
-                    <img src="images/placeholder.png" alt="" class="documents__img">
-                    <span class="documents__text">Документы проверены</span>
-                    <span class="documents__subtext">Паспорт, диплом об образовании</span>
-                  </div>
-                </div>
-                <div class="profile__rating">
-                  <div class="profile__stars">
-                    <img src="images/star-white.svg" alt="" class="profile__rating-img">
-                    <span class="profile__rating-amount">4,97</span>
-                  </div>
-                  <div class="profile__comments">
-                    <img src="images/star-white.svg" alt="" class="profile__rating-img">
-                    <span class="profile__rating-amount">34 отзыва</span>
-                  </div>
-                </div>
-              </div>
-              <div class="profile__categories">
-                <ul class="profile__categories-list">
-                  <li class="profile__category">
-                    <div class="profile__category-title">Без категории</div>
-                    <div class="profile__category-amount">3</div>
-                  </li>
-                  <li class="profile__category">
-                    <div class="profile__category-title">Видео</div>
-                    <div class="profile__category-amount">0</div>
-                  </li>
-                  <li class="profile__category">
-                    <div class="profile__category-title">Интерьер</div>
-                    <div class="profile__category-amount">0</div>
-                  </li>
-                  <li class="profile__category">
-                    <div class="profile__category-title">Экстерьер</div>
-                    <div class="profile__category-amount">2</div>
-                  </li>
-                </ul>
-              </div>
+	
+<section class="main__article article">
+          <div class="article__wrapper">
+            <h1 class="article__header">{{ $article->h1 }}</h1>
+            <img src="{{ Storage::url($article->thumb) }}" alt="" class="article__img">
+            <div class="article__subtitle-wrapper">
+              <span class="article__subtitle">{{ $article->subtitle }}</span>
             </div>
-          </section>
-        </div>
-@endsection
+            <span class="article__content-header">Содержание статьи:</span>
+            <ul class="article__content-list">
+              <li class="article__content-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda
+                doloribus labore quas, aliquam sint provident distinctio explicabo perspiciatis consequuntur nisi at
+                adipisci ullam nam velit facilis nesciunt mollitia aperiam saepe?</li>
+              <li class="article__content-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium
+                delectus adipisci expedita, pariatur, </li>
+            </ul>
+            <div class="article__main-text">
+              <h2 class="article__main-text-header">Подзаголовок</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum error asperiores saepe,
+                voluptatibus facere dignissimos officia praesentium incidunt commodi fugit quidem excepturi alias
+                inventore, quas quo! Maiores rerum quasi excepturi?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum error asperiores saepe,
+                voluptatibus facere dignissimos officia praesentium incidunt commodi fugit quidem excepturi alias
+                inventore, quas quo! Maiores rerum quasi excepturi?</p>
+            </div>
+          </div>
+        </section>
+	@endsection
