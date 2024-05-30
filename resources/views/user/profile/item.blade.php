@@ -1,8 +1,10 @@
 @extends('app')
-@section('title', $user->name)
-@section('description', '2')
-@section('keywords', '3')
-@section('canonical', 'profile/'. '4')
+@section('title', $article->title)
+@section('description', $article->metadescription)
+@section('keywords', $article->metakey)
+@section('canonical', 'article/'. $article->id)
+@section('chat', @vite(['resources/views/user/profile/main.jsx']))
+
 
 @section('content')
 @include('parts.sidebar')
