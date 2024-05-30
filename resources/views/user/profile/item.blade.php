@@ -3,7 +3,7 @@
 @section('description', $article->metadescription)
 @section('keywords', $article->metakey)
 @section('canonical', 'article/'. $article->id)
-@section('chat', @vite(['resources/views/user/profile/main.jsx']))
+@section('chat', @vite(['resources/views/user/profile/src/main.jsx']))
 
 
 @section('content')
