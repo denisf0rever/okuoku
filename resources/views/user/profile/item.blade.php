@@ -1,9 +1,13 @@
 @extends('app')
-@section('title', $article->title)
-@section('description', $article->metadescription)
-@section('keywords', $article->metakey)
-@section('canonical', 'article/'. $article->id)
-@section('chat', @vite(['resources/views/user/profile/src/main.jsx']))
+
+@section('title', $user->name)
+@section('description', '2')
+@section('keywords', '3')
+@section('canonical', 'profile/'. '4')
+
+@section('chat')
+@vite(['resources/views/user/profile/src/main.jsx'])
+@endsection
 
 
 @section('content')

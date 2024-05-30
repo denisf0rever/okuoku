@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import RegistrantionForm from "./components/RegistrationForm"
 import ActiveChat from "./components/ActiveChat";
 import axios from "axios";
-import { io } from 'socket.io-client';
+import io from 'socket.io-client';
 
 function App() {
 
@@ -27,6 +27,8 @@ function App() {
   useEffect(() => {
     setsocket(io('https://chat-test-server.onrender.com'));
   }, [])
+
+  console.log(123);
 
   return <div className="user-chat__wrapper">
     {isUserReigistered
