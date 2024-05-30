@@ -1,0 +1,52 @@
+ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.user-chat{
+  &__wrapper{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 200px;
+    height: 300px;
+    background-color: #2b5278;
+    border-radius: 20px;
+    color: #fff;
+  }
+  &__active-chat{
+    height: 100%;
+  }
+}
+
+.active-chat{
+  &__wrapper{
+    padding: 10px;
+    height: 80%;
+    overflow: auto;
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__message-user{
+    align-self: flex-end;
+  }
+  &__message-operator{
+    align-self: flex-start;
+  }
+  &__message-author{
+    font-weight: bold;
+  }
+}
+
+.registrarion-form{
+  &__submit{
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
