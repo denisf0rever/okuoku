@@ -7,17 +7,22 @@ import Chat from "./modules/Chat/Chat";
 
 function App() {
 
-  // const [socket, setsocket] = useState('');
+  const [socket, setsocket] = useState('');
 
   const [isChatOpened, setIsChatOpened] = useState(false);
   const [isUserRegistered, setIsUserRegistered] = useState(false);
 
   useEffect(() => {
-    // setsocket(io('https://chat-test-server.onrender.com'));
+    setsocket(io('http://server.okuoku.ru:6001'));
   }, [])
 
-  const joinChat = () => {
-    console.log(123);
+  const joinChat = (email, name) => {
+    console.log('creating chat');
+    socket.emit('createChat', JSON.stringify({
+      email: email,
+      name: name,
+      expert_id: 1
+    }));
     setIsUserRegistered(true);
   }
 

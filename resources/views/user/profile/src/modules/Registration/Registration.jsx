@@ -18,7 +18,7 @@ const Registration = (props) => {
         <input name="name" type="text" value={name} onChange={e => setName(e.target.value)} className="chat-reg-form__item" />
       </div>
     </form>
-    <div className="user-chat__start-chat-button" onClick={() => props.joinChat()}>Начать чат</div>
+    <div className="user-chat__start-chat-button" onClick={() => props.joinChat(email, name)}>Начать чат</div>
   </>
 }
 
