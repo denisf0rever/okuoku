@@ -10,11 +10,8 @@ h2{
 
 .chat-open-button{
   &__wrapper{
-    position: fixed;
     width: 60px;
     height: 60px;
-    right: 25px;
-    bottom: 25px;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -32,25 +29,25 @@ h2{
 }
 
 .user-chat{
+  position: fixed;
+  &__chat-open-button{
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+  }
   &__wrapper{
     position: fixed;
-    width: 370px;
-    height: calc(100% - 120px);
     right: 25px;
     bottom: 100px;
+    width: 370px;
+    height: calc(100% - 120px);
     box-shadow: 1px 1px 25px 1px rgb(80, 89, 104);
     background-color: #fff;
     border-radius: 10px;
-  }
-  &__user-chat-registration{
-    height: 100%;
-  }
-}
-
-.user-chat-registration{
-  &__wrapper{
     display: flex;
     flex-direction: column;
+  }
+  &__user-chat-registration{
     height: 100%;
   }
   &__header{
@@ -114,7 +111,35 @@ h2{
       opacity: 0.8;
     }
   }
+  &__message-input-wrapper{
+    margin-top: auto;
+    height: 80px;
+    background-color: #f1f2f6;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+  }
+  &__new-message{
+    flex-grow: 1;
+    background-color: #fff;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    resize: none;
+    height: 45px;
+    padding: 5px 5px 5px 20px;
+  }
+  &__send-message{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  &__chat-list{
+    overflow: auto;
+  }
 }
+
 
 .chat-reg-form{
   &__wrapper{
@@ -137,5 +162,34 @@ h2{
     padding: 4px 10px;
     background: #f5f5f5;
     font-size: 14px;
+  }
+}
+
+.chat-list{
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  &__message{
+    padding: 7px 40px 10px 5px;
+    max-width: 500px;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 1px .5px rgba(11, 20, 26, .13);
+  }
+  &__time{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 12px; 
+  }
+  &__user{
+    align-self: flex-end;
+    background-color: #d9fdd1;
   }
 }
