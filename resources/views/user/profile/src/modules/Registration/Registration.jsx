@@ -14,7 +14,7 @@ const Registration = (props) => {
       <div className="chat-reg-form__wrapper">
         <label className="chat-reg-form__label">Ваш Email</label>
         <input name="email" type="email" value={email} onChange={e => setEmail(e.target.value)} className="chat-reg-form__item" />
-        <label className="chat-reg-form__label">Ваше ФИО</label>
+        <label className="chat-reg-form__label">Ваше имя</label>
         <input name="name" type="text" value={name} onChange={e => setName(e.target.value)} className="chat-reg-form__item" />
       </div>
     </form>

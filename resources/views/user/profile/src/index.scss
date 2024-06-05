@@ -30,6 +30,7 @@ h2{
 
 .user-chat{
   position: fixed;
+  z-index: 100;
   &__chat-open-button{
     position: fixed;
     right: 25px;
