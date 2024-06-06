@@ -24,6 +24,20 @@ function App() {
       expert_id: 1
     }));
     setIsUserRegistered(true);
+    socket.on('getMessages', (messages) => {
+      console.log('messages', messages);
+    });
+  }
+
+  const sendMessage = (messageText) => {
+    console
+    socket.emit('sendMessage', JSON.stringify({
+      chat_id: activeChat.chat_id,
+      user_id: 123,
+      text: messageText,
+      name: 'Имя клиента',
+      type: 'client'
+    }));
   }
 
   console.log(window.location.pathname);
@@ -34,7 +48,7 @@ function App() {
       <div className="user-chat__wrapper">
         <Header />
         {isUserRegistered
-          ? <Chat />
+          ? <Chat sendMessage={sendMessage} />
           : <Registration joinChat={joinChat} />}
       </div>
       : null}

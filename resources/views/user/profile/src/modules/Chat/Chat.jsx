@@ -24,7 +24,7 @@ const Chat = (props) => {
         <Message message={{ text: '12g3g3', role: 0, created_at: '123131313' }} />
       </ul>
     </div>
-    <NewMessageForm />
+    <NewMessageForm sendMessage={props.sendMessage} />
   </>
 
 }
