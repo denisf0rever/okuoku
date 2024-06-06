@@ -30,9 +30,9 @@ function App() {
   }
 
   const sendMessage = (messageText) => {
-    console
+    console.log(messageText);
     socket.emit('sendMessage', JSON.stringify({
-      chat_id: activeChat.chat_id,
+      chat_id: 112313,
       user_id: 123,
       text: messageText,
       name: 'Имя клиента',
