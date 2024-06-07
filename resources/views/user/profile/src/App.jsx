@@ -46,7 +46,7 @@ function App() {
   }
 
   console.log(window.location.pathname);
-
+  console.log(socket);
   return <>
     {isChatOpened
       ?
