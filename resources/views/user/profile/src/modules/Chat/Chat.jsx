@@ -3,25 +3,17 @@ import NewMessageForm from "./components/NewMessageForm";
 
 const Chat = (props) => {
 
+  console.log(props);
+
   return <>
     <div className="user-chat__chat-list chat-list">
       <ul className="chat-list__wrapper">
-        <Message message={{ text: '123', role: 1, created_at: '123131313' }} />
-        <Message message={{ text: '123', role: 0, created_at: '123131313' }} />
-        <Message message={{ text: '1233131', role: 1, created_at: '123131313' }} />
-        <Message message={{ text: '12g3g3', role: 0, created_at: '123131313' }} />
-        <Message message={{ text: '123', role: 1, created_at: '123131313' }} />
-        <Message message={{ text: '123', role: 0, created_at: '123131313' }} />
-        <Message message={{ text: '1233131', role: 1, created_at: '123131313' }} />
-        <Message message={{ text: '12g3g3', role: 0, created_at: '123131313' }} />
-        <Message message={{ text: '123', role: 1, created_at: '123131313' }} />
-        <Message message={{ text: '123', role: 0, created_at: '123131313' }} />
-        <Message message={{ text: '1233131', role: 1, created_at: '123131313' }} />
-        <Message message={{ text: '12g3g3', role: 0, created_at: '123131313' }} />
-        <Message message={{ text: '123', role: 1, created_at: '123131313' }} />
-        <Message message={{ text: '123', role: 0, created_at: '123131313' }} />
-        <Message message={{ text: '1233131', role: 1, created_at: '123131313' }} />
-        <Message message={{ text: '12g3g3', role: 0, created_at: '123131313' }} />
+        {
+          props.messages.length > 0
+            ?
+            props.messages.map((el, key) => <Message key={key} message={{ text: el.text, role: el.role, created_at: el.created_at }} />)
+            : ''
+        }
       </ul>
     </div>
     <NewMessageForm sendMessage={props.sendMessage} />

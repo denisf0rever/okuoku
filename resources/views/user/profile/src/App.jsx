@@ -12,6 +12,7 @@ function App() {
   const [isChatOpened, setIsChatOpened] = useState(false);
   const [isUserRegistered, setIsUserRegistered] = useState(false);
   const [currentChatId, setCurrentChatId] = useState(0);
+  const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     setsocket(io('http://server.okuoku.ru:6001'));
@@ -28,9 +29,11 @@ function App() {
       console.log('chat id:', chatId);
       setCurrentChatId(chatId);
     })
+    socket.off('getMessages');
     setIsUserRegistered(true);
     socket.on('getMessages', (messages) => {
-      console.log('messages', messages);
+      setMessages(messages);
+      // console.log('messages', messages);
     });
   }
 
@@ -53,7 +56,7 @@ function App() {
       <div className="user-chat__wrapper">
         <Header />
         {isUserRegistered
-          ? <Chat sendMessage={sendMessage} />
+          ? <Chat messages={messages} sendMessage={sendMessage} />
           : <Registration joinChat={joinChat} />}
       </div>
       : null}
