@@ -28,8 +28,8 @@ function App() {
     }));
 
     socket.on('createChat', (chatInfoJSON) => {
-      console.log('create chat:', chatInfoJSON);
-      const chatInfo = JSON.parse(chatInfoJSON)
+      const chatInfo = JSON.parse(chatInfoJSON);
+      console.log('create chat:', chatInfo.chat_id);
       setCurrentChatId(chatInfo.chat_id);
       setUserId(chatInfo.user_id)
     })
@@ -50,9 +50,10 @@ function App() {
       name: 'Имя оператора',
       type: 'operator'
     }));
+
     socket.emit('sendMessage', JSON.stringify({
       chat_id: currentChatId,
-      user_id: userId,
+      user_id: +userId,
       text: messageText,
       name: 'Имя клиента',
       type: 'client'
