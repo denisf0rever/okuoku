@@ -12,6 +12,7 @@ function App() {
   const [isChatOpened, setIsChatOpened] = useState(false);
   const [isUserRegistered, setIsUserRegistered] = useState(false);
   const [currentChatId, setCurrentChatId] = useState(0);
+  const [userId, setUserId] = useState(0);
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -25,29 +26,33 @@ function App() {
       name: name,
       expert_id: 1
     }));
-    socket.on('createChat', (chatId) => {
-      console.log('chat id:', chatId);
-      setCurrentChatId(chatId);
+
+    socket.on('createChat', (chatInfoJSON) => {
+      console.log('create chat:', chatInfoJSON);
+      const chatInfo = JSON.parse(chatInfoJSON)
+      setCurrentChatId(chatInfo.chat_id);
+      setUserId(chatInfo.user_id)
     })
+
     socket.off('getMessages');
     setIsUserRegistered(true);
     socket.on('getMessages', (messages) => {
+
       setMessages(messages);
-      // console.log('messages', messages);
     });
   }
 
   const sendMessage = (messageText) => {
     console.log(JSON.stringify({
       chat_id: currentChatId,
-      user_id: 1,
+      user_id: userId,
       text: messageText,
       name: 'Имя оператора',
       type: 'operator'
     }));
     socket.emit('sendMessage', JSON.stringify({
       chat_id: currentChatId,
-      user_id: 1,
+      user_id: userId,
       text: messageText,
       name: 'Имя клиента',
       type: 'client'
