@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react"
+import useSound from 'use-sound';
 import OpenChatButton from "./components/OpenChatButton";
-import io from 'socket.io-client';
 import Registration from "./modules/Registration/Registration";
 import Header from "./modules/Header/Header";
 import Chat from "./modules/Chat/Chat";
 
-function App() {
+import newMessageSound from './sounds/newMessage.mp3';
+import usePageVisibility from "./hooks/usePageVisibility";
 
-  const [socket, setsocket] = useState('');
+import socket from "./api/socket";
+
+const App = () => {
 
   const [isChatOpened, setIsChatOpened] = useState(false);
   const [isUserRegistered, setIsUserRegistered] = useState(false);
@@ -15,9 +18,34 @@ function App() {
   const [userId, setUserId] = useState(0);
   const [messages, setMessages] = useState([]);
 
+  const [play] = useSound(newMessageSound);
+  const isVisible = usePageVisibility();
+
   useEffect(() => {
-    setsocket(io('http://server.okuoku.ru:6001'));
-  }, [])
+    socket.on('getMessages', (messages) => {
+      if (messages.length > 0) {
+        const lastMessage = messages[messages.length - 1];
+        if (lastMessage.role === 'operator' && !isVisible) {
+          console.log('visibility check:', isVisible);
+          play();
+        }
+      }
+      setMessages(messages);
+    });
+
+    socket.on('createChat', (chatInfoJSON) => {
+      const chatInfo = JSON.parse(chatInfoJSON);
+      console.log('create chat:', chatInfo.chat_id);
+      setCurrentChatId(chatInfo.chat_id);
+      setUserId(chatInfo.user_id);
+    });
+
+
+    return () => {
+      socket.off('getMessages');
+      socket.off('createChat');
+    };
+  }, [isVisible, play]);
 
   const joinChat = (email, name) => {
     console.log('creating chat');
@@ -27,19 +55,7 @@ function App() {
       expert_id: 1
     }));
 
-    socket.on('createChat', (chatInfoJSON) => {
-      const chatInfo = JSON.parse(chatInfoJSON);
-      console.log('create chat:', chatInfo.chat_id);
-      setCurrentChatId(chatInfo.chat_id);
-      setUserId(chatInfo.user_id)
-    })
-
-    socket.off('getMessages');
     setIsUserRegistered(true);
-    socket.on('getMessages', (messages) => {
-
-      setMessages(messages);
-    });
   }
 
   const sendMessage = (messageText) => {
@@ -60,8 +76,6 @@ function App() {
     }));
   }
 
-  console.log(window.location.pathname);
-  console.log(socket);
   return <>
     {isChatOpened
       ?
