@@ -12,6 +12,9 @@ import socket from "./api/socket";
 
 const App = () => {
 
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+
   const [isChatOpened, setIsChatOpened] = useState(false);
   const [isUserRegistered, setIsUserRegistered] = useState(false);
   const [currentChatId, setCurrentChatId] = useState(0);
@@ -22,6 +25,7 @@ const App = () => {
   const isVisible = usePageVisibility();
 
   useEffect(() => {
+
     socket.on('getMessages', (messages) => {
       if (messages.length > 0) {
         const lastMessage = messages[messages.length - 1];
@@ -47,7 +51,7 @@ const App = () => {
     };
   }, [isVisible, play]);
 
-  const joinChat = (email, name) => {
+  const joinChat = () => {
     console.log('creating chat');
     socket.emit('createChat', JSON.stringify({
       email: email,
@@ -83,7 +87,7 @@ const App = () => {
         <Header />
         {isUserRegistered
           ? <Chat messages={messages} sendMessage={sendMessage} />
-          : <Registration joinChat={joinChat} />}
+          : <Registration joinChat={joinChat} name={name} email={email} setEmail={setEmail} setName={setName} />}
       </div>
       : null}
     <OpenChatButton setIsChatOpened={setIsChatOpened} isChatOpened={isChatOpened} />

@@ -11,7 +11,7 @@ const Chat = (props) => {
         {
           props.messages.length > 0
             ?
-            props.messages.map((el, key) => <Message key={key} message={{ text: el.text, role: el.role, created_at: el.created_at }} />)
+            props.messages.map((el, key) => <Message key={key} message={{ text: el.text, role: el.role, created_at: el.created_at, isRead: el.is_read }} />)
             : ''
         }
       </ul>

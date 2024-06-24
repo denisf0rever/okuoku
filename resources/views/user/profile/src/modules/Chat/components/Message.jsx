@@ -10,6 +10,8 @@ const Message = (props) => {
   return <li className={messageTypeClass}>
     <div className="chat-list__message-text">{props.message.text}</div>
     <div className="chat-list__time">{formattedTime}</div>
+    <div className="chat-list__is-read">{props.message.isRead}</div>
+
   </li>
 }
 
