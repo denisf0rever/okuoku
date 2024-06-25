@@ -139,7 +139,7 @@ h2{
   &__chat-list{
     overflow: auto;
     flex-grow: 1;
-    position: relative;
+    max-height: calc(100vh - 120px - 70px - 70px - 80px);
   }
 }
 
@@ -170,11 +170,14 @@ h2{
 
 .chat-list{
   &__wrapper{
+    min-height: 100%;
+    padding: 10px;
+    position: relative;
+  }
+  &__list{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 10px;
-    height: 100%;
   }
   &__message{
     padding: 7px 40px 10px 5px;

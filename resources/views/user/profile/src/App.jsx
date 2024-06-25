@@ -76,7 +76,6 @@ const App = () => {
   }
 
   const sendMessage = (messageText) => {
-    isWriting(false);
     console.log(JSON.stringify({
       chat_id: currentChatId,
       user_id: userId,
@@ -94,27 +93,14 @@ const App = () => {
     }));
   }
 
-  const isWriting = (isWritingVal) => {
-    socket.emit('setWritingStatus', JSON.stringify({
-      chat_id: currentChatId,
-      name: name,
-      is_writing: isWritingVal
-    }))
-    if (isWritingVal) {
-      console.log('is writin emit true')
-    }
-    else if (!isWritingVal) {
-      console.log('is writin emit false')
-    }
-  }
-
   return <>
     {isChatOpened
       ?
       <div className="user-chat__wrapper">
         <Header />
         {isUserRegistered
-          ? <Chat messages={messages} sendMessage={sendMessage} isWriting={isWriting} isNowWriting={isNowWriting} />
+          ? <Chat messages={messages} sendMessage={sendMessage} isNowWriting={isNowWriting} name={name}
+            currentChatId={currentChatId} />
           : <Registration joinChat={joinChat} name={name} email={email} setEmail={setEmail} setName={setName} />}
       </div>
       : null}

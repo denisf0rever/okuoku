@@ -7,17 +7,24 @@ const newMessageForm = (props) => {
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
+      props.isWriting(false);
+      clearTimeout(timeoutRef.current);
+      setTimerActive(false);
       props.sendMessage(msg);
       setMsg('');
     }
   };
 
   const sendNewMessage = () => {
+    props.isWriting(false);
+    clearTimeout(timeoutRef.current);
+    setTimerActive(false);
     props.sendMessage(msg);
     setMsg('');
   }
 
   const handleChange = (e) => {
+
     setMsg(e.target.value)
     setTimerActive(true);
     startTimeout();
