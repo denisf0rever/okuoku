@@ -1,9 +1,18 @@
-import { useState } from "react";
-
+import socket from "../../api/socket";
 
 const Registration = (props) => {
-  // const [email, setEmail] = useState('');
-  // const [name, setName] = useState('');
+
+  const joinChat = () => {
+    console.log('creating chat');
+    socket.emit('createChat', JSON.stringify({
+      email: props.email,
+      name: props.name,
+      expert_id: 1
+    }));
+
+    props.setIsUserRegistered(true);
+  }
+
   return <>
     <div className="user-chat__guide">
       <div className="user-chat__guide-text">
@@ -18,7 +27,7 @@ const Registration = (props) => {
         <input name="name" type="text" value={props.name} onChange={e => props.setName(e.target.value)} className="chat-reg-form__item" />
       </div>
     </form>
-    <div className="user-chat__start-chat-button" onClick={() => props.joinChat()}>Начать чат</div>
+    <div className="user-chat__start-chat-button" onClick={() => joinChat()}>Начать чат</div>
   </>
 }
 

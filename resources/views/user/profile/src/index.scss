@@ -180,7 +180,7 @@ h2{
     gap: 10px;
   }
   &__message{
-    padding: 7px 40px 10px 5px;
+    padding: 7px 70px 10px 5px;
     max-width: 500px;
     width: max-content;
     display: flex;
@@ -192,8 +192,18 @@ h2{
   &__time{
     position: absolute;
     bottom: 5px;
-    right: 5px;
+    right: 35px;
     font-size: 12px; 
+  }
+  &__is-read{
+    position: absolute;
+    display: flex;
+    right: 5px;
+    bottom: 5px;
+  }
+  &__checkmark{
+    width: 10px;
+    height: 10px;
   }
   &__user{
     align-self: flex-end;

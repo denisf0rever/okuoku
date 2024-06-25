@@ -1,25 +1,49 @@
 import { useState, useRef, useEffect } from "react";
-
+import socket from "../../../api/socket";
 
 const newMessageForm = (props) => {
 
   const [msg, setMsg] = useState('');
 
+  const sendMessage = (messageText) => {
+    socket.emit('sendMessage', JSON.stringify({
+      chat_id: props.currentChatId,
+      user_id: +props.userId,
+      text: messageText,
+      name: 'Имя клиента',
+      type: 'client'
+    }));
+  }
+
+  const isWriting = (isWritingVal) => {
+    socket.emit('setWritingStatus', JSON.stringify({
+      chat_id: props.currentChatId,
+      name: props.name,
+      is_writing: isWritingVal
+    }))
+    if (isWritingVal) {
+      console.log('is writin emit true')
+    }
+    else if (!isWritingVal) {
+      console.log('is writin emit false')
+    }
+  }
+
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      props.isWriting(false);
+      isWriting(false);
       clearTimeout(timeoutRef.current);
       setTimerActive(false);
-      props.sendMessage(msg);
+      sendMessage(msg);
       setMsg('');
     }
   };
 
   const sendNewMessage = () => {
-    props.isWriting(false);
+    isWriting(false);
     clearTimeout(timeoutRef.current);
     setTimerActive(false);
-    props.sendMessage(msg);
+    sendMessage(msg);
     setMsg('');
   }
 
@@ -36,7 +60,7 @@ const newMessageForm = (props) => {
   const startTimeout = () => {
     clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
-      props.isWriting(false);
+      isWriting(false);
       setTimerActive(false); // Сброс состояния активации после срабатывания таймера
     }, 1500); // 5 секунд
   };
@@ -44,7 +68,7 @@ const newMessageForm = (props) => {
   useEffect(() => {
     if (timerActive) {
       // console.log('emit start');
-      props.isWriting(true);
+      isWriting(true);
     }
   }, [timerActive])
 
