@@ -20,6 +20,8 @@ const App = () => {
   const [currentChatId, setCurrentChatId] = useState(0);
   const [userId, setUserId] = useState(0);
   const [messages, setMessages] = useState([]);
+  const [isNowWriting, setIsNowWriting] = useState('');
+
 
   const [play] = useSound(newMessageSound);
   const isVisible = usePageVisibility();
@@ -44,8 +46,19 @@ const App = () => {
       setUserId(chatInfo.user_id);
     });
 
+    socket.on('setWritingStatus', (JSONmsg) => {
+      const msg = JSON.parse(JSONmsg);
+      console.log('msg', msg);
+      if (msg.is_writing) {
+        setIsNowWriting(msg.name);
+      }
+      else if (!msg.is_writing) {
+        setIsNowWriting('');
+      }
+    });
 
     return () => {
+      socket.off('setWritingStatus');
       socket.off('getMessages');
       socket.off('createChat');
     };
@@ -63,6 +76,7 @@ const App = () => {
   }
 
   const sendMessage = (messageText) => {
+    isWriting(false);
     console.log(JSON.stringify({
       chat_id: currentChatId,
       user_id: userId,
@@ -80,13 +94,27 @@ const App = () => {
     }));
   }
 
+  const isWriting = (isWritingVal) => {
+    socket.emit('setWritingStatus', JSON.stringify({
+      chat_id: currentChatId,
+      name: name,
+      is_writing: isWritingVal
+    }))
+    if (isWritingVal) {
+      console.log('is writin emit true')
+    }
+    else if (!isWritingVal) {
+      console.log('is writin emit false')
+    }
+  }
+
   return <>
     {isChatOpened
       ?
       <div className="user-chat__wrapper">
         <Header />
         {isUserRegistered
-          ? <Chat messages={messages} sendMessage={sendMessage} />
+          ? <Chat messages={messages} sendMessage={sendMessage} isWriting={isWriting} isNowWriting={isNowWriting} />
           : <Registration joinChat={joinChat} name={name} email={email} setEmail={setEmail} setName={setName} />}
       </div>
       : null}

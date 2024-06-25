@@ -138,6 +138,8 @@ h2{
   }
   &__chat-list{
     overflow: auto;
+    flex-grow: 1;
+    position: relative;
   }
 }
 
@@ -172,6 +174,7 @@ h2{
     flex-direction: column;
     gap: 10px;
     padding: 10px;
+    height: 100%;
   }
   &__message{
     padding: 7px 40px 10px 5px;
@@ -192,5 +195,11 @@ h2{
   &__user{
     align-self: flex-end;
     background-color: #d9fdd1;
+  }
+  &__now-writing{
+    position: absolute;
+    padding-left: 10px;
+    bottom: 0;
+    left: 0;
   }
 }

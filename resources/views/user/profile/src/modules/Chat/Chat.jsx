@@ -15,8 +15,11 @@ const Chat = (props) => {
             : ''
         }
       </ul>
+      {props.isNowWriting === ''
+        ? <div className="chat-list__now-writing"></div>
+        : <div className="chat-list__now-writing">{props.isNowWriting} печатает...</div>}
     </div>
-    <NewMessageForm sendMessage={props.sendMessage} />
+    <NewMessageForm sendMessage={props.sendMessage} isWriting={props.isWriting} />
   </>
 
 }
