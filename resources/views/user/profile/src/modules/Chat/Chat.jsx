@@ -15,6 +15,7 @@ const Chat = (props) => {
   const [userId, setUserId] = useState(0);
   const [messages, setMessages] = useState([]);
   const messageRefs = useRef({});
+  const messageListScroll = useRef({});
 
   useEffect(() => {
 
@@ -76,8 +77,16 @@ const Chat = (props) => {
     };
   }, [messages]);
 
+  useEffect(() => {
+    console.log(messageListScroll.current.scrollTop, '-', messageListScroll.current.scrollHeight - messageListScroll.current.clientHeight);
+    if (messageListScroll.current.scrollTop > messageListScroll.current.scrollHeight - messageListScroll.current.clientHeight - 400) {
+      messageListScroll.current.scrollTop = messageListScroll.current.scrollHeight;
+    }
+  }, [messages])
+
+
   return <>
-    <div className="user-chat__chat-list chat-list">
+    <div className="user-chat__chat-list chat-list" ref={messageListScroll}>
       <div className="chat-list__wrapper">
         <ul className="chat-list__list">
           {

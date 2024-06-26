@@ -30,7 +30,7 @@ const newMessageForm = (props) => {
   }
 
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && msg.length > 0) {
       isWriting(false);
       clearTimeout(timeoutRef.current);
       setTimerActive(false);
@@ -40,11 +40,13 @@ const newMessageForm = (props) => {
   };
 
   const sendNewMessage = () => {
-    isWriting(false);
-    clearTimeout(timeoutRef.current);
-    setTimerActive(false);
-    sendMessage(msg);
-    setMsg('');
+    if (msg.length > 0) {
+      isWriting(false);
+      clearTimeout(timeoutRef.current);
+      setTimerActive(false);
+      sendMessage(msg);
+      setMsg('');
+    }
   }
 
   const handleChange = (e) => {
