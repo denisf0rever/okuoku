@@ -30,6 +30,12 @@ const Chat = (props) => {
       setMessages(messages);
     });
 
+    socket.on('getReadedMessages', (messages) => {
+      console.log('messages', messages);
+      setMessages(messages);
+      scrollToBottom();
+    });
+
     socket.on('createChat', (chatInfoJSON) => {
       const chatInfo = JSON.parse(chatInfoJSON);
       console.log('create chat:', chatInfo.chat_id);
@@ -77,12 +83,19 @@ const Chat = (props) => {
     };
   }, [messages]);
 
-  useEffect(() => {
+  const scrollToBottom = () => {
     console.log(messageListScroll.current.scrollTop, '-', messageListScroll.current.scrollHeight - messageListScroll.current.clientHeight);
     if (messageListScroll.current.scrollTop > messageListScroll.current.scrollHeight - messageListScroll.current.clientHeight - 400) {
       messageListScroll.current.scrollTop = messageListScroll.current.scrollHeight;
     }
-  }, [messages])
+  }
+
+  // useEffect(() => {
+  //   console.log(messageListScroll.current.scrollTop, '-', messageListScroll.current.scrollHeight - messageListScroll.current.clientHeight);
+  //   if (messageListScroll.current.scrollTop > messageListScroll.current.scrollHeight - messageListScroll.current.clientHeight - 400) {
+  //     messageListScroll.current.scrollTop = messageListScroll.current.scrollHeight;
+  //   }
+  // }, [messages])
 
 
   return <>
