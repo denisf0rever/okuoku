@@ -37,7 +37,7 @@ const App = () => {
     fetch('http://okuoku.ru/set-cookie', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
         // 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') // Если требуется CSRF токен
       },
       body: { email: mail }
