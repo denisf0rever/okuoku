@@ -35,13 +35,19 @@ const App = () => {
 
   function setChatCookie(mail) {
     // Получаем CSRF-токен из мета-тега
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-    fetch('http://okuoku.ru/set-cookie', {
+    // Преобразуем данные в формат URL-кодирования
+    const formData = new URLSearchParams();
+    formData.append('mail', mail);
+    formData.append('_token', csrfToken); // Добавляем CSRF-токен
+
+    fetch('/set-cookie', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/x-www-form-urlencoded' // Устанавливаем заголовок Content-Type
       },
-      body: { email: mail } // Используем URL-кодированные данные
+      body: formData.toString() // Преобразуем данные в строку
     })
       .then(response => {
         if (!response.ok) {
@@ -54,15 +60,9 @@ const App = () => {
       })
       .catch(error => {
         console.error('Error:', error);
-        if (error instanceof Response) {
-          error.text().then(errorMessage => {
-            console.error('Response text:', errorMessage);
-          });
-        } else {
-          console.error(error.message);
-        }
       });
   }
+
 
   // Пример использования:
   setChatCookie('example@example.com');
