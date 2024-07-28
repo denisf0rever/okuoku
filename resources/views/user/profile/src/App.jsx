@@ -34,7 +34,7 @@ const App = () => {
 
 
   function setChatCookie(mail) {
-    fetch('http://okuoku.ru/set-cookie', {
+    fetch('https://okuoku.ru/profile/set-cookie', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -47,6 +47,7 @@ const App = () => {
         console.log(data.message); // Обрабатываем ответ от сервера
       })
       .catch(error => {
+        console.log(JSON.stringify({ email: mail }));
         console.error('Error:', error);
       });
   }
