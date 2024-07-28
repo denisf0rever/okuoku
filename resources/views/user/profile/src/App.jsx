@@ -34,7 +34,7 @@ const App = () => {
 
 
   function setChatCookie(mail) {
-    fetch('https://okuoku.ru/profile/set-cookie', {
+    fetch('http://okuoku.ru/set-cookie', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
