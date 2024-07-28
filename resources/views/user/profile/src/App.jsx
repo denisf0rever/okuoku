@@ -35,7 +35,7 @@ const App = () => {
 
   function setChatCookie(mail) {
     // Получаем CSRF-токен из мета-тега
-    const csrfToken = document.querySelector('input[name="_token"]').getAttribute('value');
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
     console.log(csrfToken);
 
