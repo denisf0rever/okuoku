@@ -41,6 +41,9 @@ const Chat = (props) => {
       console.log('create chat:', chatInfo.chat_id);
       setCurrentChatId(chatInfo.chat_id);
       setUserId(chatInfo.user_id);
+
+      // setCookie("resumeChatCookie", JSON.stringify(cookieData), 30);
+
     });
 
     return () => {
@@ -90,13 +93,25 @@ const Chat = (props) => {
     }
   }
 
-  // useEffect(() => {
-  //   console.log(messageListScroll.current.scrollTop, '-', messageListScroll.current.scrollHeight - messageListScroll.current.clientHeight);
-  //   if (messageListScroll.current.scrollTop > messageListScroll.current.scrollHeight - messageListScroll.current.clientHeight - 400) {
-  //     messageListScroll.current.scrollTop = messageListScroll.current.scrollHeight;
-  //   }
-  // }, [messages])
+  // const setCookie = (name, value, days) => {
+  //   let date = new Date();
+  //   date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  //   let expires = "expires=" + date.toUTCString();
+  //   document.cookie = name + "=" + encodeURIComponent(value) + "; " + expires + "; path=/";
+  // }
 
+  // const setExpertId = () => {
+  //   const pathParts = window.location.pathname.split('/');
+  //   const id = pathParts[pathParts.length - 1];
+  //   return id;
+  // }
+
+
+  // // Сериализация данных в JSON и установка куки
+  // let cookieData = {
+  //   email: props.email,
+  //   expertId: setExpertId()
+  // };
 
   return <>
     <div className="user-chat__chat-list chat-list" ref={messageListScroll}>
