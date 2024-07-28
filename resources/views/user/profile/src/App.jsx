@@ -38,7 +38,7 @@ const App = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') // Если требуется CSRF токен
+        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') // Если требуется CSRF токен
       },
       body: JSON.stringify({ email: mail })
     })
