@@ -34,13 +34,14 @@ const App = () => {
 
 
   function setChatCookie(mail) {
+    // Получаем CSRF-токен из мета-тега
+
     fetch('http://okuoku.ru/set-cookie', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        // 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') // Если требуется CSRF токен
+        'Content-Type': 'application/x-www-form-urlencoded'
       },
-      body: { email: mail }
+      body: { email: mail } // Используем URL-кодированные данные
     })
       .then(response => {
         if (!response.ok) {
@@ -53,9 +54,13 @@ const App = () => {
       })
       .catch(error => {
         console.error('Error:', error);
-        error.text().then(errorMessage => {
-          console.error('Response text:', errorMessage);
-        });
+        if (error instanceof Response) {
+          error.text().then(errorMessage => {
+            console.error('Response text:', errorMessage);
+          });
+        } else {
+          console.error(error.message);
+        }
       });
   }
 
