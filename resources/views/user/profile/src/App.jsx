@@ -42,13 +42,20 @@ const App = () => {
       },
       body: JSON.stringify({ email: mail })
     })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then(data => {
         console.log(data.message); // Обрабатываем ответ от сервера
       })
       .catch(error => {
-        console.log(JSON.stringify({ email: mail }));
         console.error('Error:', error);
+        error.text().then(errorMessage => {
+          console.error('Response text:', errorMessage);
+        });
       });
   }
 
