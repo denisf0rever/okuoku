@@ -42,7 +42,7 @@ const App = () => {
     // Преобразуем данные в формат URL-кодирования
     const formData = new URLSearchParams();
     formData.append('mail', mail);
-    formData.append('_token', csrfToken); // Добавляем CSRF-токен
+    // formData.append('_token', csrfToken); // Добавляем CSRF-токен
 
     fetch('/set-cookie', {
       method: 'POST',
