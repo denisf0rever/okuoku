@@ -141,6 +141,21 @@ h2{
     flex-grow: 1;
     max-height: calc(100vh - 120px - 70px - 70px - 80px);
   }
+  &__choices{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 auto;
+    margin-top: 150px;
+    text-align: center;
+  }
+  &__choice{
+    cursor: pointer;
+    padding: 5px 10px;
+    background: #0d192eb8;
+    color: #fff;
+    border-radius: 5px;
+  }
 }
 
 

@@ -4,6 +4,7 @@ const Registration = (props) => {
 
   const joinChat = () => {
     console.log('creating chat');
+    props.setChatCookie(email);
     socket.emit('createChat', JSON.stringify({
       email: props.email,
       name: props.name,

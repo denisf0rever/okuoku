@@ -42,7 +42,13 @@ const Chat = (props) => {
       setCurrentChatId(chatInfo.chat_id);
       setUserId(chatInfo.user_id);
 
-      // setCookie("resumeChatCookie", JSON.stringify(cookieData), 30);
+    });
+
+    socket.on('resumeChat', (chatInfoJSON) => {
+      const chatInfo = JSON.parse(chatInfoJSON);
+      console.log('create chat:', chatInfo.chat_id);
+      setCurrentChatId(chatInfo.chat_id);
+      setUserId(chatInfo.user_id);
 
     });
 
@@ -92,26 +98,6 @@ const Chat = (props) => {
       messageListScroll.current.scrollTop = messageListScroll.current.scrollHeight;
     }
   }
-
-  // const setCookie = (name, value, days) => {
-  //   let date = new Date();
-  //   date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-  //   let expires = "expires=" + date.toUTCString();
-  //   document.cookie = name + "=" + encodeURIComponent(value) + "; " + expires + "; path=/";
-  // }
-
-  // const setExpertId = () => {
-  //   const pathParts = window.location.pathname.split('/');
-  //   const id = pathParts[pathParts.length - 1];
-  //   return id;
-  // }
-
-
-  // // Сериализация данных в JSON и установка куки
-  // let cookieData = {
-  //   email: props.email,
-  //   expertId: setExpertId()
-  // };
 
   return <>
     <div className="user-chat__chat-list chat-list" ref={messageListScroll}>
