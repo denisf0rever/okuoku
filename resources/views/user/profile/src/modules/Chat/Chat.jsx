@@ -28,8 +28,8 @@ const Chat = (props) => {
           console.log('visibility check:', isVisible);
           play();
         }
+        setMessages(messages);
       }
-      setMessages(messages);
     });
 
     socket.on('getReadedMessages', (messages) => {
