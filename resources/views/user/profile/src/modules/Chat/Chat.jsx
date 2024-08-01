@@ -56,12 +56,20 @@ const Chat = (props) => {
     socket.on('errorMessage', (message) => {
       console.log(message);
       setIsError(message.message);
+
+      const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+      // Преобразуем данные в формат URL-кодирования
+      const formData = new URLSearchParams();
+      formData.append('mail', props.userCookie);
+      formData.append('_token', csrfToken); // Добавляем CSRF-токен
+
       fetch('/delete-cookie', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded' // Устанавливаем заголовок Content-Type
         },
-        body: props.userCookie.toString() // Преобразуем данные в строку
+        body: formData.toString() // Преобразуем данные в строку
       })
         .then(response => {
           if (!response.ok) {
