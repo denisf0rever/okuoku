@@ -5,7 +5,6 @@ import Header from "./modules/Header/Header";
 import Chat from "./modules/Chat/Chat";
 import ResumeChat from "./modules/ResumeChat/ResumeChat";
 
-
 const App = () => {
 
   const [email, setEmail] = useState('');

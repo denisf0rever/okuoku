@@ -1,4 +1,4 @@
-
+import socket from "../../api/socket";
 
 const ResumeChat = (props) => {
 
