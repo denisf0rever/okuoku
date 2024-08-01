@@ -12,6 +12,7 @@ const Chat = (props) => {
   const [play] = useSound(newMessageSound);
   const isVisible = usePageVisibility();
   const [currentChatId, setCurrentChatId] = useState(0);
+  const [isError, setIsError] = useState(null);
   const [userId, setUserId] = useState(0);
   const [messages, setMessages] = useState([]);
   const messageRefs = useRef({});
@@ -111,10 +112,12 @@ const Chat = (props) => {
       <div className="chat-list__wrapper">
         <ul className="chat-list__list">
           {
-            messages.length > 0
-              ?
-              messages.map((el, key) => <Message key={key} message={{ text: el.text, role: el.role, created_at: el.created_at, isRead: el.is_read, userId: el.user_id, messageId: el.message_id, chatId: el.chat_id }} messageRefs={messageRefs} />)
-              : ''
+            isError
+              ? Ошибка
+              : messages.length > 0
+                ?
+                messages.map((el, key) => <Message key={key} message={{ text: el.text, role: el.role, created_at: el.created_at, isRead: el.is_read, userId: el.user_id, messageId: el.message_id, chatId: el.chat_id }} messageRefs={messageRefs} />)
+                : ''
           }
         </ul>
         <IsWriting />
