@@ -20,6 +20,7 @@ const Chat = (props) => {
   useEffect(() => {
 
     socket.on('getMessages', (messages) => {
+      console.log(messages);
       if (messages.length > 0) {
         const lastMessage = messages[messages.length - 1];
         if (lastMessage.role === 'operator' && !isVisible) {
@@ -46,7 +47,7 @@ const Chat = (props) => {
 
     socket.on('resumeChat', (chatInfoJSON) => {
       const chatInfo = JSON.parse(chatInfoJSON);
-      console.log('create chat:', chatInfo.chat_id);
+      console.log('resume chat:', chatInfo.chat_id);
       setCurrentChatId(chatInfo.chat_id);
       setUserId(chatInfo.user_id);
     });
