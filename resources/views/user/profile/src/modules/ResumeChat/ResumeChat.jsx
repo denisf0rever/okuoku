@@ -3,8 +3,28 @@ import socket from "../../api/socket";
 const ResumeChat = (props) => {
 
   const resumeChat = () => {
+
+    const currentUrl = window.location.href;
+
+    // Создаем объект URL из текущего URL
+    const urlObject = new URL(currentUrl);
+
+    // Получаем путь из URL
+    const pathname = urlObject.pathname;
+
+    // Разделяем путь на части
+    const pathParts = pathname.split('/');
+
+    // Получаем последний элемент массива, который должен быть номером профиля
+    const profileNumber = pathParts.pop();
+
+    console.log(profileNumber); // Выводит номер профиля
+
+
+
     socket.emit('resumeChat', JSON.stringify({
-      email: props.userCookie
+      email: props.userCookie,
+      expert_id: profileNumber
     }));
     props.setIsUserRegistered(true);
   }
