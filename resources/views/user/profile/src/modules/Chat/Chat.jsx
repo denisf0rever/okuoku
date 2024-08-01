@@ -49,7 +49,6 @@ const Chat = (props) => {
       console.log('create chat:', chatInfo.chat_id);
       setCurrentChatId(chatInfo.chat_id);
       setUserId(chatInfo.user_id);
-
     });
 
     return () => {

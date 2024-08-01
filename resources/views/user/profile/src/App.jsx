@@ -79,7 +79,7 @@ const App = () => {
         {isUserRegistered
           ? <Chat name={name} email={email} />
           : userCookie
-            ? <ResumeChat setUserCookie={setUserCookie} setIsUserRegistered={setIsUserRegistered} />
+            ? <ResumeChat userCookie={userCookie} setUserCookie={setUserCookie} setIsUserRegistered={setIsUserRegistered} />
             : <Registration name={name} email={email} setEmail={setEmail} setName={setName} setIsUserRegistered={setIsUserRegistered} setChatCookie={setChatCookie} />
         }
 

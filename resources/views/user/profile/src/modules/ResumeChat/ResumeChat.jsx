@@ -3,7 +3,9 @@
 const ResumeChat = (props) => {
 
   const resumeChat = () => {
-    //emit...
+    socket.emit('resumeChat', JSON.stringify({
+      email: props.userCookie
+    }));
     props.setIsUserRegistered(true);
   }
 
