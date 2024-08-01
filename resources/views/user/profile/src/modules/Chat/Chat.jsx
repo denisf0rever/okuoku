@@ -54,6 +54,7 @@ const Chat = (props) => {
 
     return () => {
       socket.off('getMessages');
+      socket.off('resumeChat');
       socket.off('createChat');
     };
   }, [isVisible, play]);

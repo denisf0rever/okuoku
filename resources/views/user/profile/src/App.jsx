@@ -4,6 +4,7 @@ import Registration from "./modules/Registration/Registration";
 import Header from "./modules/Header/Header";
 import Chat from "./modules/Chat/Chat";
 import ResumeChat from "./modules/ResumeChat/ResumeChat";
+import socket from "./api/socket";
 
 const App = () => {
 
@@ -13,6 +14,16 @@ const App = () => {
   const [isChatOpened, setIsChatOpened] = useState(false);
   const [isUserRegistered, setIsUserRegistered] = useState(false);
   const [userCookie, setUserCookie] = useState(null);
+
+  useEffect(() => {
+    socket.on('error', (message) => {
+      console.log('message');
+    });
+
+    return () => {
+      socket.off('error');
+    };
+  }, [])
 
   const setChatCookie = (mail) => {
     // Получаем CSRF-токен из мета-тега
