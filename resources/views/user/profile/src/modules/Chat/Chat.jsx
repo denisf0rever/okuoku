@@ -53,13 +53,13 @@ const Chat = (props) => {
       setUserId(chatInfo.user_id);
     });
 
-    socket.on('error', (message) => {
+    socket.on('errorMessage', (message) => {
       console.log(message);
     });
 
 
     return () => {
-      socket.off('error');
+      socket.off('errorMessage');
       socket.off('getMessages');
       socket.off('resumeChat');
       socket.off('createChat');
