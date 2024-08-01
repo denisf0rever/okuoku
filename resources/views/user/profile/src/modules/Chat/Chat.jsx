@@ -55,6 +55,7 @@ const Chat = (props) => {
 
     socket.on('errorMessage', (message) => {
       console.log(message);
+      setIsError(message.message);
     });
 
 
