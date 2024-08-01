@@ -15,16 +15,6 @@ const App = () => {
   const [isUserRegistered, setIsUserRegistered] = useState(false);
   const [userCookie, setUserCookie] = useState(null);
 
-  useEffect(() => {
-    socket.on('error', (message) => {
-      console.log('message');
-    });
-
-    return () => {
-      socket.off('error');
-    };
-  }, [])
-
   const setChatCookie = (mail) => {
     // Получаем CSRF-токен из мета-тега
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
