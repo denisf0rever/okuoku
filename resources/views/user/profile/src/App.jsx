@@ -77,7 +77,7 @@ const App = () => {
       <div className="user-chat__wrapper">
         <Header />
         {isUserRegistered
-          ? <Chat name={name} email={email} />
+          ? <Chat name={name} email={email} userCookie={userCookie} />
           : userCookie
             ? <ResumeChat userCookie={userCookie} setUserCookie={setUserCookie} setIsUserRegistered={setIsUserRegistered} />
             : <Registration name={name} email={email} setEmail={setEmail} setName={setName} setIsUserRegistered={setIsUserRegistered} setChatCookie={setChatCookie} />

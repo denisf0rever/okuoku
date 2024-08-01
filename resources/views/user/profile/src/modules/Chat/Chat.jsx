@@ -56,6 +56,25 @@ const Chat = (props) => {
     socket.on('errorMessage', (message) => {
       console.log(message);
       setIsError(message.message);
+      fetch('/delete-cookie', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded' // Устанавливаем заголовок Content-Type
+        },
+        body: props.userCookie.toString() // Преобразуем данные в строку
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log(data.message); // Обрабатываем ответ от сервера
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
     });
 
 
