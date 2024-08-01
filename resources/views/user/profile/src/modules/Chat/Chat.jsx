@@ -114,7 +114,7 @@ const Chat = (props) => {
         <ul className="chat-list__list">
           {
             isError
-              ? { isError }
+              ? <div className="">{isError}</div>
               : messages.length > 0
                 ?
                 messages.map((el, key) => <Message key={key} message={{ text: el.text, role: el.role, created_at: el.created_at, isRead: el.is_read, userId: el.user_id, messageId: el.message_id, chatId: el.chat_id }} messageRefs={messageRefs} />)
