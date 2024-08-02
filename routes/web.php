@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Post\PostController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegistrationController;
-use BeyondCode\LaravelWebSockets\Facades\WebSocketRouter;
 
 
 Route::get('/', function () {
@@ -31,8 +30,11 @@ Route::middleware(['guest'])->group(function () {
 	
 	Route::get('/chat', [\App\Http\Controllers\Chat\ChatController::class, 'endPoint']);
 	
+	// Чат
+	Route::post('/set-cookie', [\App\Http\Controllers\User\UserCookiesController::class, 'setCookie'])->name('set-cookie');
+	Route::get('/get-cookie', [\App\Http\Controllers\User\UserCookiesController::class, 'getCookie'])->name('get-cookie');
+	Route::post('/delete-cookie', [\App\Http\Controllers\User\UserCookiesController::class, 'removeCookie'])->name('delete-cookie');
 	
-	//WebSocketRouter::webSocket('/socket.io', \App\WebSocketHandler::class);
 });
 	
 Route::middleware(['auth'])->group(function () {

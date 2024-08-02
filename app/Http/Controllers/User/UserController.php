@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Cookie;
 
 
 class UserController extends Controller
@@ -45,18 +46,6 @@ class UserController extends Controller
 		return view('user.profile.item', ['user' => $user]);
     }
 	
-	/**public function show(string $id)
-    {
-        $user = User::query()
-            ->where('id', '=', $id)
-            ->firstOrFail();
-
-		return view('user.profile.item', ['user' => $user]);
-    }
-
-    
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         //

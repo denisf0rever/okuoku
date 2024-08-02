@@ -51,7 +51,6 @@
 		  
 		<!--@include('stories.block')-->
 		  
-          
           <section class="main__news news">
             <div class="news__wrapper">
               <div class="news__top">
