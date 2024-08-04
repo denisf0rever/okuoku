@@ -14,6 +14,25 @@ const App = () => {
   const [isChatOpened, setIsChatOpened] = useState(false);
   const [isUserRegistered, setIsUserRegistered] = useState(false);
   const [userCookie, setUserCookie] = useState(null);
+  const [currentProfileId, setCurrentProfileId] = useState(null)
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+
+    // Создаем объект URL из текущего URL
+    const urlObject = new URL(currentUrl);
+
+    // Получаем путь из URL
+    const pathname = urlObject.pathname;
+
+    // Разделяем путь на части
+    const pathParts = pathname.split('/');
+    // Получаем последний элемент массива, который должен быть номером профиля
+    const profileNumber = pathParts.pop();
+
+    setCurrentProfileId(profileNumber);
+    console.log(profileNumber); // Выводит номер профиля
+  }, [])
 
   const setChatCookie = (mail) => {
     // Получаем CSRF-токен из мета-тега
@@ -22,6 +41,7 @@ const App = () => {
     // Преобразуем данные в формат URL-кодирования
     const formData = new URLSearchParams();
     formData.append('mail', mail);
+    formData.append('expertId', currentProfileId);
     formData.append('_token', csrfToken); // Добавляем CSRF-токен
 
     fetch('/set-cookie', {
@@ -58,6 +78,15 @@ const App = () => {
       .then(data => {
         // Работа с полученными данными
         console.log('cookie:', data);
+
+        // const newData = JSON.parse(data);
+
+        // newData.forEach((el) => {
+        //   if (el.mail == currentProfileId) {
+        //     setUserCookie(el.mail);            
+        //   }
+        // })
+
         setUserCookie(data.mail);
       })
       .catch(error => {
@@ -79,8 +108,8 @@ const App = () => {
         {isUserRegistered
           ? <Chat name={name} email={email} userCookie={userCookie} />
           : userCookie
-            ? <ResumeChat userCookie={userCookie} setUserCookie={setUserCookie} setIsUserRegistered={setIsUserRegistered} />
-            : <Registration name={name} email={email} setEmail={setEmail} setName={setName} setIsUserRegistered={setIsUserRegistered} setChatCookie={setChatCookie} />
+            ? <ResumeChat userCookie={userCookie} setUserCookie={setUserCookie} setIsUserRegistered={setIsUserRegistered} currentProfileId={currentProfileId} />
+            : <Registration name={name} email={email} setEmail={setEmail} setName={setName} setIsUserRegistered={setIsUserRegistered} setChatCookie={setChatCookie} currentProfileId={currentProfileId} />
         }
 
 

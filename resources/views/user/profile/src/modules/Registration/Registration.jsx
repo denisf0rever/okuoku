@@ -6,29 +6,12 @@ const Registration = (props) => {
 
   const joinChat = () => {
 
-    const currentUrl = window.location.href;
-
-    // Создаем объект URL из текущего URL
-    const urlObject = new URL(currentUrl);
-
-    // Получаем путь из URL
-    const pathname = urlObject.pathname;
-
-    // Разделяем путь на части
-    const pathParts = pathname.split('/');
-
-    // Получаем последний элемент массива, который должен быть номером профиля
-    const profileNumber = pathParts.pop();
-
-    console.log(profileNumber); // Выводит номер профиля
-
-
     console.log('creating chat');
     props.setChatCookie(props.email);
     socket.emit('createChat', JSON.stringify({
       email: props.email,
       name: props.name,
-      expert_id: profileNumber
+      expert_id: props.currentProfileId
     }));
 
     props.setIsUserRegistered(true);
