@@ -56,6 +56,10 @@ body{
   max-width: 1300px;
 }
 
+.input-error{
+  border-color: red;
+}
+
 .header{
   &__wrapper{
     background-color: #fff;
