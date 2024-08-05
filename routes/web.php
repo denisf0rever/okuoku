@@ -23,7 +23,7 @@ Route::middleware(['guest'])->group(function () {
 	Route::get('/logout', [\App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
 	
 	// Статьи
-	Route::get('/article/{id}', [\App\Http\Controllers\Post\PostController::class, 'show'])->name('dashboard.posts.item');
+	Route::get('/article/{id}', [\App\Http\Controllers\Post\PostController::class, 'show'])->name('articles.item');
 	
 	// Профиль
 	Route::get('/profile/{id}', [\App\Http\Controllers\User\UserController::class, 'show'])->name('user.profile.item');
@@ -42,22 +42,20 @@ Route::middleware(['auth'])->group(function () {
 		return view('dashboard.main');})->name('dashboard.main');
 	
 	// Шаблоны: добавление статьи
-	Route::get('dashboard/posts/add-post', function () {
-		return view('dashboard.posts.add-post');
-	})->name('dashboard.posts.add-post');
+	Route::get('dashboard/article/add-article', function () {
+		return view('dashboard.articles.add-article');
+	})->name('dashboard.article.add-article');
 	
-	Route::get('dashboard/posts', function () {
-		return view('dashboard.posts.post-list');
-	})->name('dashboard.posts');
+	Route::get('dashboard/article', [\App\Http\Controllers\Post\PostController::class, 'index'])->name('dashboard.article');
+	Route::get('dashboard/article/{id}/edit', [\App\Http\Controllers\Post\PostController::class, 'edit'])->name('dashboard.article.edit');
 	
 	// Запросы: статьи
-	Route::post('/article/create', [\App\Http\Controllers\Post\PostController::class, 'create'])->name('dashboard.posts.create-post');
+	Route::post('/article/create', [\App\Http\Controllers\Post\PostController::class, 'create'])->name('dashboard.article.create-article');
 	
 	// Чат: оператор
 	Route::get('/dashboard/chat', [\App\Http\Controllers\Chat\ChatController::class, 'index'])->name('dashboard.chat');
 	
-	
-	Route::get('/article/{id}', [\App\Http\Controllers\Post\PostController::class, 'show'])->name('dashboard.posts.item');
+
 });
 
 

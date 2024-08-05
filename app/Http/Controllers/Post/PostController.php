@@ -17,12 +17,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::query()
-			->orderBy('ASC')
+        $articles = Post::query()
+			->orderBy('created_at')
             ->take(10)
             ->get();
 		
-		return view('dashboard.posts.post-list', ['posts' => $posts]);
+		return view('dashboard.articles.articles', ['articles' => $articles]);
     }
 
     /**
@@ -39,8 +39,9 @@ class PostController extends Controller
             'author_id' => 'required|integer|max:5',
             'reading-time' => 'required|integer',
             'category' => 'required|integer|max:2',
-            'short-text' => 'required|string',
-            'full-text' => 'required|string',
+            'short_text' => 'required|string',
+            'content' => 'required|string',
+            'full_text' => 'required|string',
 			'image' =>  'required|image'
         ]);
 		
@@ -48,9 +49,9 @@ class PostController extends Controller
 		$year = date('Y');
 		$mounth = date('m');
 			
-		$path = $request->file('image')->store('public/post/' . $year .'/' . $mounth);
+		$path = $request->file('image')->store('public/article/' . $year .'/' . $mounth);
 		
-		$post = Post::create([
+		$article = Post::create([
                 'h1' => $data['h1'],
                 'title' => $data['title'],
 				'subtitle' => $data['subtitle'],
@@ -59,15 +60,17 @@ class PostController extends Controller
 				'author_id' => $data['author_id'],
 				'reading-time' => $data['reading-time'],
 				'category' => $data['category'],
-				'short-text' => $data['full-text'],
-				'full-text' => $data['full-text'],
+				'short_text' => $data['short_text'],
+				'content' => $data['content'],
+				'full_text' => $data['full_text'],
 				'thumb' => $path
             ]);
 		
 		
-		if ($post) {
-			
-			return redirect()->route('dashboard.posts');
+		if ($article) {
+			return redirect()->route('dashboard.article');
+		} else {
+			return back()->withInput($this->all());
 		}
     }
 
@@ -88,7 +91,7 @@ class PostController extends Controller
             ->where('id', '=', $id)
             ->firstOrFail();
 
-		return view('article.item', ['article' => $article]);
+		return view('articles.item', ['article' => $article]);
     }
 
     /**

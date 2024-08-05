@@ -6,7 +6,6 @@
     </head>
    
    <body>
-   
    @include('dashboard.parts.header')
    
    <div class="wrapper">
@@ -16,7 +15,7 @@
       <main class="wrapper__main main">
         <div class="main__wrapper">
           <h1 class="main__title">Статьи</h1>
-		  <p><a href="{{ route('dashboard.posts.add-post') }}">Добавить статью</a></p>
+		  <p><a href="{{ route('dashboard.article.add-article') }}">Добавить статью</a></p>
           <section class="main__info info">
             <div class="info__wrapper">
               <div class="info__element">
@@ -50,50 +49,26 @@
               <h2 class="pages__title">Заголовки страниц</h2>
               <div class="pages__inner">
                 <div class="pages__titles">
+                  <span class="pages__title-name">ID</span>
                   <span class="pages__title-name">Название</span>
                   <span class="pages__title-number">Просмотры</span>
                 </div>
                 <ul class="pages__list">
+				@foreach ($articles as $article)
                   <li class="pages__item">
-                    <span class="pages__name">Тара и упаковки - бутылки для гель-лака | GL-завод</span>
+				    <span class="pages__views-number">{{ $article->id }}</span>
+                    <a href="{{ route('articles.item', $article->id)}}" target="_blank"><span class="pages__name">{{ $article->title }}</span></a>
                     <span class="pages__views-number">446</span>
                     <div class="pages__icon">
-                      <img src="images/pencil.svg" alt="" class="pages__icon-img">
+                      <a href="{{ route('dashboard.article.edit', $article->id)}}" target="_blank">Редактировать</a>
+					  <!--<img src="images/pencil.svg" alt="" class="pages__icon-img">-->
                     </div>
                     <div class="pages__icon">
-                      <img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">
+                        <a href="#">Удалить</a>
+					  <!--<img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">-->
                     </div>
                   </li>
-                  <li class="pages__item">
-                    <span class="pages__name">Тара и упаковки - бутылки для гель-лака | GL-завод</span>
-                    <span class="pages__views-number">446</span>
-                    <div class="pages__icon">
-                      <img src="images/pencil.svg" alt="" class="pages__icon-img">
-                    </div>
-                    <div class="pages__icon">
-                      <img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">
-                    </div>
-                  </li>
-                  <li class="pages__item">
-                    <span class="pages__name">Тара и упаковки - бутылки для гель-лака | GL-завод</span>
-                    <span class="pages__views-number">446</span>
-                    <div class="pages__icon">
-                      <img src="images/pencil.svg" alt="" class="pages__icon-img">
-                    </div>
-                    <div class="pages__icon">
-                      <img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">
-                    </div>
-                  </li>
-                  <li class="pages__item">
-                    <span class="pages__name">Тара и упаковки - бутылки для гель-лака | GL-завод</span>
-                    <span class="pages__views-number">446</span>
-                    <div class="pages__icon">
-                      <img src="images/pencil.svg" alt="" class="pages__icon-img">
-                    </div>
-                    <div class="pages__icon">
-                      <img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">
-                    </div>
-                  </li>
+				@endforeach
                 </ul>
               </div>
             </div>
