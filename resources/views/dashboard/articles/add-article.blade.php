@@ -19,8 +19,12 @@
           <h1 class="main__title">Добавить статью</h1>
           <section class="main__form form">
             <div class="form__wrapper">
-              <form action="{{ route('dashboard.article.create-article') }}" method="post" class="form__inner-form" enctype="multipart/form-data">
+              <form action="{{ isset($article) ? route('dashboard.article.edit', $article->id) : route('dashboard.article.create-article') }}" method="post" class="form__inner-form" enctype="multipart/form-data">
                 @csrf
+				
+				@if (isset($article))
+					@method('PUT')
+				@endif
                 <div class="form__tabs-buttons">
                   <div class="form__tab-button form__tab-button-active">Основные</div>
                   <div class="form__tab-button">Дополнительные</div>

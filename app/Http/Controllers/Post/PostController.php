@@ -99,7 +99,11 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+         $article = Post::query()
+            ->where('id', '=', $id)
+            ->firstOrFail();
+
+		return view('dashboard.articles.add-article', ['article' => $article]);
     }
 
     /**
