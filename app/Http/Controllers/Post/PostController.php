@@ -45,9 +45,8 @@ class PostController extends Controller
 			'image' => 'required|image'
         ]);
 		
-		$year = date('Y') .'/' . date('m');
-			
-		$path = $request->file('image')->store('public/article/' . $year);
+		$pathImage = date('Y') .'/' . date('m');
+		$path = $request->file('image')->store('public/article/' . $pathImage);
 		
 		$article = Post::create([
                 'h1' => $data['h1'],
@@ -109,10 +108,8 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-		$year = date('Y');
-		$mounth = date('m');
-			
-		$path = $request->file('image')->store('public/article/' . $year .'/' . $mounth);
+		$pathImage = date('Y') .'/' . date('m');
+		$path = $request->file('image')->store('public/article/' . $pathImage);
 		
         $data = $request->validate([
             'h1' => 'required|string|max:255',
@@ -128,8 +125,6 @@ class PostController extends Controller
             'full_text' => 'required|string',
 			'image' => 'required|image'
         ]);
-		
-		$path = $request->file('image')->store('public/article/' . $year);
 		
 	    $article = Post::query()
             ->where('id', '=', $id)
