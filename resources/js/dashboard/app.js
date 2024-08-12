@@ -99,4 +99,29 @@ window.onload = () => {
 
   fullText.addEventListener("input", analyzeText);
 
+  //TOAST
+
+
+  const hideToast = () => {
+    const toast = document.getElementById('toast');
+    if (toast) {
+      toast.classList.remove('toast__show');
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 500);
+    }
+  }
+
+  const toast = document.getElementById('toast');
+
+  if (toast) {
+    // Показываем тост с задержкой
+    setTimeout(() => {
+      toast.classList.add('toast__show');
+    }, 100);
+
+    // Автоматически скрываем тост через 5 секунд
+    setTimeout(hideToast, 5000);
+  }
+
 }

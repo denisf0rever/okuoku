@@ -28,9 +28,16 @@
                 @endforeach
 
                 @if (session('success'))
-                <div class="alert alert-success">
+                <!-- <div class="alert alert-success">
                   TOAST
                   {{ session('success') }}
+                </div> -->
+                <div class="toast">
+                  <div class="toast__container" id="toast">
+                    <div class="toast__item">
+                      {{ session('success') }}
+                    </div>
+                  </div>
                 </div>
                 @endif
                 <div class="form__tabs-buttons">

@@ -452,4 +452,24 @@ body{
   }
 }
 
+.toast{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  &__container{
+    width: 200px;
+    height: 50px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  &__show{
+    opacity: 1;
+  }
+}
+
+
 @import 'media';
