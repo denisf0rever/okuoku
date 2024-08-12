@@ -37,18 +37,17 @@ class PostController extends Controller
             'metadescription' => 'required|string|max:255',
             'metakey' => 'required|string|max:255',
             'author_id' => 'required|integer|max:255',
-            'reading_time' => 'required|integer',
+            'reading_time' => 'required',
             'category' => 'required|integer|max:2',
             'short_text' => 'required|string',
             'content' => 'required|string',
             'full_text' => 'required|string',
-			'image' =>  'required|image'
+			'image' => 'required|image'
         ]);
 		
-		$year = date('Y');
-		$mounth = date('m');
+		$year = date('Y') .'/' . date('m');
 			
-		$path = $request->file('image')->store('public/article/' . $year .'/' . $mounth);
+		$path = $request->file('image')->store('public/article/' . $year);
 		
 		$article = Post::create([
                 'h1' => $data['h1'],
@@ -110,6 +109,11 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
+		$year = date('Y');
+		$mounth = date('m');
+			
+		$path = $request->file('image')->store('public/article/' . $year .'/' . $mounth);
+		
         $data = $request->validate([
             'h1' => 'required|string|max:255',
             'title' => 'required|string|max:255',
@@ -117,16 +121,16 @@ class PostController extends Controller
             'metadescription' => 'required|string|max:255',
             'metakey' => 'required|string|max:255',
             'author_id' => 'required|integer|max:5',
-            'reading_time' => 'required|integer',
+            'reading_time' => 'required',
             'category' => 'required|integer|max:2',
             'short_text' => 'required|string',
             'content' => 'required|string',
             'full_text' => 'required|string',
-			//'image' =>  'required|image'
+			'image' => 'required|image'
         ]);
 		
-		//$post = Post::findOrFail($id);
-      
+		$path = $request->file('image')->store('public/article/' . $year);
+		
 	    $article = Post::query()
             ->where('id', '=', $id)
             ->firstOrFail();
@@ -142,7 +146,7 @@ class PostController extends Controller
 		$article->short_text = $request->input('short_text');
 		$article->content = $request->input('content');
 		$article->full_text = $request->input('full_text');
-		//$article->thumb = $request->input('thumb');
+		$article->thumb = $path;
 		$article->save();
 		
 		return redirect()->back()->with('success', 'Пост успешно обновлен');
