@@ -19,12 +19,18 @@
           <h1 class="main__title">Добавить статью</h1>
           <section class="main__form form">
             <div class="form__wrapper">
-              <form action="{{ route('dashboard.article.create-article') }}" method="post" class="form__inner-form" enctype="multipart/form-data">
+              <form action="{{ route('dashboard.article.update', $article->id) }}" method="post" class="form__inner-form" enctype="multipart/form-data">
                 @csrf
 				
 				@foreach($errors->all() as $error)
 				{{ $error }} <br />
 				@endforeach
+				
+				@if (session('success'))
+					<div class="alert alert-success">
+						{{ session('success') }}
+					</div>
+				@endif
                 <div class="form__tabs-buttons">
                   <div class="form__tab-button form__tab-button-active">Основные</div>
                   <div class="form__tab-button">Дополнительные</div>
@@ -36,31 +42,31 @@
 						
                         <li class="form__input-wrapper">
                           <label class="form__label" for="title">Заголовок документа</label>
-                          <input class="form__input @error('title')input-error @enderror" type="text" id="title" name="title">
+                          <input class="form__input @error('title')input-error @enderror" type="text" id="title" name="title" value="{{ $article->title }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="title">Заголовок статьи</label>
-                          <input class="form__input @error('h1')input-error @enderror" type="text" id="h1" name="h1">
+                          <input class="form__input @error('h1')input-error @enderror" type="text" id="h1" name="h1" value="{{ $article->h1 }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="subtitle">Подзаголовок</label>
-                          <input class="form__input @error('subtitle')input-error @enderror" type="text" id="subtitle" name="subtitle">
+                          <input class="form__input @error('subtitle')input-error @enderror" type="text" id="subtitle" name="subtitle" value="{{ $article->subtitle }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="Meta-description">Метаописание</label>
-                          <input class="form__input @error('metadescription')input-error @enderror" type="text" id="Meta-description" name="metadescription">
+                          <input class="form__input @error('metadescription')input-error @enderror" type="text" id="Meta-description" name="metadescription" value="{{ $article->metadescription }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="Metakeys">Метаключи</label>
-                          <input class="form__input @error('metakey')input-error @enderror" type="text" id="Metakeys" name="metakey">
+                          <input class="form__input @error('metakey')input-error @enderror" type="text" id="Metakeys" name="metakey" value="{{ $article->metakey }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="authorID">ID Автора</label>
-                          <input class="form__input @error('author_id')input-error @enderror" type="text" id="author_id" name="author_id">
+                          <input class="form__input @error('author_id')input-error @enderror" type="text" id="author-id" name="author_id" value="{{ $article->author_id }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="reading-time">Время прочтения</label>
-                          <input class="form__input @error('reading-time')input-error @enderror" type="text" id="reading-time" name="reading_time">
+                          <input class="form__input @error('reading-time')input-error @enderror" type="text" id="reading-time" name="reading_time" value="{{ $article->reading_time }}">
                         </li>
                       </ul>
                       <label class="form__label-photo">
@@ -79,22 +85,21 @@
                       <input class="form__status-current @error('category')input-error @enderror" name="category" type="text" value="0" readonly>
                       <ul id="status" class="form__status-select form__status-hide">
                         <li class="form__status-option" value="1">Категория</li>
-                        <li class="form__status-option" value="2">Категория</li>
                       </ul>
                     </div>
                   </div>
                 </div>
                 <div class="form__textarea-wrapper">
                   <div class="form__textarea-title">Краткое описание</div>
-                  <textarea name="short_text" id="short_text" class="form__textarea @error('short_text')input-error @enderror"></textarea>
+                  <textarea name="short_text" id="short_text" class="form__textarea @error('short_text')input-error @enderror">{{ $article->short_text }}</textarea>
                 </div>
                 <div class="form__textarea-wrapper">
                   <div class="form__textarea-title">Содержание статьи</div>
-                  <textarea name="content" id="" class="form__textarea @error('content')input-error @enderror"><ul class="article__content-list"><li class="article__content-item"></li></ul></textarea>
+                  <textarea name="content" id="content" class="form__textarea @error('content')input-error @enderror">{{ $article->content }}</textarea>
                 </div>
                 <div class="form__textarea-wrapper">
                   <div class="form__textarea-title">Полный текст</div>
-                  <textarea name="full_text" id="full-text" class="form__textarea @error('full_text')input-error @enderror"></textarea>
+                  <textarea name="full_text" id="full-text"" class="form__textarea @error('full_text')input-error @enderror">{{ $article->full_text }}</textarea>
                   <input class="form__submit" type="submit"> </input>
                 </div>
               </form>

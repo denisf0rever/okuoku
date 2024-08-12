@@ -36,15 +36,14 @@ class PostController extends Controller
             'subtitle' => 'required|string|max:255',
             'metadescription' => 'required|string|max:255',
             'metakey' => 'required|string|max:255',
-            'author_id' => 'required|integer|max:5',
-            'reading-time' => 'required|integer',
+            'author_id' => 'required|integer|max:255',
+            'reading_time' => 'required|integer',
             'category' => 'required|integer|max:2',
             'short_text' => 'required|string',
             'content' => 'required|string',
             'full_text' => 'required|string',
 			'image' =>  'required|image'
         ]);
-		
 		
 		$year = date('Y');
 		$mounth = date('m');
@@ -58,7 +57,7 @@ class PostController extends Controller
 				'metadescription' => $data['metadescription'],
 				'metakey' => $data['metakey'],
 				'author_id' => $data['author_id'],
-				'reading-time' => $data['reading-time'],
+				'reading_time' => $data['reading_time'],
 				'category' => $data['category'],
 				'short_text' => $data['short_text'],
 				'content' => $data['content'],
@@ -68,9 +67,9 @@ class PostController extends Controller
 		
 		
 		if ($article) {
-			return redirect()->route('dashboard.article');
+			 return redirect()->route('dashboard.article.edit', ['id' => $article->id])->with('success', 'Пост успешно создан');
 		} else {
-			return back()->withInput($this->all());
+			return redirect()->back()->withInput($this->all());
 		}
     }
 
@@ -103,7 +102,7 @@ class PostController extends Controller
             ->where('id', '=', $id)
             ->firstOrFail();
 
-		return view('dashboard.articles.add-article', ['article' => $article]);
+		return view('dashboard.articles.edit-article', ['article' => $article]);
     }
 
     /**
@@ -111,7 +110,42 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = $request->validate([
+            'h1' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
+            'subtitle' => 'required|string|max:255',
+            'metadescription' => 'required|string|max:255',
+            'metakey' => 'required|string|max:255',
+            'author_id' => 'required|integer|max:5',
+            'reading_time' => 'required|integer',
+            'category' => 'required|integer|max:2',
+            'short_text' => 'required|string',
+            'content' => 'required|string',
+            'full_text' => 'required|string',
+			//'image' =>  'required|image'
+        ]);
+		
+		//$post = Post::findOrFail($id);
+      
+	    $article = Post::query()
+            ->where('id', '=', $id)
+            ->firstOrFail();
+	   
+	    $article->h1 = $request->input('h1');
+		$article->title = $request->input('title');
+		$article->subtitle = $request->input('subtitle');
+		$article->metadescription = $request->input('metadescription');
+		$article->metakey = $request->input('metakey');	    
+		$article->author_id = $request->input('author_id');
+		$article->reading_time = $request->input('reading_time');
+		$article->category = $request->input('category');
+		$article->short_text = $request->input('short_text');
+		$article->content = $request->input('content');
+		$article->full_text = $request->input('full_text');
+		//$article->thumb = $request->input('thumb');
+		$article->save();
+		
+		return redirect()->back()->with('success', 'Пост успешно обновлен');
     }
 
     /**
