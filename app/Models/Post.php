@@ -12,4 +12,8 @@ class Post extends Model
 	protected $table = 'post';
 	
 	protected $guarded = [];
+	
+	protected $fillable = [
+		'views',
+	];
 }

@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManager;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -42,11 +44,31 @@ class PostController extends Controller
             'short_text' => 'required|string',
             'content' => 'required|string',
             'full_text' => 'required|string',
-			'image' => 'required|image'
+			'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 		
-		$pathImage = date('Y') .'/' . date('m');
-		$path = $request->file('image')->store('public/article/' . $pathImage);
+		if ($request->hasFile('image')) {
+			$datePath = date('Y') . '/' . date('m');
+			$savedImage = $request->file('image')->store('public/article/' . $datePath);
+			$filename = Str::of($savedImage)->basename();
+			
+			$path = storage_path('app/public/article/' . $datePath . '/' . $filename);
+			
+			$image = ImageManager::imagick()->read($path);
+			$image->resizeDown(width: 700);
+			
+			$directoryPath = storage_path('app/public/article/' . $datePath . '/small');
+
+			if (!File::exists($directoryPath)) {
+				File::makeDirectory($directoryPath, 0755, true);
+			}
+			
+			$path = storage_path('app/public/article/' .  $datePath . '/small/' . $filename);
+			$image->save($path);
+			
+			Storage::delete('public/article/' .  $datePath . '/' . $filename);
+			$finalImage = 'public/article/' .  $datePath . '/small/' . $filename;
+		}
 		
 		$article = Post::create([
                 'h1' => $data['h1'],
@@ -60,9 +82,9 @@ class PostController extends Controller
 				'short_text' => $data['short_text'],
 				'content' => $data['content'],
 				'full_text' => $data['full_text'],
-				'thumb' => $path
+				'thumb' => $finalImage
             ]);
-		
+
 		
 		if ($article) {
 			 return redirect()->route('dashboard.article.edit', ['id' => $article->id])->with('success', 'Пост успешно создан');
@@ -87,6 +109,9 @@ class PostController extends Controller
         $article = Post::query()
             ->where('id', '=', $id)
             ->firstOrFail();
+			
+		// Increment views when a post is viewed
+		$article->increment('views');
 
 		return view('articles.item', ['article' => $article]);
     }
@@ -107,10 +132,7 @@ class PostController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-		$pathImage = date('Y') .'/' . date('m');
-		$path = $request->file('image')->store('public/article/' . $pathImage);
-		
+    {	
         $data = $request->validate([
             'h1' => 'required|string|max:255',
             'title' => 'required|string|max:255',
@@ -123,14 +145,41 @@ class PostController extends Controller
             'short_text' => 'required|string',
             'content' => 'required|string',
             'full_text' => 'required|string',
-			'image' => 'required|image'
+			'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 		
 	    $article = Post::query()
             ->where('id', '=', $id)
             ->firstOrFail();
-	   
-	    $article->h1 = $request->input('h1');
+			
+		$articleImage = $article->thumb;
+			
+		if ($request->hasFile('image'))
+		{
+			$datePath = date('Y') . '/' . date('m');
+			$savedImage = $request->file('image')->store('public/article/' . $datePath);
+			$filename = Str::of($savedImage)->basename();
+			$path = storage_path('app/public/article/' . $datePath . '/' . $filename);
+			
+			$image = ImageManager::imagick()->read($path);
+			$image->resizeDown(width: 700);
+			
+			$directoryPath = storage_path('app/public/article/' . $datePath . '/small');
+
+			if (!File::exists($directoryPath)) {
+				File::makeDirectory($directoryPath, 0755, true);
+			}
+			
+			$path = storage_path('app/public/article/' .  $datePath . '/small/' . $filename);
+			$image->save($path);
+			
+			Storage::delete($articleImage);
+			$finalImage = 'public/article/' .  $datePath . '/small/' . $filename;
+			
+			$article->thumb = $finalImage;
+		}
+		
+		$article->h1 = $request->input('h1');
 		$article->title = $request->input('title');
 		$article->subtitle = $request->input('subtitle');
 		$article->metadescription = $request->input('metadescription');
@@ -141,7 +190,6 @@ class PostController extends Controller
 		$article->short_text = $request->input('short_text');
 		$article->content = $request->input('content');
 		$article->full_text = $request->input('full_text');
-		$article->thumb = $path;
 		$article->save();
 		
 		return redirect()->back()->with('success', 'Пост успешно обновлен');
@@ -152,6 +200,19 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $article = Post::query()
+            ->where('id', '=', $id)
+            ->firstOrFail();
+		
+		if ($article->thumb) {
+			$articleImage = $article->thumb;
+			Storage::delete($articleImage);
+		}
+		
+		$article->delete();
+				
+		if ($article) {
+			 return redirect()->route('dashboard.article')->with('success', 'Пост успешно удален');
+		}
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Post\PostController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegistrationController;
-
+use App\Http\Controllers\ImageController;
 
 Route::get('/', function () {
     return view('layout');
@@ -48,9 +48,8 @@ Route::middleware(['auth'])->group(function () {
 	// Статья: редактированиеы
 	Route::get('/dashboard/article/{id}/edit', [\App\Http\Controllers\Post\PostController::class, 'edit'])->name('dashboard.article.edit');
 	Route::post('/dashboard/article/{id}', [\App\Http\Controllers\Post\PostController::class, 'update'])->name('dashboard.article.update');
-	
-	// Запросы: статьи
 	Route::post('/article/create', [\App\Http\Controllers\Post\PostController::class, 'create'])->name('dashboard.article.create-article');
+	Route::get('/article/delete/{id}', [\App\Http\Controllers\Post\PostController::class, 'destroy'])->name('dashboard.article.destroy');
 	
 	// Чат: оператор
 	Route::get('/dashboard/chat', [\App\Http\Controllers\Chat\ChatController::class, 'index'])->name('dashboard.chat');

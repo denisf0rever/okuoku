@@ -64,7 +64,7 @@
 					  <!--<img src="images/pencil.svg" alt="" class="pages__icon-img">-->
                     </div>
                     <div class="pages__icon">
-                        <a href="#">Удалить</a>
+                        <a href="{{ route('dashboard.article.destroy', $article->id) }}">Удалить</a>
 					  <!--<img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">-->
                     </div>
                   </li>
