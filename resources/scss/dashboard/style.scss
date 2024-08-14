@@ -418,19 +418,33 @@ body{
     display: flex;
     align-items: center;
   }
+
   &__name{
     width: 80%;
     padding-right: 10px;
   }
   &__views-number{
     width: 10%;
-    text-align: center;
+    text-align: start;
+  }
+  &__icons{
+    width: 10%;
+    height: 20px;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-around;
   }
   &__icon{
-    width: 5%;
-    height: 20px;
+    width: auto;
+    height: 100%;
     cursor: pointer;
+    a{
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+    }
   }
+
   &__icon-img{
     width: 100%;
     height: 100%;
@@ -441,6 +455,10 @@ body{
     align-items: center;
     margin-bottom: 30px;
     color: $grey;
+  }
+  &__title-id{
+    width: 10%;
+    padding-right: 10px;
   }
   &__title-name{
     width: 80%;
