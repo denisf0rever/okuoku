@@ -27,19 +27,6 @@
                 {{ $error }} <br />
                 @endforeach
 
-                @if (session('success'))
-                <!-- <div class="alert alert-success">
-                  TOAST
-                  {{ session('success') }}
-                </div> -->
-                <div class="toast">
-                  <div class="toast__container" id="toast">
-                    <div class="toast__item">
-                      {{ session('success') }}
-                    </div>
-                  </div>
-                </div>
-                @endif
                 <div class="form__tabs-buttons">
                   <div class="form__tab-button form__tab-button-active">Основные</div>
                   <div class="form__tab-button">Дополнительные</div>
@@ -128,5 +115,16 @@
           </section>
         </div>
       </main>
+	  
+	  
+                @if (session('success'))
+                <div class="toast">
+                  <div class="toast__container" id="toast">
+                    <div class="toast__item">
+                      {{ session('success') }}
+                    </div>
+                  </div>
+                </div>
+                @endif
     </div>
   </div>

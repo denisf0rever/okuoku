@@ -75,5 +75,15 @@
           </section>
         </div>
       </main>
+	  
+                @if (session('success'))
+                <div class="toast">
+                  <div class="toast__container" id="toast">
+                    <div class="toast__item">
+                      {{ session('success') }}
+                    </div>
+                  </div>
+                </div>
+                @endif
     </div>
   </div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Post\PostController;
+use App\Http\Controllers\Post\CatergoryController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\ImageController;
@@ -20,7 +21,8 @@ Route::get('/home', function () {
 	Route::get('/logout', [\App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
 	
 	// Статьи
-	Route::get('/article/{id}', [\App\Http\Controllers\Post\PostController::class, 'show'])->name('articles.item');
+	Route::get('/article/{id}', [PostController::class, 'show'])->name('articles.item');
+	Route::resource('/categories', CatergoryController::class);
 	
 	// Профиль
 	Route::get('/profile/{id}', [\App\Http\Controllers\User\UserController::class, 'show'])->name('user.profile.item');
