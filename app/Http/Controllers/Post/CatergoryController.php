@@ -4,15 +4,20 @@ namespace App\Http\Controllers\Post;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\PostCategory;
 
-class CatergoryCotroller extends Controller
+class CatergoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $categories = PostCategory::query()
+			->orderBy('id')
+            ->get();
+		
+		return view('dashboard.articles.categories', ['categories' => $categories]);
     }
 
     /**

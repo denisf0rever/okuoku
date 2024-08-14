@@ -9,7 +9,6 @@
 <body>
 
   @include('dashboard.parts.header')
-
   <div class="wrapper">
     <div class="wrapper__wrapper container">
       @include('dashboard.parts.sidebar')
@@ -35,11 +34,11 @@
                       <ul class="form__inputs">
 						
                         <li class="form__input-wrapper">
-                          <label class="form__label" for="title">Заголовок документа</label>
+                          <label class="form__label" for="title">Заголовок документа (title)</label>
                           <input class="form__input @error('title')input-error @enderror" type="text" id="title" name="title">
                         </li>
                         <li class="form__input-wrapper">
-                          <label class="form__label" for="title">Заголовок статьи</label>
+                          <label class="form__label" for="title">Заголовок статьи (h1)</label>
                           <input class="form__input @error('h1')input-error @enderror" type="text" id="h1" name="h1">
                         </li>
                         <li class="form__input-wrapper">
