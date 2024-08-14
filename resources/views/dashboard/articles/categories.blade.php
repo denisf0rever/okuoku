@@ -57,7 +57,7 @@
 				@foreach ($categories as $category)
                   <li class="pages__item">
 				    <span class="pages__views-number">{{ $category->id }}</span>
-                    <a href="{{ route('articles.item', $article->id)}}" target="_blank"><span class="pages__name">{{ $category->title }}</span></a>
+                    <a href="{{ route('category.item', $category->id)}}" target="_blank"><span class="pages__name">{{ $category->title }}</span></a>
                     <span class="pages__views-number">446</span>
                     <div class="pages__icon">
                       <a href="{{ route('dashboard.category.edit', $category->id)}}" target="_blank">Редактировать</a>

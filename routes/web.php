@@ -22,7 +22,7 @@ Route::get('/home', function () {
 	
 	// Статьи
 	Route::get('/article/{id}', [PostController::class, 'show'])->name('articles.item');
-	Route::resource('/categories', CatergoryController::class);
+	Route::get('/category/{id}', [CatergoryController::class, 'show'])->name('category.item');
 	
 	// Профиль
 	Route::get('/profile/{id}', [\App\Http\Controllers\User\UserController::class, 'show'])->name('user.profile.item');
@@ -52,7 +52,8 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('/dashboard/categories', [CatergoryController::class, 'index'])->name('dashboard.categories');
 	Route::get('/dashboard/article/add-category', function () {return view('dashboard.articles.add-category');})->name('dashboard.article.add-category');
 	Route::post('/categories/create', [CatergoryController::class, 'create'])->name('dashboard.article.create-category');
-	
+	Route::get('/dashboard/category/{id}/edit', [CatergoryController::class, 'edit'])->name('dashboard.category.edit');
+	Route::get('/category/delete/{id}', [CatergoryController::class, 'destroy'])->name('dashboard.category.destroy');
 
 	
 	// Чат: оператор

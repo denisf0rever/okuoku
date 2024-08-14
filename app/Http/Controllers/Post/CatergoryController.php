@@ -35,6 +35,7 @@ class CatergoryController extends Controller
             'slug' => 'required|string|max:255'
         ]);
 		
+		
 		$category = PostCategory::create([
                 'h1' => $data['h1'],
                 'title' => $data['title'],
@@ -45,7 +46,7 @@ class CatergoryController extends Controller
 				'slug' => $data['slug']
             ]);
 			
-		return redirect()->back()->withInput($this->all());
+		return redirect()->back();
 			
 		//if ($category) {
 		//	 return redirect()->route('dashboard.article.edit', ['id' => $article->id])->with('post_added', 'Пост успешно обновлен');
