@@ -54,7 +54,7 @@
                           <input class="form__input @error('metakey')input-error @enderror" type="text" id="metakey" name="metakey">
                         </li>
                         <li class="form__input-wrapper">
-                          <label class="form__label" for="Metakeys">Метаключи</label>
+                          <label class="form__label" for="Metakeys">Slug</label>
                           <input class="form__input @error('metakey')input-error @enderror" type="text" id="slug" name="slug">
                         </li>
                       </ul>
@@ -64,6 +64,7 @@
                 <div class="form__textarea-wrapper">
                   <div class="form__textarea-title">Описание</div>
                   <textarea name="description" id="description" class="form__textarea @error('description')input-error @enderror"></textarea>
+                  <input class="form__submit" type="submit"> </input>
                 </div>
               </form>
             </div>

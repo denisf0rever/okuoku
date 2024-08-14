@@ -23,9 +23,35 @@ class CatergoryController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $data = $request->validate([
+            'h1' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
+            'metadescription' => 'required|string|max:255',
+            'metakey' => 'required|string|max:255',
+            'description' => 'required|string',
+            'short_title' => 'required|string|max:255',
+            'slug' => 'required|string|max:255'
+        ]);
+		
+		$category = PostCategory::create([
+                'h1' => $data['h1'],
+                'title' => $data['title'],
+				'meta_description' => $data['metadescription'],
+				'meta_keywords' => $data['metakey'],
+				'description' => $data['description'],
+				'short_title' => $data['short_title'],
+				'slug' => $data['slug']
+            ]);
+			
+		return redirect()->back()->withInput($this->all());
+			
+		//if ($category) {
+		//	 return redirect()->route('dashboard.article.edit', ['id' => $article->id])->with('post_added', 'Пост успешно обновлен');
+	//	} else {
+	//		return redirect()->back()->withInput($this->all());
+	//	}
     }
 
     /**
@@ -41,7 +67,13 @@ class CatergoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+		$category = PostCategory::query()
+            ->where('id', '=', $id)
+            ->firstOrFail();
+			
+        $categories->increment('views');
+		
+		return view('categories.item', ['category' => $category]);
     }
 
     /**

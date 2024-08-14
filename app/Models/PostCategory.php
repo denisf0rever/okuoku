@@ -9,8 +9,15 @@ class PostCategory extends Model
 {
     use HasFactory;
 	
+	public $timestamps = false;
+	
 	protected $table = 'post_category';
 	
+	protected $guarded = [
+		'updated_at',
+		'created_at'
+	];
+  
 	protected $fillable = [
 		'views',
 	];
