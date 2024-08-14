@@ -76,11 +76,11 @@
         </div>
       </main>
 	  
-                @if (session('success'))
+                @if (session('post_added'))
                 <div class="toast">
                   <div class="toast__container" id="toast">
                     <div class="toast__item">
-                      {{ session('success') }}
+                      {{ session('post_added') }}
                     </div>
                   </div>
                 </div>

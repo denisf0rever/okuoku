@@ -87,7 +87,7 @@ class PostController extends Controller
 
 		
 		if ($article) {
-			 return redirect()->route('dashboard.article.edit', ['id' => $article->id])->with('success', 'Пост успешно создан');
+			 return redirect()->route('dashboard.article.edit', ['id' => $article->id])->with('post_added', 'Пост успешно обновлен');
 		} else {
 			return redirect()->back()->withInput($this->all());
 		}
