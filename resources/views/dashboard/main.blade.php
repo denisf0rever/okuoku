@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-		<title>Главная страница</title>
-		@include('dashboard.settings')
-    </head>
-   
-   <body>
-   
-   @include('dashboard.parts.header')
-   
-   <div class="wrapper">
+
+<head>
+  <title>Главная страница</title>
+  @include('dashboard.settings')
+</head>
+
+<body>
+
+  @include('dashboard.parts.header')
+
+  <div class="wrapper">
     <div class="wrapper__wrapper container">
-	@include('dashboard.parts.sidebar')
-	   
+      @include('dashboard.parts.sidebar')
+
       <main class="wrapper__main main">
         <div class="main__wrapper">
           <h1 class="main__title">Информация о сайте OkuOku.ru</h1>
@@ -42,7 +43,7 @@
               </div>
             </div>
           </section>
-         
+
           <section class="main__pages pages">
             <div class="pages__wrapper">
               <h2 class="pages__title">Заголовки страниц</h2>
@@ -55,41 +56,65 @@
                   <li class="pages__item">
                     <span class="pages__name">Тара и упаковки - бутылки для гель-лака | GL-завод</span>
                     <span class="pages__views-number">446</span>
-                    <div class="pages__icon">
-                      <img src="images/pencil.svg" alt="" class="pages__icon-img">
-                    </div>
-                    <div class="pages__icon">
-                      <img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">
-                    </div>
-                  </li>
-                  <li class="pages__item">
-                    <span class="pages__name">Тара и упаковки - бутылки для гель-лака | GL-завод</span>
-                    <span class="pages__views-number">446</span>
-                    <div class="pages__icon">
-                      <img src="images/pencil.svg" alt="" class="pages__icon-img">
-                    </div>
-                    <div class="pages__icon">
-                      <img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">
+                    <div class="pages__icons">
+                      <div class="pages__icon">
+                        <a href="/">
+                          <img src="images/pencil.svg" alt="" class="pages__icon-img">
+                        </a>
+                      </div>
+                      <div class="pages__icon">
+                        <a href="/">
+                          <img src="images/pencil.svg" alt="" class="pages__icon-img">
+                        </a>
+                      </div>
                     </div>
                   </li>
                   <li class="pages__item">
                     <span class="pages__name">Тара и упаковки - бутылки для гель-лака | GL-завод</span>
                     <span class="pages__views-number">446</span>
-                    <div class="pages__icon">
-                      <img src="images/pencil.svg" alt="" class="pages__icon-img">
-                    </div>
-                    <div class="pages__icon">
-                      <img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">
+                    <div class="pages__icons">
+                      <div class="pages__icon">
+                        <a href="/">
+                          <img src="images/pencil.svg" alt="" class="pages__icon-img">
+                        </a>
+                      </div>
+                      <div class="pages__icon">
+                        <a href="/">
+                          <img src="images/pencil.svg" alt="" class="pages__icon-img">
+                        </a>
+                      </div>
                     </div>
                   </li>
                   <li class="pages__item">
                     <span class="pages__name">Тара и упаковки - бутылки для гель-лака | GL-завод</span>
                     <span class="pages__views-number">446</span>
-                    <div class="pages__icon">
-                      <img src="images/pencil.svg" alt="" class="pages__icon-img">
+                    <div class="pages__icons">
+                      <div class="pages__icon">
+                        <a href="/">
+                          <img src="images/pencil.svg" alt="" class="pages__icon-img">
+                        </a>
+                      </div>
+                      <div class="pages__icon">
+                        <a href="/">
+                          <img src="images/pencil.svg" alt="" class="pages__icon-img">
+                        </a>
+                      </div>
                     </div>
-                    <div class="pages__icon">
-                      <img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">
+                  </li>
+                  <li class="pages__item">
+                    <span class="pages__name">Тара и упаковки - бутылки для гель-лака | GL-завод</span>
+                    <span class="pages__views-number">446</span>
+                    <div class="pages__icons">
+                      <div class="pages__icon">
+                        <a href="/">
+                          <img src="images/pencil.svg" alt="" class="pages__icon-img">
+                        </a>
+                      </div>
+                      <div class="pages__icon">
+                        <a href="/">
+                          <img src="images/pencil.svg" alt="" class="pages__icon-img">
+                        </a>
+                      </div>
                     </div>
                   </li>
                 </ul>
@@ -100,4 +125,3 @@
       </main>
     </div>
   </div>
-
