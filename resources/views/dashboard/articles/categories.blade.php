@@ -50,7 +50,7 @@
               <h2 class="pages__title">Заголовки страниц</h2>
               <div class="pages__inner">
                 <div class="pages__titles">
-                  <span class="pages__title-name">ID</span>
+                  <span class="pages__title-id">ID</span>
                   <span class="pages__title-name">Название</span>
                   <span class="pages__title-number">Просмотры</span>
                 </div>
@@ -58,16 +58,22 @@
                   @foreach ($categories as $category)
                   <li class="pages__item">
                     <span class="pages__views-number">{{ $category->id }}</span>
-                    <a href="{{ route('category.item', $category->id)}}" target="_blank"><span
+                    <a class="pages__link" href="{{ route('category.item', $category->id)}}" target="_blank"><span
                         class="pages__name">{{ $category->title }}</span></a>
                     <span class="pages__views-number">446</span>
-                    <div class="pages__icon">
-                      <a href="{{ route('dashboard.category.edit', $category->id)}}" target="_blank">Редактировать</a>
-                      <!--<img src="images/pencil.svg" alt="" class="pages__icon-img">-->
-                    </div>
-                    <div class="pages__icon">
-                      <a href="{{ route('dashboard.category.destroy', $category->id) }}">Удалить</a>
-                      <!--<img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">-->
+                    <div class="pages__icons">
+                      <div class="pages__icon">
+                        <a href="{{ route('dashboard.category.edit', $category->id)}}" target="_blank">
+                          <img src="../../../images/dashboard/pencil.svg" alt="" class="pages__icon-img">
+                        </a>
+                        <!--<img src="images/pencil.svg" alt="" class="pages__icon-img">-->
+                      </div>
+                      <div class="pages__icon">
+                        <a href="{{ route('dashboard.category.destroy', $category->id) }}">
+                          <img src="../../../images/dashboard/rubbish-bin.svg" alt="" class="pages__icon-img">
+                        </a>
+                        <!--<img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">-->
+                      </div>
                     </div>
                   </li>
                   @endforeach

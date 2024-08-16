@@ -58,7 +58,7 @@
                   @foreach ($articles as $article)
                   <li class="pages__item">
                     <span class="pages__views-number">{{ $article->id }}</span>
-                    <a href="{{ route('articles.item', $article->id)}}" target="_blank"><span
+                    <a class="pages__link" href="{{ route('articles.item', $article->id)}}" target="_blank"><span
                         class="pages__name">{{ $article->title }}</span></a>
                     <span class="pages__views-number">{{ $article->views }}</span>
                     <div class="pages__icons">

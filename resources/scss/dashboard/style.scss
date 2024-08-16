@@ -461,12 +461,15 @@ body{
     padding-right: 10px;
   }
   &__title-name{
-    width: 80%;
+    width: 60%;
     padding-right: 10px;
   }
   &__title-number{
     width: 10%;
-    text-align: center;
+    text-align: left;
+  }
+  &__link{
+    width: 60%;
   }
 }
 
