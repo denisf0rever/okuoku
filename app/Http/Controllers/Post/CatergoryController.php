@@ -36,23 +36,21 @@ class CatergoryController extends Controller
         ]);
 		
 		
-		$category = PostCategory::create([
-                'h1' => $data['h1'],
+		try {
+			$category = PostCategory::create([
                 'title' => $data['title'],
-				'meta_description' => $data['metadescription'],
-				'meta_keywords' => $data['metakey'],
+                'h1' => $data['h1'],
+				'metadescription' => $data['metadescription'],
+				'metakeywords' => $data['metakey'],
 				'description' => $data['description'],
 				'short_title' => $data['short_title'],
 				'slug' => $data['slug']
             ]);
 			
-		return redirect()->back();
-			
-		//if ($category) {
-		//	 return redirect()->route('dashboard.article.edit', ['id' => $article->id])->with('post_added', 'Пост успешно обновлен');
-	//	} else {
-	//		return redirect()->back()->withInput($this->all());
-	//	}
+			return redirect()->route('dashboard.category.edit', ['id' => $category->id])->with('category_added', 'Категория успешна добавлена');
+		} catch(\Exception $e) {
+			return redirect()->back()->with('category_notadded', 'Категория не добавлена');
+		}
     }
 
     /**

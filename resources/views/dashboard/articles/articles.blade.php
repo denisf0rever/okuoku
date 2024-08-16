@@ -60,7 +60,7 @@
                     <span class="pages__views-number">{{ $article->id }}</span>
                     <a href="{{ route('articles.item', $article->id)}}" target="_blank"><span
                         class="pages__name">{{ $article->title }}</span></a>
-                    <span class="pages__views-number">446</span>
+                    <span class="pages__views-number">{{ $article->views }}</span>
                     <div class="pages__icons">
                       <div class="pages__icon">
                         <a href="{{ route('dashboard.article.edit', $article->id)}}" target="_blank">

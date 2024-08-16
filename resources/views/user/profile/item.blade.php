@@ -46,6 +46,10 @@
             <img src="images/star-white.svg" alt="" class="profile__rating-img">
             <span class="profile__rating-amount">34 отзыва</span>
           </div>
+		  <div class="profile__comments">
+            <img src="images/star-white.svg" alt="" class="profile__rating-img">
+            <span class="profile__rating-amount">Views: {{ $user->views }}</span>
+          </div>
         </div>
       </div>
       <div class="profile__categories">

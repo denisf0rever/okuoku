@@ -11,9 +11,22 @@ class Post extends Model
 	
 	protected $table = 'post';
 	
-	protected $guarded = [];
+	protected $guarded = [];	
 	
 	protected $fillable = [
+		'h1',
+        'title',
+        'subtitle',
+        'metadescription',
+        'metakey',
+        'author_id',
+        'reading_time',
+        'category',
+        'short_text',
+        'content',
+        'full_text',
+        'thumb',
 		'views',
 	];
+
 }

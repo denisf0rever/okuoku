@@ -11,15 +11,16 @@ class PostCategory extends Model
 	
 	public $timestamps = false;
 	
-	protected $table = 'post_category';
-	
-	protected $guarded = [
-		'updated_at',
-		'created_at',
-		'views'
-	];
-  
-	protected $fillable = [
+	protected $table = 'post_categories';
+	  
+	protected $fillable = [ 
+		'title',
+        'h1',
+        'metadescription',
+        'metakeywords',
+        'description',
+        'short_title',
+        'slug',
 		'views',
 	];
 }

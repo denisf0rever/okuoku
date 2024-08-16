@@ -39,11 +39,13 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        $user = User::query()
-            ->where('id', '=', $id)
-            ->firstOrFail();
+		$user = User::query()
+			->where('id', $id)
+			->firstOrFail();
+			
+		$user->increment('views');
 
-		return view('user.profile.item', ['user' => $user]);
+		return view('user.profile.item', compact('user'));
     }
 	
     public function edit(string $id)
