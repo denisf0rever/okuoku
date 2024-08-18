@@ -17,6 +17,8 @@ class User extends Authenticatable
 	protected $fillable = [
 		'views',
 	];
+	
+	protected $appends = ['full_name'];
 
     /**
      * The attributes that are mass assignable.
@@ -44,4 +46,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+	
+	  
+	public function getFullNameAttribute()
+    {
+        return $this->last_name. ' ' . $this->name . ' ' . $this->middle_name;
+    }
 }

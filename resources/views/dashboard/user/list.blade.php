@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-		<title>Список категорий</title>
+		<title>Список пользователей</title>
 		@include('dashboard.settings')
     </head>
    
@@ -14,15 +14,15 @@
 	   
       <main class="wrapper__main main">
         <div class="main__wrapper">
-          <h1 class="main__title">Категории</h1>
-		  <p><a href="{{ route('dashboard.article.add-category') }}">Добавить категорию</a></p>
+          <h1 class="main__title">Список пользователей</h1>
+		  <p><a href="{{ route('dashboard.user.add-user') }}">Добавить пользователя</a></p>
           <section class="main__info info">
             <div class="info__wrapper">
               <div class="info__element">
                 <h3 class="info__title">Информация о категориях</h3>
                 <div class="info__text-wrapper">
                   <div class="info__data">
-                    <span class="info__text"><strong>{{ $total }} </strong> категорий на сайте</span>
+                    <span class="info__text"><strong>{{ $totalUsers }} </strong> пользователей на сайте</span>
                   </div>
                   <div class="info__data">
                     <span class="info__text"><strong>52 768 </strong>дублирующихся description</span>
@@ -54,17 +54,17 @@
                   <span class="pages__title-number">Просмотры</span>
                 </div>
                 <ul class="pages__list">
-				@foreach ($categories as $category)
+				@foreach ($users as $user)
                   <li class="pages__item">
-				    <span class="pages__views-number">{{ $category->id }}</span>
-                    <a href="{{ route('category.item', $category->id)}}" target="_blank"><span class="pages__name">{{ $category->short_title }}</span></a>
-                    <span class="pages__views-number">{{ $category->views }}</span>
+				    <span class="pages__views-number">{{ $user->id }}</span>
+                    <a href="{{ route('user.profile.item', $user->id)}}" target="_blank"><span class="pages__name">{{ $user->username }}</span></a>
+                    <span class="pages__views-number">{{ $user->views }}</span>
                     <div class="pages__icon">
-                      <a href="{{ route('dashboard.category.edit', $category->id)}}" target="_blank">Редактировать</a>
+                      <a href="{{ route('dashboard.user.edit', $user->id)}}" target="_blank">Редактировать</a>
 					  <!--<img src="images/pencil.svg" alt="" class="pages__icon-img">-->
                     </div>
                     <div class="pages__icon">
-                        <a href="{{ route('dashboard.category.destroy', $category->id) }}">Удалить</a>
+                        <a href="{{ route('dashboard.user.destroy', $user->id) }}">Удалить</a>
 					  <!--<img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">-->
                     </div>
                   </li>

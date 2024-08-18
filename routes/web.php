@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Post\PostController;
 use App\Http\Controllers\Post\CatergoryController;
+use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\ImageController;
@@ -41,12 +42,12 @@ Route::middleware(['auth'])->group(function () {
 		return view('dashboard.main');})->name('dashboard.main');
 	
 	// Статьи
-	Route::get('/dashboard/article', [\App\Http\Controllers\Post\PostController::class, 'index'])->name('dashboard.article');
-	Route::get('/dashboard/article/{id}/edit', [\App\Http\Controllers\Post\PostController::class, 'edit'])->name('dashboard.article.edit');
-	Route::post('/dashboard/article/{id}', [\App\Http\Controllers\Post\PostController::class, 'update'])->name('dashboard.article.update');
-	Route::get('/dashboard/article/add-article', function () {return view('dashboard.articles.add-article');})->name('dashboard.article.add-article');
-	Route::post('/article/create', [\App\Http\Controllers\Post\PostController::class, 'create'])->name('dashboard.article.create-article');
-	Route::get('/article/delete/{id}', [\App\Http\Controllers\Post\PostController::class, 'destroy'])->name('dashboard.article.destroy');
+	Route::get('/dashboard/article', [PostController::class, 'index'])->name('dashboard.article');
+	Route::get('/dashboard/article/{id}/edit', [PostController::class, 'edit'])->name('dashboard.article.edit');
+	Route::post('/dashboard/article/{id}', [PostController::class, 'update'])->name('dashboard.article.update');
+	Route::get('/dashboard/article/add-article', [PostController::class, 'store'])->name('dashboard.article.add-article');
+	Route::post('/article/create', [PostController::class, 'create'])->name('dashboard.article.create-article');
+	Route::get('/article/delete/{id}', [PostController::class, 'destroy'])->name('dashboard.article.destroy');
 	
 	// Статьи: категории
 	Route::get('/dashboard/categories', [CatergoryController::class, 'index'])->name('dashboard.categories');
@@ -54,7 +55,15 @@ Route::middleware(['auth'])->group(function () {
 	Route::post('/categories/create', [CatergoryController::class, 'create'])->name('dashboard.article.create-category');
 	Route::get('/dashboard/category/{id}/edit', [CatergoryController::class, 'edit'])->name('dashboard.category.edit');
 	Route::get('/category/delete/{id}', [CatergoryController::class, 'destroy'])->name('dashboard.category.destroy');
+	Route::post('/dashboard/category/{id}', [CatergoryController::class, 'update'])->name('dashboard.category.update');
 
+	// Профиль
+	Route::get('/dashboard/user', [UserController::class, 'index'])->name('dashboard.user');
+	Route::get('/dashboard/user/add-user', [UserController::class, 'store'])->name('dashboard.user.add-user');
+	Route::get('/dashboard/user/{id}/edit', [UserController::class, 'edit'])->name('dashboard.user.edit');
+	Route::post('/user/create', [UserController::class, 'create'])->name('dashboard.user.create-user');
+	Route::get('/user/delete/{id}', [UserController::class, 'destroy'])->name('dashboard.user.destroy');
+	Route::post('/dashboard/user/{id}', [UserController::class, 'update'])->name('dashboard.user.update');
 	
 	// Чат: оператор
 	Route::get('/dashboard/chat', [\App\Http\Controllers\Chat\ChatController::class, 'index'])->name('dashboard.chat');

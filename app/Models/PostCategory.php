@@ -21,6 +21,11 @@ class PostCategory extends Model
         'description',
         'short_title',
         'slug',
-		'views',
+		'views'
 	];
+	
+	public function articles()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

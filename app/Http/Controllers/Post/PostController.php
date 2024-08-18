@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Post;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\PostCategory;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -23,8 +23,10 @@ class PostController extends Controller
 			->orderBy('created_at')
             ->take(10)
             ->get();
+			
+		$totalArticles = Post::count();
 		
-		return view('dashboard.articles.articles', ['articles' => $articles]);
+		return view('dashboard.articles.articles', ['articles' => $articles, 'total' => $totalArticles]);
     }
 
     /**
@@ -40,7 +42,7 @@ class PostController extends Controller
             'metakey' => 'required|string|max:255',
             'author_id' => 'required|integer|max:255',
             'reading_time' => 'required',
-            'category' => 'required|integer|max:2',
+            'category' => 'required|integer|min:2',
             'short_text' => 'required|string',
             'content' => 'required|string',
             'full_text' => 'required|string',
@@ -98,7 +100,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+		$categories = PostCategory::all();
+		
+		return view('dashboard.articles.add-article', ['categories' => $categories]);
     }
 
     /**
@@ -107,10 +111,9 @@ class PostController extends Controller
     public function show(string $id)
     {
         $article = Post::query()
-            ->where('id', '=', $id)
+            ->where('id', $id)
             ->firstOrFail();
 			
-		// Increment views when a post is viewed
 		$article->increment('views');
 
 		return view('articles.item', ['article' => $article]);
@@ -121,11 +124,13 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-         $article = Post::query()
-            ->where('id', '=', $id)
+        $article = Post::query()
+            ->where('id', $id)
             ->firstOrFail();
+			
+		$categories = PostCategory::all();
 
-		return view('dashboard.articles.edit-article', ['article' => $article]);
+		return view('dashboard.articles.edit-article', ['article' => $article, 'categories' => $categories]);
     }
 
     /**
@@ -141,7 +146,7 @@ class PostController extends Controller
             'metakey' => 'required|string|max:255',
             'author_id' => 'required|integer|max:5',
             'reading_time' => 'required',
-            'category' => 'required|integer|max:2',
+            'category' => 'required|integer|min:1',
             'short_text' => 'required|string',
             'content' => 'required|string',
             'full_text' => 'required|string',

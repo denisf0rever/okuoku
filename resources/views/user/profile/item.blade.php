@@ -18,9 +18,9 @@
       <div class="user-chat" id="user-chat"></div>
       <img src="images/avatar.jpg" alt="" class="profile__avatar">
       <div class="profile__info">
-        <h1 class="profile__name">Пузачева Анна Александровна</h1>
+        <h1 class="profile__name">{{ $user->full_name }}</h1>
         <div class="profile__text">
-          <span class="profile__location">Россия, г. Чебоксары</span>
+          <span class="profile__location">{{ $user->city }}</span>
           <span class="profile__on-site-time">На сайте с <strong>14 апреля 2023 г.</strong></span>
         </div>
         <div class="profile__online">

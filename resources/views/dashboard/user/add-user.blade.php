@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-  <title>Добавление категории</title>
+  <title>Добавление пользователя</title>
   @include('dashboard.settings')
 </head>
 
@@ -15,7 +15,7 @@
 
       <main class="wrapper__main main">
         <div class="main__wrapper">
-          <h1 class="main__title">Добавить категорию</h1>
+          <h1 class="main__title">Добавить пользователя</h1>
           <section class="main__form form">
             <div class="form__wrapper">
               <form action="{{ route('dashboard.article.create-category') }}" method="post" class="form__inner-form">
@@ -33,30 +33,40 @@
                     <div class="form__tab form__tab-active">
                       <ul class="form__inputs">
                         <li class="form__input-wrapper">
-                          <label class="form__label" for="title">Заголовок документа (title)</label>
-                          <input class="form__input @error('title')input-error @enderror" type="text" id="title" name="title">
+                          <label class="form__label" for="email">Почта</label>
+                          <input class="form__input @error('email')input-error @enderror" type="text" id="email" name="email">
+                        </li>
+						<li class="form__input-wrapper">
+                          <label class="form__label" for="name">Логин</label>
+                          <input class="form__input @error('username')input-error @enderror" type="text" id="username" name="username">
                         </li>
                         <li class="form__input-wrapper">
-                          <label class="form__label" for="title">Заголовок категории (h1)</label>
-                          <input class="form__input @error('h1')input-error @enderror" type="text" id="h1" name="h1">
+                          <label class="form__label" for="password">Пароль</label>
+                          <input class="form__input @error('password')input-error @enderror" type="text" id="password" name="password">
                         </li>
                         <li class="form__input-wrapper">
-                          <label class="form__label" for="subtitle">Короткое название</label>
-                          <input class="form__input @error('short_title')input-error @enderror" type="text" id="short_title" name="short_title">
+                          <label class="form__label" for="name">Имя</label>
+                          <input class="form__input @error('name')input-error @enderror" type="text" id="name" name="name">
                         </li>
                         <li class="form__input-wrapper">
-                          <label class="form__label" for="Meta-description">Метаописание</label>
-                          <input class="form__input @error('metadescription')input-error @enderror" type="text" id="metadescription" name="metadescription">
+                          <label class="form__label" for="last_name">Фамилия</label>
+                          <input class="form__input @error('last_name')input-error @enderror" type="text" id="last_name" name="last_name">
                         </li>
                         <li class="form__input-wrapper">
-                          <label class="form__label" for="Metakeys">Метаключи</label>
-                          <input class="form__input @error('metakey')input-error @enderror" type="text" id="metakey" name="metakey">
+                          <label class="form__label" for="middle_name">Отчество</label>
+                          <input class="form__input @error('middle_name')input-error @enderror" type="text" id="middle_name" name="middle_name">
                         </li>
                         <li class="form__input-wrapper">
-                          <label class="form__label" for="slug">Slug</label>
-                          <input class="form__input @error('slug')input-error @enderror" type="text" id="slug" name="slug">
+                          <label class="form__label" for="city">Откуда вы?</label>
+                          <input class="form__input @error('city')input-error @enderror" type="text" id="city" name="city">
                         </li>
                       </ul>
+					  <label class="form__label-photo">
+                        <img src="images/photo-camera.svg" alt="" class="form__input-photo-img">
+                        <span class="form__input-photo-text">Загрузить фото</span>
+                        <input class="form__input-photo @error('image')input-error @enderror" type="file" name="image"
+                          accept="image/*">
+                      </label>
                     </div>
                   </div>
                 </div>

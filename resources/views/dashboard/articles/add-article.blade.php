@@ -32,7 +32,6 @@
                   <div class="form__tabs">
                     <div class="form__tab form__tab-active">
                       <ul class="form__inputs">
-						
                         <li class="form__input-wrapper">
                           <label class="form__label" for="title">Заголовок документа (title)</label>
                           <input class="form__input @error('title')input-error @enderror" type="text" id="title" name="title">
@@ -72,13 +71,14 @@
                   </div>
                   <div class="form__status-wrapper">
                     <div class="form__select-wrapper">
-                      <span class="form__status-title" for="status">Текущий статус</span>
+                      <span class="form__status-title" for="status">Выберите категорию</span>
                       <img src="images/expand-more.svg" alt="" class="form__status-arrow">
                       <div class="form__status-current-text">Выберите категорию</div>
                       <input class="form__status-current @error('category')input-error @enderror" name="category" type="text" value="0" readonly>
                       <ul id="status" class="form__status-select form__status-hide">
-                        <li class="form__status-option" value="1">Категория</li>
-                        <li class="form__status-option" value="2">Категория</li>
+						@foreach($categories as $category)
+							<li class="form__status-option" value="{{ $category->id }}">{{ $category->short_title }}</li>
+						@endforeach
                       </ul>
                     </div>
                   </div>

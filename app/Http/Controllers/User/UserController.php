@@ -15,7 +15,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::query()
+			->orderBy('id')
+            ->get();
+			
+		$totalUsers = User::count();
+
+		return view('dashboard.user.list', compact('users', 'totalUsers'));
     }
 
     /**
@@ -31,7 +37,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('dashboard.user.add-user');
     }
 
     /**
@@ -50,7 +56,11 @@ class UserController extends Controller
 	
     public function edit(string $id)
     {
-        //
+        $user = User::query()
+			->where('id', $id)
+            ->firstOrFail();
+
+		return view('dashboard.user.edit-user', compact('user'));
     }
 
     /**
