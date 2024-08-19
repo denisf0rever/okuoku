@@ -17,12 +17,12 @@ class UserCookiesController extends Controller
 		
 		// Собираем данные в массив
 		$data = [
-			'mail' => [],
-			'expertID' => []
+			'mail' => $mail,
+			'expertID' => $expertID
 			];
 			
-		$data['mail'] = $mail;
-		$data['expertID'] = $expertID;
+		//$data['mail'] = $mail;
+		//$data['expertID'] = $expertID;
 		
 		$jsonResult = json_encode($data);
 		

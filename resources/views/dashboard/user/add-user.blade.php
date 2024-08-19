@@ -18,7 +18,7 @@
           <h1 class="main__title">Добавить пользователя</h1>
           <section class="main__form form">
             <div class="form__wrapper">
-              <form action="{{ route('dashboard.article.create-category') }}" method="post" class="form__inner-form">
+              <form action="{{ route('dashboard.user.create-user') }}" method="post" class="form__inner-form">
                 @csrf
 				
 				@foreach($errors->all() as $error)
@@ -64,7 +64,7 @@
 					  <label class="form__label-photo">
                         <img src="images/photo-camera.svg" alt="" class="form__input-photo-img">
                         <span class="form__input-photo-text">Загрузить фото</span>
-                        <input class="form__input-photo @error('image')input-error @enderror" type="file" name="image"
+                        <input class="form__input-photo @error('avatar')input-error @enderror" type="file" name="avatar"
                           accept="image/*">
                       </label>
                     </div>

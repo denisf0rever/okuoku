@@ -7,12 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Cookie;
 
-
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $users = User::query()
@@ -24,25 +20,40 @@ class UserController extends Controller
 		return view('dashboard.user.list', compact('users', 'totalUsers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $data = $request->validate([
+            'email' => 'required|string|max:255',
+            'username' => 'required|string|max:255',
+            'password' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'last_name' => 'required|string',
+            'middle_name' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+            'middle_name' => 'required|string|max:255',
+			'avatar' => 'image|mimes:jpeg,png,jpg|max:2048'
+        ]);
+		
+		$data['password'] = bcrypt($data['password']);
+		
+		//$user = User::create($data);
+			
+		
+		
+		
+		
+		/*if ($user) {
+			return redirect()->route('dashboard.user.edit', ['id' => $user->id])->with('user_added', 'Пользователь успешно добавлен');
+		} else {
+			return redirect()->back()->with('user_added', 'Пользователь не добавлен');
+		}*/
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         return view('dashboard.user.add-user');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
 		$user = User::query()
@@ -62,18 +73,12 @@ class UserController extends Controller
 
 		return view('dashboard.user.edit-user', compact('user'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
+	
     public function update(Request $request, string $id)
     {
         //
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
+	
     public function destroy(string $id)
     {
         //
