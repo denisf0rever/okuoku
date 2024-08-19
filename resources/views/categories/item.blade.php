@@ -6,17 +6,17 @@
 
 @section('content')
 @include('parts.sidebar')
-<section class="main__category category">
-	<div class="category__wrapper">
-		<h1 class="category__header">{{ $category->h1 }} Views: {{ $category->views }}</h1>
-		<img src="{{ Storage::url($category->thumb) }}" alt="" class="category__img">
-		<div class="category__subtitle-wrapper">
-		<span class="category__subtitle">{{ $category->short_title }}</span>
+<section class="main__content-block content-block">
+	<div class="content-block__wrapper">
+		<h1 class="content-block__header">{{ $category->h1 }} Views: {{ $category->views }}</h1>
+		<img src="{{ Storage::url($category->thumb) }}" alt="" class="content-block__img">
+		<div class="content-block__subtitle-wrapper">
+		<span class="content-block__subtitle">{{ $category->short_title }}</span>
 	</div>
-	<span class="category__content-header">Содержание статьи:</span>
+	<span class="content-block__content-header">Содержание статьи:</span>
 	{{ $category->description }}
-	<div class="category__main-text">
-	<h2 class="category__main-text-header">Подзаголовок</h2>
+	<div class="content-block__main-text">
+	<h2 class="content-block__main-text-header">Подзаголовок</h2>
 		{{ $category->description }}
 	</div>
           </div>
