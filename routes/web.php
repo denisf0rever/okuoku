@@ -9,7 +9,7 @@ use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\ImageController;
 
 Route::get('/', function () {
-    return view('layout');
+    return view('mainpage');
 });
 
 Route::get('/home', function () {

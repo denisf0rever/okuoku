@@ -5,7 +5,7 @@
 @section('canonical', 'profile/'. '')
 	
 	@section('content')
-    @include('parts.sidebar')
+    @include('parts.sidebar__mainpage')
         <div class="main__field">
           <section class="main__banner banner">
             <div class="banner__wrapper">

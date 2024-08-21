@@ -1,5 +1,4 @@
 @extends('app')
-
 @section('title', $user->name)
 @section('description', '2')
 @section('keywords', '3')
@@ -8,7 +7,6 @@
 @section('chat')
 @vite(['resources/views/user/profile/src/main.jsx'])
 @endsection
-
 
 @section('content')
 @include('parts.sidebar')

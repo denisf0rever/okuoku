@@ -1,4 +1,4 @@
-        <div class="main__wrapper">
+  <div class="main__wrapper">
       <div class="main__container container">
 	  <nav class="main__navigation navigation">
           <ul class="navigation__list">
