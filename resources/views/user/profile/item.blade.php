@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', $user->name)
+@section('title', $user->full_name)
 @section('description', '2')
 @section('keywords', '3')
 @section('canonical', 'profile/'. '4')
@@ -14,12 +14,15 @@
   <section class="main-profile__profile profile">
     <div class="profile__wrapper">
       <div class="user-chat" id="user-chat"></div>
-      <img src="images/avatar.jpg" alt="" class="profile__avatar">
+		<picture>
+			<source type="image/webp" srcset="/storage/avatar/webp/{{ $user->webp_avatar }}" class="profile__avatar">
+			<img src="/storage/avatar/{{ $user->avatar }}" alt="" class="profile__avatar">
+		</picture>
       <div class="profile__info">
         <h1 class="profile__name">{{ $user->full_name }}</h1>
         <div class="profile__text">
           <span class="profile__location">{{ $user->city }}</span>
-          <span class="profile__on-site-time">На сайте с <strong>14 апреля 2023 г.</strong></span>
+          <span class="profile__on-site-time">На сайте с <strong>{{ $date }}</strong></span>
         </div>
         <div class="profile__online">
           <div class="profile__online-indicator profile__online-indicator-green"></div>

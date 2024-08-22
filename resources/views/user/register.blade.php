@@ -31,6 +31,8 @@
         <input type="text" id="middle_name" name="middle_name" class="popup-form__input">
         <label for="email" class="popup-form__label">Ваша почта:</label>
         <input type="text" id="email" name="email" class="popup-form__input">
+        <label for="city" class="popup-form__label">Откуда вы?</label>
+        <input type="text" id="city" name="city" class="popup-form__input" value="Россия, г. ">
         <label for="password" class="popup-form__label">Пароль от личного кабинета:</label>
         <div class="popup-form__input-wrapper">
           <input type="password" id="password" name="password" class="popup-form__input popup-form__password">

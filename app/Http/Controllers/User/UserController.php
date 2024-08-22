@@ -5,7 +5,13 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Cookie;
+use App\Models\Role;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
+use Intervention\Image\ImageManager;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -30,18 +36,32 @@ class UserController extends Controller
             'last_name' => 'required|string',
             'middle_name' => 'required|string|max:255',
             'city' => 'required|string|max:255',
-            'middle_name' => 'required|string|max:255',
-			'avatar' => 'image|mimes:jpeg,png,jpg|max:2048'
+			'avatar' => 'image|mimes:jpeg,png,jpg|max:2048',
+			'webp_avatar' => 'image|mimes:webp|max:2048'
         ]);
 		
-		$data['password'] = bcrypt($data['password']);
-		
-		//$user = User::create($data);
+		if ($request->hasFile('avatar')) {
+			$imagePath = $request->file('avatar')->store('public/avatar');
+			$avatarImage = Str::of($imagePath)->basename();
 			
+		}
+		if ($request->hasFile('avatar_webp')) {
+			$webpPath = $request->file('avatar_webp')->store('public/avatar/webp');
+			$avatarWebp = Str::of($webpPath)->basename();
+		}
 		
-		
-		
-		
+		$user = User::create([
+			'email' => $data['email'],
+			'username' => $data['username'],
+			'password' => Hash::make($data['password']),
+			'name' => $data['name'],
+			'last_name' => $data['last_name'],
+			'middle_name' => $data['middle_name'],
+			'city' => $data['city'],
+			'avatar' => $avatarImage,
+			'webp_avatar' => $avatarWebp
+		]);
+			
 		/*if ($user) {
 			return redirect()->route('dashboard.user.edit', ['id' => $user->id])->with('user_added', 'Пользователь успешно добавлен');
 		} else {
@@ -59,10 +79,15 @@ class UserController extends Controller
 		$user = User::query()
 			->where('id', $id)
 			->firstOrFail();
-			
+		
+		$dateString = $user->created_at;
+		$createdAt = Carbon::parse($dateString);
+		\Carbon\Carbon::setLocale('ru');
+		$date = $createdAt->translatedFormat('j F Y') . ' года';
+		
 		$user->increment('views');
 
-		return view('user.profile.item', compact('user'));
+		return view('user.profile.item', compact('user', 'date'));
     }
 	
     public function edit(string $id)
@@ -70,17 +95,80 @@ class UserController extends Controller
         $user = User::query()
 			->where('id', $id)
             ->firstOrFail();
+			
+		$roles = Role::all();
 
-		return view('dashboard.user.edit-user', compact('user'));
+		return view('dashboard.user.edit-user', compact('user', 'roles'));
     }
 	
     public function update(Request $request, string $id)
     {
-        //
+         $data = $request->validate([
+            'email' => 'string|max:255',
+            'username' => 'string|max:255',
+            'password' => 'max:255',
+            'role' => 'string|max:1',
+            'name' => 'string|max:255',
+            'last_name' => 'string|max:255',
+            'middle_name' => 'string|max:255',
+            'city' => 'string|max:255',
+			'is_active' => 'string',
+			'avatar' => 'image|mimes:jpeg,png,jpg|max:2048',
+			'webp_avatar' => 'image|mimes:webp|max:2048'
+        ]);
+			
+		$user = User::query()
+            ->where('id', $id)
+            ->firstOrFail();
+			
+		if ($request->hasFile('avatar')) {
+			$imagePath = $request->file('avatar')->store('public/avatar');
+			$avatarImage = Str::of($imagePath)->basename();
+			$user->avatar = $avatarImage;
+		}
+		
+		if ($request->hasFile('avatar_webp')) {
+			$webpPath = $request->file('avatar_webp')->store('public/avatar/webp');
+			$avatarWebp = Str::of($webpPath)->basename();
+			$user->webp_avatar = $avatarWebp;
+		}
+		
+		$is_active = $request->has('is_active') ? 1 : 0;
+				
+		$user->email = $request->input('email');
+		$user->username = $request->input('username');
+		$user->password = Hash::make($data['password']);
+		$user->role = $request->input('role');
+		$user->name = $request->input('name');
+		$user->last_name = $request->input('last_name');
+		$user->middle_name = $request->input('middle_name');
+		$user->is_active = $is_active;
+		$user->city = $request->input('city');
+		$user->save();
+		
+		return redirect()->back()->with('success', 'Пользователь успешно обновлен');
     }
 	
     public function destroy(string $id)
     {
-        //
+         $user = User::query()
+            ->where('id', $id)
+            ->firstOrFail();
+		
+		if ($user->avatar) {
+			$avatarImage = $user->avatar;
+			Storage::delete($avatarImage);
+		}
+		
+		if ($user->webp_avatar) {
+			$webpImage = $user->webp_avatar;
+			Storage::delete($webpImage);
+		}
+		
+		$user->delete();
+				
+		if ($user) {
+			 return redirect()->route('dashboard.user')->with('success', 'Юзер успешно удален');
+		}
     }
 }

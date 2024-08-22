@@ -23,11 +23,13 @@ class User extends Authenticatable
 		'middle_name',
 		'city',
 		'middle_name',
-		'views'
+		'views',
+		'avatar',
+		'webp_avatar'
 	];
 	
 	
-	protected $appends = ['full_name'];
+	protected $appends = ['full_name', 'first_middle_name'];
 
     /**
      * The attributes that are mass assignable.
@@ -57,8 +59,23 @@ class User extends Authenticatable
     ];
 	
 	  
-	public function getFullNameAttribute()
+	public function getFullNameAttribute(): string
     {
         return $this->last_name. ' ' . $this->name . ' ' . $this->middle_name;
+    }
+	
+	public function getFirstMiddleNameAttribute(): string
+    {
+        return $this->name . ' ' . $this->middle_name;
+    }
+	
+	public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+	
+	public function articles()
+    {
+        return $this->hasMany(Post::class);
     }
 }

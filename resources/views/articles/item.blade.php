@@ -8,7 +8,7 @@
 @include('parts.sidebar')
 <section class="main__content-block content-block">
   <div class="content-block__wrapper">
-    <h1 class="content-block__header">{{ $article->h1 }} Views: {{ $article->views }}</h1>
+    <h1 class="content-block__header">{{ $article->h1 }}</h1>
     <img src="{{ Storage::url($article->thumb) }}" alt="" class="content-block__img">
     <div class="content-block__subtitle-wrapper">
       <span class="content-block__subtitle">{{ $article->subtitle }}</span>
@@ -18,6 +18,10 @@
     <div class="content-block__main-text">
       <h2 class="content-block__main-text-header">Подзаголовок</h2>
       {{ $article->content }}
+		<p> Views: {{ $article->views }}</p>
+		<p>Врач офтальмолог <a href="/profile/{{ $article->author->id }}">{{ $article->author->first_middle_name }}</a></p>
+		<p>{{ $date }}</p>
+	   
     </div>
   </div>
 </section>

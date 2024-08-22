@@ -19,8 +19,7 @@
           <h1 class="main__title">Редактирование пользователя {{ $user->title }}</h1>
           <section class="main__form form">
             <div class="form__wrapper">
-              <form action="{{ route('dashboard.user.update', $user->id) }}" method="post"
-                class="form__inner-form" enctype="multipart/form-data">
+              <form action="{{ route('dashboard.user.update', $user->id) }}" method="post" class="form__inner-form" enctype="multipart/form-data">
                 @csrf
 
                 @foreach($errors->all() as $error)
@@ -34,38 +33,78 @@
                  <div class="form__inner">
                   <div class="form__tabs">
                     <div class="form__tab form__tab-active">
+                     <ul class="form__inputs">
+                        <li class="form__input-wrapper">
+                          <label class="form__label" for="email">Почта</label>
+                          <input class="form__input @error('email')input-error @enderror" type="text" id="email" name="email" value="{{ $user->email }}">
+                        </li>
+						<li class="form__input-wrapper">
+                          <label class="form__label" for="name">Логин</label>
+                          <input class="form__input @error('username')input-error @enderror" type="text" id="username" name="username" value="{{ $user->username }}">
+                        </li>
+                        <li class="form__input-wrapper">
+                          <label class="form__label" for="password">Пароль</label>
+                          <input class="form__input @error('password')input-error @enderror" type="text" id="password" name="password">
+                        </li>
+                        <li class="form__input-wrapper">
+                          <label class="form__label" for="name">Имя</label>
+                          <input class="form__input @error('name')input-error @enderror" type="text" id="name" name="name" value="{{ $user->name }}">
+                        </li>
+                        <li class="form__input-wrapper">
+                          <label class="form__label" for="last_name">Фамилия</label>
+                          <input class="form__input @error('last_name')input-error @enderror" type="text" id="last_name" name="last_name" value="{{ $user->last_name }}">
+                        </li>
+                        <li class="form__input-wrapper">
+                          <label class="form__label" for="middle_name">Отчество</label>
+                          <input class="form__input @error('middle_name')input-error @enderror" type="text" id="middle_name" name="middle_name" value="{{ $user->middle_name }}">
+                        </li>
+                        <li class="form__input-wrapper">
+                          <label class="form__label" for="city">Откуда вы?</label>
+                          <input class="form__input @error('city')input-error @enderror" type="text" id="city" name="city" value="{{ $user->city }}">
+                        </li>
+                      </ul>
+					  <label class="form__label-photo">
+                        <img src="images/photo-camera.svg" alt="" class="form__input-photo-img">
+                        <span class="form__input-photo-text">Загрузить фото</span>
+                        <input class="form__input-photo @error('images')input-error @enderror" type="file" name="avatar">
+						{{ $user->avatar }}
+                      </label>
+					  <label class="form__label-photo">
+                        <img src="images/photo-camera.svg" alt="" class="form__input-photo-img">
+                        <span class="form__input-photo-text">Загрузить webp</span>
+                        <input class="form__input-photo @error('webp')input-error @enderror" type="file" name="avatar_webp">
+						{{ $user->webp_avatar }}
+                      </label>
+                    </div>
+					<div class="form__tab">
                       <ul class="form__inputs">
                         <li class="form__input-wrapper">
-                          <label class="form__label" for="title">Заголовок документа (title)</label>
-                          <input class="form__input @error('title')input-error @enderror" type="text" id="title" name="title" value="{{ $user->title }}">
+                          <label class="form__label" for="is_active">Активный</label>
+							@if ($user->is_active)
+							<input class="form__input" type="checkbox" id="is_active" name="is_active" value="1" checked>
+							@else
+							<input class="form__input" type="checkbox" id="is_active" name="is_active" value="0">
+							@endif
                         </li>
-                        <li class="form__input-wrapper">
-                          <label class="form__label" for="title">Заголовок категории (h1)</label>
-                          <input class="form__input @error('h1')input-error @enderror" type="text" id="h1" name="h1" value="{{ $user->h1 }}">
-                        </li>
-                        <li class="form__input-wrapper">
-                          <label class="form__label" for="subtitle">Короткое название</label>
-                          <input class="form__input @error('short_title')input-error @enderror" type="text" id="short_title" name="short_title" value="{{ $user->short_title }}">
-                        </li>
-                        <li class="form__input-wrapper">
-                          <label class="form__label" for="Meta-description">Метаописание</label>
-                          <input class="form__input @error('metadescription')input-error @enderror" type="text" id="metadescription" name="metadescription" value="{{ $user->metadescription }}">
-                        </li>
-                        <li class="form__input-wrapper">
-                          <label class="form__label" for="Metakeys">Метаключи</label>
-                          <input class="form__input @error('metakey')input-error @enderror" type="text" id="metakey" name="metakey" value="{{ $user->metakeywords }}">
-                        </li>
-                        <li class="form__input-wrapper">
-                          <label class="form__label" for="Slug">Slug</label>
-                          <input class="form__input @error('slug')input-error @enderror" type="text" id="slug" name="slug" value="{{ $user->slug }}">
-                        </li>
+                      </ul>
+                    </div>
+                  </div>
+				   <div class="form__status-wrapper">
+                    <div class="form__select-wrapper">
+                      <span class="form__status-title" for="status">Выберите категорию</span>
+                      <img src="images/expand-more.svg" alt="" class="form__status-arrow">
+                      <div class="form__status-current-text">Выберите категорию</div>
+                      <input class="form__status-current @error('role')input-error @enderror" name="role" type="text" value="0" readonly>
+                      <ul id="status" class="form__status-select form__status-hide">
+                        @foreach($roles as $role)
+                        <li class="form__status-option" value="{{ $role->id }}">{{ $role->role_name }}</li>
+                        @endforeach
                       </ul>
                     </div>
                   </div>
                 </div>
                 <div class="form__textarea-wrapper">
-                  <div class="form__textarea-title">Описание</div>
-                  <textarea name="description" id="description" class="form__textarea @error('description')input-error @enderror">{{ $user->description }}</textarea>
+                 
                   <input class="form__submit" type="submit"></input>
                 </div>
               </form>

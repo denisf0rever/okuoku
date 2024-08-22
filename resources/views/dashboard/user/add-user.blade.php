@@ -18,7 +18,7 @@
           <h1 class="main__title">Добавить пользователя</h1>
           <section class="main__form form">
             <div class="form__wrapper">
-              <form action="{{ route('dashboard.user.create-user') }}" method="post" class="form__inner-form">
+              <form action="{{ route('dashboard.user.create-user') }}" method="post" class="form__inner-form" enctype="multipart/form-data">
                 @csrf
 				
 				@foreach($errors->all() as $error)
@@ -64,15 +64,26 @@
 					  <label class="form__label-photo">
                         <img src="images/photo-camera.svg" alt="" class="form__input-photo-img">
                         <span class="form__input-photo-text">Загрузить фото</span>
-                        <input class="form__input-photo @error('avatar')input-error @enderror" type="file" name="avatar"
-                          accept="image/*">
+                        <input class="form__input-photo @error('images')input-error @enderror" type="file" name="avatar">
                       </label>
+					  <label class="form__label-photo">
+                        <img src="images/photo-camera.svg" alt="" class="form__input-photo-img">
+                        <span class="form__input-photo-text">Загрузить webp</span>
+                        <input class="form__input-photo @error('webp')input-error @enderror" type="file" name="avatar_webp">
+                      </label>
+                    </div>
+					<div class="form__tab">
+                      <ul class="form__inputs">
+                        <li class="form__input-wrapper">
+                          <label class="form__label" for="is_active">Активный</label>
+                          <input class="form__input" type="checkbox" id="is_active" name="is_active">
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
                 <div class="form__textarea-wrapper">
-                  <div class="form__textarea-title">Описание</div>
-                  <textarea name="description" id="description" class="form__textarea @error('description')input-error @enderror"></textarea>
+                 
                   <input class="form__submit" type="submit"> </input>
                 </div>
               </form>

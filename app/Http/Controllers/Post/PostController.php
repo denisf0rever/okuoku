@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class PostController extends Controller
 {
@@ -46,7 +47,7 @@ class PostController extends Controller
             'short_text' => 'required|string',
             'content' => 'required|string',
             'full_text' => 'required|string',
-			'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+			'image' => 'image|mimes:jpeg,png,jpg|max:2048'
         ]);
 		
 		if ($request->hasFile('image')) {
@@ -114,9 +115,15 @@ class PostController extends Controller
             ->where('id', $id)
             ->firstOrFail();
 			
+		$dateString = $article->created_at;
+		$createdAt = Carbon::parse($dateString);
+		\Carbon\Carbon::setLocale('ru');
+		
+		$date = $createdAt->translatedFormat('j F Y') . ' года';
+		
 		$article->increment('views');
-
-		return view('articles.item', ['article' => $article]);
+		
+		return view('articles.item', compact('article', 'date'));
     }
 
     /**
@@ -144,7 +151,7 @@ class PostController extends Controller
             'subtitle' => 'required|string|max:255',
             'metadescription' => 'required|string|max:255',
             'metakey' => 'required|string|max:255',
-            'author_id' => 'required|integer|max:5',
+            'author_id' => 'required|integer|max:255',
             'reading_time' => 'required',
             'category' => 'required|integer|min:1',
             'short_text' => 'required|string',
