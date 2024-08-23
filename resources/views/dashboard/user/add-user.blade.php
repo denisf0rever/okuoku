@@ -60,23 +60,31 @@
                           <label class="form__label" for="city">Откуда вы?</label>
                           <input class="form__input @error('city')input-error @enderror" type="text" id="city" name="city">
                         </li>
+                        <li class="form__input-wrapper">
+                          <label class="form__label" for="phone">Телефон</label>
+                          <input class="form__input @error('phone')input-error @enderror" type="text" id="phone" name="phone">
+                        </li>
                       </ul>
 					  <label class="form__label-photo">
-                        <img src="images/photo-camera.svg" alt="" class="form__input-photo-img">
+                        <img src="/images/dashboard/photo-camera.svg" alt="" class="form__input-photo-img">
                         <span class="form__input-photo-text">Загрузить фото</span>
                         <input class="form__input-photo @error('images')input-error @enderror" type="file" name="avatar">
                       </label>
 					  <label class="form__label-photo">
-                        <img src="images/photo-camera.svg" alt="" class="form__input-photo-img">
+                        <img src="/images/dashboard/photo-camera.svg" alt="" class="form__input-photo-img">
                         <span class="form__input-photo-text">Загрузить webp</span>
                         <input class="form__input-photo @error('webp')input-error @enderror" type="file" name="avatar_webp">
                       </label>
                     </div>
 					<div class="form__tab">
                       <ul class="form__inputs">
-                        <li class="form__input-wrapper">
-                          <label class="form__label" for="is_active">Активный</label>
-                          <input class="form__input" type="checkbox" id="is_active" name="is_active">
+					  <li class="form__input-wrapper">
+						<label class="form__label" for="is_priority">Получать уведомления о платных консультациях</label>
+						<input class="form__input" type="checkbox" id="is_priority" name="is_priority">
+                        </li>
+                       <li class="form__input-wrapper">
+                         <label class="form__label" for="is_active">Активный</label>
+                         <input class="form__input" type="checkbox" id="is_active" name="is_active">
                         </li>
                       </ul>
                     </div>

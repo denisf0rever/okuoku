@@ -25,7 +25,8 @@ class RegistrationController extends Controller
             'username' => 'required|unique:user|string',
             'last_name' => 'required|string',
             'middle_name' => 'required|string',
-            'city' => 'required|string|max:255'
+            'city' => 'required|string|max:255',
+            'phone' => 'required|string|max:255'
         ]);
 			
 		$user = User::create([
@@ -35,7 +36,8 @@ class RegistrationController extends Controller
                 'name' => $data['name'],
                 'last_name' => $data['last_name'],
                 'middle_name' => $data['middle_name'],
-                'city' => $data['city']
+                'city' => $data['city'],
+                'phone' => $data['phone']
             ]);
 			
 		if ($user) {

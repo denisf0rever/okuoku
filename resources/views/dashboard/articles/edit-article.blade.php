@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-  <title>Добавление поста</title>
+  <title>Редактировать статью</title>
   @include('dashboard.settings')
 </head>
 
@@ -72,7 +72,7 @@
                         </li>
                       </ul>
                       <label class="form__label-photo">
-                        <img src="images/photo-camera.svg" alt="" class="form__input-photo-img">
+                        <img src="/images/dashboard/photo-camera.svg" alt="" class="form__input-photo-img">
                         <span class="form__input-photo-text">Загрузить фото</span>
                         <input class="form__input-photo @error('image')input-error @enderror" type="file" name="image"
                           accept="image/*">
@@ -83,7 +83,7 @@
                   <div class="form__status-wrapper">
                     <div class="form__select-wrapper">
                       <span class="form__status-title" for="status">Выберите категорию</span>
-                      <img src="images/expand-more.svg" alt="" class="form__status-arrow">
+                      <img src="/images/dashboard/expand-more.svg" alt="" class="form__status-arrow">
                       <div class="form__status-current-text">Выберите категорию</div>
                       <input class="form__status-current @error('category')input-error @enderror" name="category"
                         type="text" value="0" readonly>

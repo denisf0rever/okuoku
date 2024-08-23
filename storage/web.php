@@ -22,7 +22,6 @@ Route::get('/home', function () {
 	Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 	
 	// Статьи
-	Route::get('/articles', [PostController::class, 'list'])->name('articles.list');
 	Route::get('/article/{id}', [PostController::class, 'show'])->name('articles.item');
 	Route::get('/category/{id}', [CatergoryController::class, 'show'])->name('category.item');
 	

@@ -14,10 +14,11 @@
       <span class="content-block__subtitle">{{ $article->subtitle }}</span>
     </div>
     <span class="content-block__content-header">Содержание статьи:</span>
-    {{ $article->content }}
+    {!! $article->content !!}
     <div class="content-block__main-text">
-      <h2 class="content-block__main-text-header">Подзаголовок</h2>
-      {{ $article->content }}
+    <span class="content-block__main-text-header">Время прочтения: {{ $article->reading_time }}</span>
+      {!! $article->full_text !!}
+		
 		<p> Views: {{ $article->views }}</p>
 		<p>Врач офтальмолог <a href="/profile/{{ $article->author->id }}">{{ $article->author->first_middle_name }}</a></p>
 		<p>{{ $date }}</p>

@@ -15,10 +15,17 @@ use Carbon\Carbon;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function list()
+    {
+        $articles = Post::query()
+			->orderBy('created_at')
+            ->take(10)
+            ->get();
+		
+		return view('articles.list', ['articles' => $articles]);
+    } 
+	
+	public function index()
     {
         $articles = Post::query()
 			->orderBy('created_at')

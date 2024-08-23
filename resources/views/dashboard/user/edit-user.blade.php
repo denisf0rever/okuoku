@@ -62,15 +62,19 @@
                           <label class="form__label" for="city">Откуда вы?</label>
                           <input class="form__input @error('city')input-error @enderror" type="text" id="city" name="city" value="{{ $user->city }}">
                         </li>
+						 <li class="form__input-wrapper">
+                          <label class="form__label" for="phone">Телефон</label>
+                          <input class="form__input @error('phone')input-error @enderror" type="text" id="phone" name="phone" value="{{ $user->phone }}">
+                        </li>
                       </ul>
 					  <label class="form__label-photo">
-                        <img src="images/photo-camera.svg" alt="" class="form__input-photo-img">
+                        <img src="/images/dashboard/photo-camera.svg" alt="" class="form__input-photo-img">
                         <span class="form__input-photo-text">Загрузить фото</span>
                         <input class="form__input-photo @error('images')input-error @enderror" type="file" name="avatar">
 						{{ $user->avatar }}
                       </label>
 					  <label class="form__label-photo">
-                        <img src="images/photo-camera.svg" alt="" class="form__input-photo-img">
+                        <img src="/images/dashboard/photo-camera.svg" alt="" class="form__input-photo-img">
                         <span class="form__input-photo-text">Загрузить webp</span>
                         <input class="form__input-photo @error('webp')input-error @enderror" type="file" name="avatar_webp">
 						{{ $user->webp_avatar }}
@@ -79,6 +83,14 @@
 					<div class="form__tab">
                       <ul class="form__inputs">
                         <li class="form__input-wrapper">
+                          <label class="form__label" for="is_priority">Получать уведомления о платных консультациях</label>
+							@if ($user->is_priority)
+							<input class="form__input" type="checkbox" id="is_priority" name="is_priority" value="1" checked>
+							@else
+							<input class="form__input" type="checkbox" id="is_priority" name="is_priority" value="0">
+							@endif
+                        </li>
+						<li class="form__input-wrapper">
                           <label class="form__label" for="is_active">Активный</label>
 							@if ($user->is_active)
 							<input class="form__input" type="checkbox" id="is_active" name="is_active" value="1" checked>
@@ -92,12 +104,16 @@
 				   <div class="form__status-wrapper">
                     <div class="form__select-wrapper">
                       <span class="form__status-title" for="status">Выберите категорию</span>
-                      <img src="images/expand-more.svg" alt="" class="form__status-arrow">
+                      <img src="/images/dashboard/expand-more.svg" alt="" class="form__status-arrow">
                       <div class="form__status-current-text">Выберите категорию</div>
                       <input class="form__status-current @error('role')input-error @enderror" name="role" type="text" value="0" readonly>
                       <ul id="status" class="form__status-select form__status-hide">
                         @foreach($roles as $role)
-                        <li class="form__status-option" value="{{ $role->id }}">{{ $role->role_name }}</li>
+							@if ($user->role == $role->id)
+							<li class="form__status-option form__status-option-active" value="{{ $role->id }}" selected>{{ $role->role_name }}</li>
+							@else
+							<li class="form__status-option" value="{{ $role->id }}">{{ $role->role_name }}</li>
+							@endif
                         @endforeach
                       </ul>
                     </div>

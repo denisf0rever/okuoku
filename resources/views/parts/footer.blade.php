@@ -4,24 +4,19 @@
     <div class="footer__lists">
       <ul class="footer__list footer__list-login">
         <li class="footer__list-item"><a href="#" class="footer__list-link">@if (Route::has('login'))
-
             @auth
-            <a href="{{ url('/home') }}"
-              class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-            @else
-            <a href="{{ route('login') }}"
-              class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
-              in</a>
+				<a href="{{ url('/home') }}" target="_blank">Панель</a>
+				@else
+				<a href="{{ route('login') }}">Войти</a>
 
-            @if (Route::has('register'))
-            <a href="{{ route('register') }}"
-              class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-            @endif
-            @endauth
+				@if (Route::has('register'))
+				<a href="{{ route('register') }}">Регистрация</a>
+				@endif
+				@endauth
             @endif</a></li>
       </ul>
       <ul class="footer__list footer__list-second">
-        <li class="footer__list-item"><a href="#" class="footer__list-link footer__bold">Работа в Бурятии</a></li>
+        <li class="footer__list-item"><a href="{{ route('articles.list') }}" class="footer__list-link footer__bold">Статьи</a></li>
       </ul>
       <ul class="footer__list footer__list-third">
         <li class="footer__list-item"><a href="#" class="footer__list-link">О компаниии</a></li>
@@ -38,12 +33,12 @@
       </ul>
     </div>
     <div class="footer__information">
-      <img src="images/pegi.jpg" alt="" class="footer__img">
-      <span class="footer__information-text">d.</span>
+      <img src="/images/public/pegi.jpg" alt="" class="footer__img">
+      <span class="footer__information-text">Информация, опубликованная на данном сайте, предназначена для любой аудитории, если иное не указано дополнительно в отношении отдельных материалов.</span>
     </div>
-    <div class="footer__copyright">OKUOKU.RU, 2006-2024</div>
+    <div class="footer__copyright">OKUOKU.RU, 2024 г.</div>
     <div class="footer__information">
-      <span class="footer__information-text"> b <span class="footer__bold">a</span> .</span>
+      <span class="footer__information-text">Консультация офтальмолога. Сервис работает круглосуточно. Онлайн чат. Телефон.<!--<span class="footer__bold">a</span> .--></span>
     </div>
   </div>
 </footer>

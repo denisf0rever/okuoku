@@ -10,17 +10,17 @@
           <section class="main__banner banner">
             <div class="banner__wrapper">
               <div class="banner__titles">
-                <h2 class="banner__title">Консультация офтальмолога онлайн</h2>
-                <span class="banner__subtitle">офтальмолог для детей и взрослых</span>
-                <span class="banner__subtitle">круглосуточно в чате и по телефону</span>
+                <h1 class="banner__title">Консультация офтальмолога онлайн</h1>
+                <span class="banner__subtitle">детский, взрослый офтальмолог</span>
+                <span class="banner__subtitle">круглосуточно в чате либо телефону</span>
               </div>
               <div class="banner__buttons">
-                <div class="banner__join-btn banner__btn">Присоединиться</div>
+                <div class="banner__join-btn banner__btn">Задать вопрос</div>
                 <div class="banner__enter-btn banner__btn">Войти</div>
               </div>
               <img src="images/placeholder.png" alt="" class="banner__img">
               <div class="banner__sponsors">
-                <span class="banner__sponsors-title">Sponsor this project</span>
+                <span class="banner__sponsors-title">Врачи офтальмологи</span>
                 <div class="banner__sponsors-list">
                   <a href="#" class="banner__sponsor-link">
                     <img src="images/avatar.jpg" alt="" class="banner__sponsor-avatar">
@@ -49,85 +49,9 @@
           </section>
           
 		  
-		<!--@include('stories.block')-->
-		  
-          <section class="main__news news">
-            <div class="news__wrapper">
-              <div class="news__top">
-                <h2 class="news__title">Новости</h2>
-                <div class="news__filter">
-                  <input class="news__filter-item" type="radio" id="news-filter-1" name="news-filter" checked value="0">
-                  <label class="news__filter-label" for="news-filter-1">
-                    По дате
-                  </label>
-                  <input class="news__filter-item" type="radio" id="news-filter-2" name="news-filter" value="0">
-                  <label class="news__filter-label" for="news-filter-2">
-                    По просмотрам
-                  </label>
-                </div>
-              </div>
-              <span class="news__current-date">05 апреля</span>
-              <ul class="news__list">
-                <li class="news__item news-item">
-                  <div class="news-item__wrapper">
-                    <div class="news-item__time">20:47</div>
-                    <span class="news-item__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <span
-                        class="news-item__comment">
-                        <img src="images/bubble.svg" alt="" class="news-item__comment-img">
-                        <span class="news-item__comment-number">1</span>
-                      </span></span>
-                  </div>
-                </li>
-                <li class="news__item news-item">
-                  <div class="news-item__wrapper">
-                    <div class="news-item__time">20:47</div>
-                    <span class="news-item__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <span
-                        class="news-item__comment hide">
-                        <img src="images/bubble.svg" alt="" class="news-item__comment-img">
-                        <span class="news-item__comment-number">1</span>
-                      </span></span>
-                  </div>
-                </li>
-                <li class="news__item news-item">
-                  <div class="news-item__wrapper">
-                    <div class="news-item__time">20:47</div>
-                    <span class="news-item__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quas
-                      voluptas ipsa, vitae deserunt adipisci a earum esse, itaque consectetur veritatis cumque facere
-                      sit tempora. A soluta reiciendis reprehenderit placeat! <span class="news-item__comment">
-                        <img src="images/bubble.svg" alt="" class="news-item__comment-img">
-                        <span class="news-item__comment-number">3</span>
-                      </span></span>
-                  </div>
-                </li>
-                <li class="news__item news-item">
-                  <div class="news-item__wrapper">
-                    <div class="news-item__time">20:47</div>
-                    <span class="news-item__text">Lorem ipsum dolor, sit amet <span class="news-item__comment">
-                        <img src="images/bubble.svg" alt="" class="news-item__comment-img">
-                        <span class="news-item__comment-number">3</span>
-                      </span></span>
-                  </div>
-                </li>
-                <li class="news__item news-item">
-                  <div class="news-item__wrapper">
-                    <div class="news-item__time">20:47</div>
-                    <span class="news-item__text">Lorem ipsuma earum esse, itaque consectetur veritatis cumque facere
-                      sit tempora. A soluta reiciendis reprehenderit placeat! <span class="news-item__comment">
-                        <img src="images/bubble.svg" alt="" class="news-item__comment-img">
-                        <span class="news-item__comment-number">3</span>
-                      </span></span>
-                  </div>
-                </li>
-              </ul>
-              <div class="news__load-more">
-                <img src="images/load-more.svg" alt="" class="news__load-more-img">
-                <span class="news__load-more-text">Загрузить еще</span>
-              </div>
-            </div>
-          </section>
-		  
-		  
-          <!--<section class="main__companies companies">
+		@include('mainpage.stories.block')
+		@include('mainpage.news.block')		  
+         <section class="main__companies companies">
             <div class="companies__wrapper">
               <h2 class="companies__title">Компании</h2>
               <span class="companies__number">40</span>
@@ -195,7 +119,7 @@
               </ul>
               <span class="companies__show-all">Показать все</span>
             </div>
-          </section>-->
+          </section>
 		  
 		  
         </div>
@@ -301,7 +225,19 @@
           </ul>
         </section>
         
-		<!--@include('parts.reviews')-->
+		@include('parts.reviews')
+		
+		
+  
+  
+  
+  
+Обратиться к офтальмологу онлайн возможно в следующих случаях:
+1. Консультация по неотложным ситуациям при появлении жалоб (покраснение глаз, слезотечение, нарушение зрения, боли в глазах и т.д.), если нет возможности показаться врачу. Врач офтальмолог подскажет, определит необходимые действия и назначит лечение.
+2. Интерпретация результатов обследований, раннее выданных заключений.
+3. Получение второго мнения по волнующим вопросам по лечению и прогнозу.
+4. Проконсультироваться с офтальмологом можно и по телефону. В этом случае можно задать все интересующие вопросы и получить ответы врача.
+Консультация опытного офтальмолога онлайн - это удобный способ быстро получить квалифицированную консультацию, когда нет возможности посетить врача.
        
       </div>
     </div>

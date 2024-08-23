@@ -36,6 +36,9 @@ class UserController extends Controller
             'last_name' => 'required|string',
             'middle_name' => 'required|string|max:255',
             'city' => 'required|string|max:255',
+            'phone' => 'required|string|max:255',
+			'is_priority' => 'string',
+			'is_active' => 'string',
 			'avatar' => 'image|mimes:jpeg,png,jpg|max:2048',
 			'webp_avatar' => 'image|mimes:webp|max:2048'
         ]);
@@ -50,6 +53,9 @@ class UserController extends Controller
 			$avatarWebp = Str::of($webpPath)->basename();
 		}
 		
+		$is_priority = $request->has('is_active') ? 1 : 0;
+		$is_active = $request->has('is_active') ? 1 : 0;
+		
 		$user = User::create([
 			'email' => $data['email'],
 			'username' => $data['username'],
@@ -58,15 +64,18 @@ class UserController extends Controller
 			'last_name' => $data['last_name'],
 			'middle_name' => $data['middle_name'],
 			'city' => $data['city'],
+			'phone' => $data['phone'],
+			'is_priority' => $is_priority,
+			'is_active' => $is_active,
 			'avatar' => $avatarImage,
 			'webp_avatar' => $avatarWebp
 		]);
 			
-		/*if ($user) {
+		if ($user) {
 			return redirect()->route('dashboard.user.edit', ['id' => $user->id])->with('user_added', 'Пользователь успешно добавлен');
 		} else {
 			return redirect()->back()->with('user_added', 'Пользователь не добавлен');
-		}*/
+		}
     }
 
     public function store(Request $request)
@@ -112,6 +121,8 @@ class UserController extends Controller
             'last_name' => 'string|max:255',
             'middle_name' => 'string|max:255',
             'city' => 'string|max:255',
+            'phone' => 'string|max:255',
+			'is_priority' => 'string',
 			'is_active' => 'string',
 			'avatar' => 'image|mimes:jpeg,png,jpg|max:2048',
 			'webp_avatar' => 'image|mimes:webp|max:2048'
@@ -133,6 +144,7 @@ class UserController extends Controller
 			$user->webp_avatar = $avatarWebp;
 		}
 		
+		$is_priority = $request->has('is_active') ? 1 : 0;
 		$is_active = $request->has('is_active') ? 1 : 0;
 				
 		$user->email = $request->input('email');
@@ -142,8 +154,10 @@ class UserController extends Controller
 		$user->name = $request->input('name');
 		$user->last_name = $request->input('last_name');
 		$user->middle_name = $request->input('middle_name');
+		$user->is_priority = $is_priority;
 		$user->is_active = $is_active;
 		$user->city = $request->input('city');
+		$user->phone = $request->input('phone');
 		$user->save();
 		
 		return redirect()->back()->with('success', 'Пользователь успешно обновлен');
