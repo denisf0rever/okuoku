@@ -120,6 +120,9 @@
     &__container{
       padding: 0;
     }
+    &__container-main{
+      padding: 10px;
+    }
     &__field-wrapper,
     &__community,
     &__article,
@@ -150,7 +153,6 @@
     &__title{
       font-size: 40px;
       letter-spacing: -1px;
-      line-height: 48px;
     }
     &__buttons{
       grid-row: 2 / 3;

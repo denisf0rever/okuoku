@@ -33,6 +33,7 @@ h1{
 body{
   background-color: $grey-background;
   font-family: 'YS', -apple-system, system-ui, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  // font-family: 'YS Display', -apple-system, system-ui, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
   color: rgba(6,6,15,.87);
 }
 
@@ -164,8 +165,8 @@ body{
     display: grid;
     grid-template-rows: auto auto auto auto auto;
     grid-template-columns: 10% 85%;
-    padding: 20px;
     gap: 50px 5%;
+    border-radius: 32px;
   }
   &__container{
     display: grid;
@@ -313,10 +314,8 @@ body{
     justify-content: flex-end;
   }
   &__title{
-    font-family: 'YS Display', -apple-system, system-ui, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-    font-size: 65px;
+    font-size: 34px;
     margin: 0 0 20px;
-    line-height: 75px;
   }
   &__subtitle{
     font-size: 23px;
