@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -27,7 +28,6 @@ class User extends Authenticatable
 		'avatar',
 		'webp_avatar'
 	];
-	
 	
 	protected $appends = ['full_name', 'first_middle_name'];
 
@@ -57,7 +57,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-	
 	  
 	public function getFullNameAttribute(): string
     {
@@ -68,6 +67,26 @@ class User extends Authenticatable
     {
         return $this->name . ' ' . $this->middle_name;
     }
+
+	public function isAdmin(): bool
+	{
+		return $this->role === 1;
+	}
+	
+	public function isUser(): bool
+	{
+		return $this->role === 2;
+	}
+	
+	public function isEditor(): bool
+	{
+		return $this->role === 3;
+	}
+	
+	public function isConsultant(): bool
+	{
+		return $this->role === 4;
+	}
 	
 	public function role()
     {

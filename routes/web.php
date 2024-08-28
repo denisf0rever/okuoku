@@ -38,7 +38,7 @@ Route::middleware(['guest'])->group(function () {
 	Route::get('/chat', [\App\Http\Controllers\Chat\ChatController::class, 'endPoint']);
 });
 	
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'access'])->group(function () {
     Route::get('/dashboard', function () {
 		return view('dashboard.main');})->name('dashboard.main');
 	
