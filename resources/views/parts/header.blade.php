@@ -3,8 +3,8 @@
   <header class="header">
     <div class="header__wrapper">
       <div class="header__container container">
-        <a href="#" class="header__left header__logo">
-          <img src="images/logo.svg" alt="" class="header__logo-img">
+        <a href="/" class="header__left header__logo">
+          <img src="/images/public/common/logo.svg" alt="" class="header__logo-img">
           <div class="header__logo-title">OkuOku</div>
         </a>
         <div class="header__right">

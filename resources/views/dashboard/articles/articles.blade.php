@@ -53,6 +53,7 @@
                   <span class="pages__title-id">ID</span>
                   <span class="pages__title-name">Название</span>
                   <span class="pages__title-number">Просмотры</span>
+                  <span class="pages__title-number">Опции</span>
                 </div>
                 <ul class="pages__list">
                   @foreach ($articles as $article)
@@ -64,15 +65,13 @@
                     <div class="pages__icons">
                       <div class="pages__icon">
                         <a href="{{ route('dashboard.article.edit', $article->id)}}" target="_blank">
-                          <img src="../../../images/dashboard/pencil.svg" alt="" class="pages__icon-img">
+                          <img src="/images/dashboard/edit.svg" alt="" class="pages__icon-img">
                         </a>
-                        <!--<img src="images/pencil.svg" alt="" class="pages__icon-img">-->
                       </div>
                       <div class="pages__icon">
                         <a href="{{ route('dashboard.article.destroy', $article->id) }}">
-                          <img src="../../../images/dashboard/rubbish-bin.svg" alt="" class="pages__icon-img">
+                          <img src="/images/dashboard/del.svg" alt="" class="pages__icon-img">
                         </a>
-                        <!--<img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">-->
                       </div>
                     </div>
                   </li>

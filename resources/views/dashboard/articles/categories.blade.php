@@ -52,6 +52,7 @@
                   <span class="pages__title-name">ID</span>
                   <span class="pages__title-name">Название</span>
                   <span class="pages__title-number">Просмотры</span>
+                  <span class="pages__title-number">Опции</span>
                 </div>
                 <ul class="pages__list">
 				@foreach ($categories as $category)
@@ -59,14 +60,14 @@
 				    <span class="pages__views-number">{{ $category->id }}</span>
                     <a href="{{ route('category.item', $category->id)}}" target="_blank"><span class="pages__name">{{ $category->short_title }}</span></a>
                     <span class="pages__views-number">{{ $category->views }}</span>
-                    <div class="pages__icon">
-                      <a href="{{ route('dashboard.category.edit', $category->id)}}" target="_blank">Редактировать</a>
-					  <!--<img src="images/pencil.svg" alt="" class="pages__icon-img">-->
+                    <div class="pages__icons">
+					<div class="pages__icon">
+                      <a href="{{ route('dashboard.category.edit', $category->id)}}" target="_blank"><img src="/images/dashboard/edit.svg" alt="" class="pages__icon-img"></a>
                     </div>
                     <div class="pages__icon">
-                        <a href="{{ route('dashboard.category.destroy', $category->id) }}">Удалить</a>
-					  <!--<img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">-->
+						<a href="{{ route('dashboard.category.destroy', $category->id) }}"><img src="/images/dashboard/del.svg" alt="" class="pages__icon-img"></a>
                     </div>
+					</div>
                   </li>
 				@endforeach
                 </ul>

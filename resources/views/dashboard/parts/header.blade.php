@@ -2,11 +2,11 @@
     <div class="header__wrapper container">
       <div class="header__left">
         <div class="header__menu-button">
-          <img src="/images/dashboard/menu.svg" alt="" class="header__menu-button-img">
+          <img src="/images/public/common/logo-white.svg" alt="" class="header__menu-button-img">
         </div>
         <a href="/" class="header__logo-link" target="_blank">
           <div class="header__logo">
-            <img src="/images/dashboard/yandex-icon.png" alt="" class="header__logo-img">
+            <img src="/images/public/common/logo-white.svg" alt="" class="header__logo-img">
           </div>
         </a>
       </div>

@@ -46,27 +46,30 @@
 		
           <section class="main__pages pages">
             <div class="pages__wrapper">
-              <h2 class="pages__title">Заголовки страниц</h2>
+              <h2 class="pages__title">Пользователи</h2>
               <div class="pages__inner">
                 <div class="pages__titles">
                   <span class="pages__title-name">ID</span>
-                  <span class="pages__title-name">Название</span>
+                  <span class="pages__title-name">Логин</span>
+                  <span class="pages__title-name">ФИО</span>
                   <span class="pages__title-number">Просмотры</span>
+                  <span class="pages__title-number">Опции</span>
                 </div>
                 <ul class="pages__list">
 				@foreach ($users as $user)
                   <li class="pages__item">
 				    <span class="pages__views-number">{{ $user->id }}</span>
-                    <a href="{{ route('user.profile.item', $user->id)}}" target="_blank"><span class="pages__name">{{ $user->username }}</span></a>
+                    <span class="pages__views-number"><b>{{ $user->username }}</b></span>
+                    <a href="{{ route('user.profile.item', $user->id)}}" target="_blank"><span class="pages__name">{{ $user->full_name }}</span></a>
                     <span class="pages__views-number">{{ $user->views }}</span>
-                    <div class="pages__icon">
-                      <a href="{{ route('dashboard.user.edit', $user->id)}}" target="_blank">Редактировать</a>
-					  <!--<img src="images/pencil.svg" alt="" class="pages__icon-img">-->
+                    <div class="pages__icons">
+					<div class="pages__icon">
+						<a href="{{ route('dashboard.user.edit', $user->id)}}" target="_blank"><img src="/images/dashboard/edit.svg" alt="" class="pages__icon-img"></a>
                     </div>
                     <div class="pages__icon">
-                        <a href="{{ route('dashboard.user.destroy', $user->id) }}">Удалить</a>
-					  <!--<img src="images/rubbish-bin.svg" alt="" class="pages__icon-img">-->
+						<a href="{{ route('dashboard.user.destroy', $user->id) }}"><img src="/images/dashboard/del.svg" alt="" class="pages__icon-img"></a>
                     </div>
+					</div>
                   </li>
 				@endforeach
                 </ul>

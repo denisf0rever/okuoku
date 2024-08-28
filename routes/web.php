@@ -66,6 +66,9 @@ Route::middleware(['auth', 'access'])->group(function () {
 	Route::get('/user/delete/{id}', [UserController::class, 'destroy'])->name('dashboard.user.destroy');
 	Route::post('/dashboard/user/{id}', [UserController::class, 'update'])->name('dashboard.user.update');
 	
+	// Консультации
+	Route::get('/dashboard/consultations', function() {return 'ok';})->middleware('can:show')->name('dashboard.consultations');
+	
 	// Чат: оператор
 	Route::get('/dashboard/chat', [\App\Http\Controllers\Chat\ChatController::class, 'index'])->name('dashboard.chat');
 	
