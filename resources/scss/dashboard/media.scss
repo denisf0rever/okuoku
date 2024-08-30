@@ -64,9 +64,6 @@
     &__item{
       min-width: 400px;
     }
-    &__titles{
-      min-width: 400px;
-    }
     &__icons{
       gap: 10px;
     }
@@ -97,15 +94,31 @@
   .pages{
     &__title-name{
       font-size: 14px;      
+      width: 40%;
     }
     &__title-number{
       font-size: 14px;
+      width: 25%;
+    }
+    &__title-options{
+      width: 15%;
     }
     &__name{
       font-size: 14px;
+      width: 40%;
     }
     &__views-number{
       font-size: 14px;
+      width: 25%;
+    }
+    &__list{
+      min-width: 400px;
+    }
+    &__titles{
+      min-width: 400px;
+    }
+    &__icons{
+      width: 15%;
     }
   }
 }

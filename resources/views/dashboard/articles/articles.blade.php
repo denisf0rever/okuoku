@@ -23,7 +23,8 @@
                 <h3 class="info__title">Информация о статьях</h3>
                 <div class="info__text-wrapper">
                   <div class="info__data">
-                    <span class="info__text"><strong>{{ $total }} </strong>{{ Str::plural('article', $total) }} на сайте</span>
+                    <span class="info__text"><strong>{{ $total }} </strong>{{ Str::plural('article', $total) }} на
+                      сайте</span>
                   </div>
                   <div class="info__data">
                     <span class="info__text"><strong>52 768 </strong>дублирующихся description</span>
@@ -53,14 +54,14 @@
                   <span class="pages__title-id">ID</span>
                   <span class="pages__title-name">Название</span>
                   <span class="pages__title-number">Просмотры</span>
-                  <span class="pages__title-number">Опции</span>
+                  <span class="pages__title-options">Опции</span>
                 </div>
                 <ul class="pages__list">
                   @foreach ($articles as $article)
                   <li class="pages__item">
-                    <span class="pages__views-number">{{ $article->id }}</span>
-                    <a class="pages__link" href="{{ route('articles.item', $article->id)}}" target="_blank"><span
-                        class="pages__name">{{ $article->h1 }}</span></a>
+                    <span class="pages__views-id">{{ $article->id }}</span>
+                    <a class="pages__name" href="{{ route('articles.item', $article->id)}}"
+                      target="_blank"><span>{{ $article->h1 }}</span></a>
                     <span class="pages__views-number">{{ $article->views }}</span>
                     <div class="pages__icons">
                       <div class="pages__icon">

@@ -404,6 +404,10 @@ body{
     padding: 25px 20px;
     border-radius: 15px;
   }
+  &__inner{
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
   &__title{
     font-weight: 500;
     font-size: 22px;
@@ -413,6 +417,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    min-width: 750px;
   }
   &__item{
     display: flex;
@@ -423,16 +428,27 @@ body{
     width: 60%;
     padding-right: 10px;
   }
-  &__views-number{
+  &__views-id{
     width: 10%;
     text-align: start;
+  }
+  &__views-number{
+    width: 10%;
+    text-align: center;
+  }
+  &__login{
+    width: 30%;
+  }
+  &__fullname{
+    width: 30%;
   }
   &__icons{
     width: 10%;
     height: 20px;
     margin-left: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10px;
   }
   &__icon{
     width: auto;
@@ -455,6 +471,7 @@ body{
     align-items: center;
     margin-bottom: 30px;
     color: $grey;
+    min-width: 750px; 
   }
   &__title-id{
     width: 10%;
@@ -466,7 +483,20 @@ body{
   }
   &__title-number{
     width: 10%;
-    text-align: left;
+    text-align: center;
+  }
+  &__title-options{
+    width: 10%;
+    text-align: center;
+    margin-left: auto;
+  }
+  &__title-login{
+    width: 30%;
+    padding-right: 10px;
+  }
+  &__title-fullname{
+    width: 30%;
+    padding-right: 10px;
   }
   &__link{
     width: 60%;

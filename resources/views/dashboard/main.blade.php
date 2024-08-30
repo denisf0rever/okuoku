@@ -17,11 +17,11 @@
       <main class="wrapper__main main">
         <div class="main__wrapper">
           <h1 class="main__title">
-		  @can('show')
-		  Информация о сайте OkuOku.ru
-		  @endcan
-		  
-		  </h1>
+            @can('show')
+            Информация о сайте OkuOku.ru
+            @endcan
+
+          </h1>
           <section class="main__info info">
             <div class="info__wrapper">
               <div class="info__element">
