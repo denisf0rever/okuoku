@@ -34,11 +34,11 @@
                       <ul class="form__inputs">
                         <li class="form__input-wrapper">
                           <label class="form__label" for="email">Почта</label>
-                          <input class="form__input @error('email')input-error @enderror" type="text" id="email" name="email">
+                          <input class="form__input @error('email')input-error @enderror" type="text" id="email" name="email" value="{{ old("email") }}">
                         </li>
 						<li class="form__input-wrapper">
                           <label class="form__label" for="name">Логин</label>
-                          <input class="form__input @error('username')input-error @enderror" type="text" id="username" name="username">
+                          <input class="form__input @error('username')input-error @enderror" type="text" id="username" name="username" value="{{ old("username") }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="password">Пароль</label>
@@ -46,23 +46,23 @@
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="name">Имя</label>
-                          <input class="form__input @error('name')input-error @enderror" type="text" id="name" name="name">
+                          <input class="form__input @error('name')input-error @enderror" type="text" id="name" name="name" value="{{ old("name") }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="last_name">Фамилия</label>
-                          <input class="form__input @error('last_name')input-error @enderror" type="text" id="last_name" name="last_name">
+                          <input class="form__input @error('last_name')input-error @enderror" type="text" id="last_name" name="last_name" value="{{ old("last_name") }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="middle_name">Отчество</label>
-                          <input class="form__input @error('middle_name')input-error @enderror" type="text" id="middle_name" name="middle_name">
+                          <input class="form__input @error('middle_name')input-error @enderror" type="text" id="middle_name" name="middle_name" value="{{ old("middle_name") }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="city">Откуда вы?</label>
-                          <input class="form__input @error('city')input-error @enderror" type="text" id="city" name="city">
+                          <input class="form__input @error('city')input-error @enderror" type="text" id="city" name="city" value="{{ old("city") }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="phone">Телефон</label>
-                          <input class="form__input @error('phone')input-error @enderror" type="text" id="phone" name="phone">
+                          <input class="form__input @error('phone')input-error @enderror" type="text" id="phone" name="phone" value="{{ old("phone") }}">
                         </li>
                       </ul>
 					  <label class="form__label-photo">

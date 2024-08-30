@@ -34,27 +34,27 @@
                       <ul class="form__inputs">
                         <li class="form__input-wrapper">
                           <label class="form__label" for="title">Заголовок документа (title)</label>
-                          <input class="form__input @error('title')input-error @enderror" type="text" id="title" name="title">
+                          <input class="form__input @error('title')input-error @enderror" type="text" id="title" name="title" value="{{ old("title") }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="title">Заголовок категории (h1)</label>
-                          <input class="form__input @error('h1')input-error @enderror" type="text" id="h1" name="h1">
+                          <input class="form__input @error('h1')input-error @enderror" type="text" id="h1" name="h1" value="{{ old("h1") }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="subtitle">Короткое название</label>
-                          <input class="form__input @error('short_title')input-error @enderror" type="text" id="short_title" name="short_title">
+                          <input class="form__input @error('short_title')input-error @enderror" type="text" id="short_title" name="short_title" value="{{ old("short_title") }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="Meta-description">Метаописание</label>
-                          <input class="form__input @error('metadescription')input-error @enderror" type="text" id="metadescription" name="metadescription">
+                          <input class="form__input @error('metadescription')input-error @enderror" type="text" id="metadescription" name="metadescription" value="{{ old("metadescription") }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="Metakeys">Метаключи</label>
-                          <input class="form__input @error('metakey')input-error @enderror" type="text" id="metakey" name="metakey">
+                          <input class="form__input @error('metakey')input-error @enderror" type="text" id="metakey" name="metakey" value="{{ old("metakey") }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="slug">Slug</label>
-                          <input class="form__input @error('slug')input-error @enderror" type="text" id="slug" name="slug">
+                          <input class="form__input @error('slug')input-error @enderror" type="text" id="slug" name="slug" value="{{ old("slug") }}">
                         </li>
                       </ul>
                     </div>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="form__textarea-wrapper">
                   <div class="form__textarea-title">Описание</div>
-                  <textarea name="description" id="description" class="form__textarea @error('description')input-error @enderror"></textarea>
+                  <textarea name="description" id="description" class="form__textarea @error('description')input-error @enderror" value="{{ old("description") }}">{{ old("description") }}</textarea>
                   <input class="form__submit" type="submit"> </input>
                 </div>
               </form>
