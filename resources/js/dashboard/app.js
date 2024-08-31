@@ -35,6 +35,13 @@ window.onload = () => {
     }
   })
 
+  selectOptions.forEach((el, key) => {
+    console.log(selectInput.value, '--', el.value)
+    if (selectInput.value == el.value) {
+      selectInputText.innerHTML = el.innerHTML;
+    }
+  })
+
   selectWrapper.onclick = () => {
     selectArrow.classList.toggle('form__rotate-arrow');
     select.classList.toggle('form__status-hide');
