@@ -50,11 +50,11 @@ class PostController extends Controller
             'metakey' => 'required|string|max:255',
             'author_id' => 'required|integer|max:255',
             'reading_time' => 'required',
-            'category' => 'required|integer|min:2',
+            'category' => 'required|integer|max:20',
             'short_text' => 'required|string',
             'content' => 'required|string',
             'full_text' => 'required|string',
-			'image' => 'image|mimes:jpeg,png,jpg|max:2048'
+			'image' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 		
 		if ($request->hasFile('image')) {
@@ -160,7 +160,7 @@ class PostController extends Controller
             'metakey' => 'required|string|max:255',
             'author_id' => 'required|integer|max:255',
             'reading_time' => 'required',
-            'category' => 'required|integer|min:1',
+            'category' => 'integer|max:20',
             'short_text' => 'required|string',
             'content' => 'required|string',
             'full_text' => 'required|string',

@@ -2,9 +2,11 @@
 
 namespace App\Services;
 
-class ServiceUser
+use Illuminate\Http\Request;
+
+final class UserService
 {
-	 public function createUser(array $userData)
+	 public function createUser(array $userData, Request $request = null)
 	 {
 		 $data = $request->validate([
             'email' => 'required|string|max:255',

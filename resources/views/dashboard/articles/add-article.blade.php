@@ -71,8 +71,7 @@
                       <label class="form__label-photo">
                         <img src="/images/dashboard/photo-camera.svg" alt="" class="form__input-photo-img">
                         <span class="form__input-photo-text">Загрузить фото</span>
-                        <input class="form__input-photo @error('image')input-error @enderror" type="file" name="image"
-                          accept="image/*">
+                        <input class="form__input-photo @error('image')input-error @enderror" type="file" name="image">
                       </label>
                     </div>
                     <div class="form__tab">
@@ -93,7 +92,7 @@
                         type="text" value="0" readonly>
                       <ul id="status" class="form__status-select form__status-hide">
                         @foreach($categories as $category)
-                        <li class="form__status-option" value="{{ $category->id }}">{{ $category->short_title }}</li>
+                        <li class="form__status-option" value="{{ $category->id ? $category->id : old("category") }}">{{ $category->short_title }}</li>
                         @endforeach
                       </ul>
                     </div>
@@ -107,11 +106,7 @@
                 <div class="form__textarea-wrapper">
                   <div class="form__textarea-title">Содержание статьи</div>
                   <textarea name="content" id=""
-                    class="form__textarea @error('content')input-error @enderror" value="{{ old("content") }}">
-					<ul class="article__content-list">
-<li class="article__content-item">Пункт первый</li>
-<li class="article__content-item">Пункт второй</li>
-</ul></textarea>
+                    class="form__textarea @error('content')input-error @enderror" value="{{ old("content") }}">{{ old("content") }}</textarea>
                 </div>
                 <div class="form__textarea-wrapper">
                   <div class="form__textarea-title">Полный текст</div>

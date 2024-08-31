@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\ImageManager;
 use Carbon\Carbon;
-use App\Services\ServiceUser;
+use App\Services\UserService;
 
 class UserController extends Controller
 {
@@ -29,10 +29,10 @@ class UserController extends Controller
 		return view('dashboard.user.list', compact('users', 'totalUsers'));
     }
 
-    public function create(Request $request, ServiceUser $userService)
+    public function create(Request $request, UserService $userService)
     {
 		$userData = $request->all();
-		$user = $this->userService->createUser($userData);
+		$user = $userService->createUser($userData);
 		
 		dump($user);
 		/*if ($user) {
