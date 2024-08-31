@@ -84,14 +84,14 @@ class PostController extends Controller
                 'h1' => $data['h1'],
                 'title' => $data['title'],
 				'subtitle' => $data['subtitle'],
-				'metadescription' => $data['metadescription'],
+				'metadescription' => Str::replace('  ', ' ', $data['metadescription']),
 				'metakey' => $data['metakey'],
 				'author_id' => $data['author_id'],
 				'reading_time' => $data['reading_time'],
 				'category' => $data['category'],
-				'short_text' => $data['short_text'],
-				'content' => $data['content'],
-				'full_text' => $data['full_text'],
+				'short_text' => Str::replace('  ', ' ', $data['short_text']),
+				'content' => Str::replace('  ', ' ', $data['content']),
+				'full_text' => Str::replace('  ', ' ', $data['full_text']),
 				'thumb' => $finalImage
             ]);
 
@@ -199,16 +199,16 @@ class PostController extends Controller
 		}
 		
 		$article->h1 = $request->input('h1');
-		$article->title = $request->input('title');
+		$article->title = Str::replace('  ', ' ', $request->input('title'));
 		$article->subtitle = $request->input('subtitle');
 		$article->metadescription = $request->input('metadescription');
 		$article->metakey = $request->input('metakey');	    
 		$article->author_id = $request->input('author_id');
 		$article->reading_time = $request->input('reading_time');
 		$article->category = $request->input('category');
-		$article->short_text = $request->input('short_text');
+		$article->short_text = Str::replace('  ', ' ', $request->input('short_text'));
 		$article->content = $request->input('content');
-		$article->full_text = $request->input('full_text');
+		$article->full_text = Str::replace('  ', ' ', $request->input('full_text'));
 		$article->save();
 		
 		return redirect()->back()->with('success', 'Пост успешно обновлен');
