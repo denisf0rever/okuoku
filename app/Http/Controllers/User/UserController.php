@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Intervention\Image\ImageManager;
 use Carbon\Carbon;
 use App\Services\UserService;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -29,17 +30,34 @@ class UserController extends Controller
 		return view('dashboard.user.list', compact('users', 'totalUsers'));
     }
 
-    public function create(Request $request, UserService $userService)
+    public function create(UserRequest $request, UserService $userService)
     {
 		$userData = $request->all();
-		$user = $userService->createUser($userData);
 		
-		dump($user);
-		/*if ($user) {
+		$images = [];
+		
+		if ($request->hasFile('avatar')) {
+			$imagePath = $request->file('avatar')->store('public/avatar');
+			$avatarImage = Str::of($imagePath)->basename();
+			$images['avatarImage'] = $avatarImage;
+			
+		}
+		if ($request->hasFile('avatar_webp')) {
+			$webpPath = $request->file('avatar_webp')->store('public/avatar/webp');
+			$avatarWebp = Str::of($webpPath)->basename();
+			$images['avatarWebp'] = $avatarWebp;
+		}
+		
+		$is_priority = $request->has('is_active') ? 1 : 0;
+		$is_active = $request->has('is_active') ? 1 : 0;
+		
+		$user = $userService->createUser($request->validated(), $images, $is_priority, $is_active);
+		
+		if ($user) {
 			return redirect()->route('dashboard.user.edit', ['id' => $user->id])->with('user_added', 'Пользователь успешно добавлен');
 		} else {
 			return redirect()->back()->with('user_added', 'Пользователь не добавлен');
-		}*/
+		}
     }
 
     public function store(Request $request)

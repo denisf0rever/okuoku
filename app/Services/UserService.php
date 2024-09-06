@@ -2,53 +2,28 @@
 
 namespace App\Services;
 
-use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
+
 
 final class UserService
 {
-	 public function createUser(array $userData, Request $request = null)
+	 public function createUser(array $userData, array $images, int $is_priority, int $is_active)
 	 {
-		 $data = $request->validate([
-            'email' => 'required|string|max:255',
-            'username' => 'required|string|max:255',
-            'password' => 'required|string|max:255',
-            'name' => 'required|string|max:255',
-            'last_name' => 'required|string',
-            'middle_name' => 'required|string|max:255',
-            'city' => 'required|string|max:255',
-            'phone' => 'required|string|max:255',
-			'is_priority' => 'string',
-			'is_active' => 'string',
-			'avatar' => 'image|mimes:jpeg,png,jpg|max:2048',
-			'webp_avatar' => 'image|mimes:webp|max:2048'
-        ]);
-		
-		if ($request->hasFile('avatar')) {
-			$imagePath = $request->file('avatar')->store('public/avatar');
-			$avatarImage = Str::of($imagePath)->basename();
-			
-		}
-		if ($request->hasFile('avatar_webp')) {
-			$webpPath = $request->file('avatar_webp')->store('public/avatar/webp');
-			$avatarWebp = Str::of($webpPath)->basename();
-		}
-		
-		$is_priority = $request->has('is_active') ? 1 : 0;
-		$is_active = $request->has('is_active') ? 1 : 0;
-		
 		$user = User::create([
-			'email' => $data['email'],
-			'username' => $data['username'],
-			'password' => Hash::make($data['password']),
-			'name' => $data['name'],
-			'last_name' => $data['last_name'],
-			'middle_name' => $data['middle_name'],
-			'city' => $data['city'],
-			'phone' => $data['phone'],
+			'email' => $userData['email'],
+			'username' => $userData['username'],
+			'password' => Hash::make($userData['password']),
+			'name' => $userData['name'],
+			'last_name' => $userData['last_name'],
+			'middle_name' => $userData['middle_name'],
+			'city' => $userData['city'],
+			'phone' => $userData['phone'],
 			'is_priority' => $is_priority,
 			'is_active' => $is_active,
-			'avatar' => $avatarImage,
-			'webp_avatar' => $avatarWebp
+			'avatar' => $images['avatarImage'],
+			'webp_avatar' => $images['avatarWebp']
 		]);
 			
 		return $user;

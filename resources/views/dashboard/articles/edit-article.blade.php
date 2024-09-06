@@ -86,7 +86,7 @@
                       <img src="/images/dashboard/expand-more.svg" alt="" class="form__status-arrow">
                       <div class="form__status-current-text">Выберите категорию</div>
                       <input class="form__status-current @error('category')input-error @enderror" name="category"
-                        type="text" value="0" readonly>
+                        type="text" value="{{ $article->category ? $article->category : 0 }}" readonly>
                       <ul id="status" class="form__status-select form__status-hide">
 						@foreach($categories as $category)
 							<li class="form__status-option" value="{{ $category->id }}">{{ $category->short_title }}</li>
