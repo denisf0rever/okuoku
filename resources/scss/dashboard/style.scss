@@ -154,6 +154,16 @@ body{
   &__info{
     margin-bottom: 20px;
   }
+  &__blocks{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  &__blocks-wrapper{
+    background-color: #fff;
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
 }
 
 .info{
@@ -522,5 +532,33 @@ body{
   }
 }
 
+.color-block{
+  &__wrapper{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__img{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  &__big-text{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  &__title{
+    font-size: 16px;
+  }
+  &__small-text{
+    font-size: 12px;
+    color: #6a93ea;
+  }
+}
 
 @import 'media';

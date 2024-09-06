@@ -42,33 +42,39 @@ window.onload = () => {
     }
   })
 
-  selectWrapper.onclick = () => {
-    selectArrow.classList.toggle('form__rotate-arrow');
-    select.classList.toggle('form__status-hide');
+  if (selectWrapper) {
+    selectWrapper.onclick = () => {
+      selectArrow.classList.toggle('form__rotate-arrow');
+      select.classList.toggle('form__status-hide');
+    }
   }
 
-  selectOptions.forEach((el, key) => {
-    el.onclick = () => {
-      selectOptions.forEach((innerEl, innerKey) => {
-        if (key === innerKey) {
-          innerEl.classList.add('form__status-option-active');
-          selectInput.setAttribute("value", innerEl.value);
-          selectInputText.innerHTML = innerEl.innerHTML;
-        }
-        else {
-          innerEl.classList.remove('form__status-option-active');
-        }
-      })
-    }
-  })
+  if (selectOptions.length > 0) {
+    selectOptions.forEach((el, key) => {
+      el.onclick = () => {
+        selectOptions.forEach((innerEl, innerKey) => {
+          if (key === innerKey) {
+            innerEl.classList.add('form__status-option-active');
+            selectInput.setAttribute("value", innerEl.value);
+            selectInputText.innerHTML = innerEl.innerHTML;
+          }
+          else {
+            innerEl.classList.remove('form__status-option-active');
+          }
+        })
+      }
+    })
+  }
 
   // BURGER
 
   const menuBurger = document.querySelector('.header__menu-button');
   const menuMobile = document.querySelector('.menu-mobile__wrapper');
 
-  menuBurger.onclick = (el) => {
-    menuMobile.classList.toggle('menu-mobile__hide');
+  if (menuBurger) {
+    menuBurger.onclick = (el) => {
+      menuMobile.classList.toggle('menu-mobile__hide');
+    }
   }
 
   // ANALYZE TEXT
@@ -104,7 +110,10 @@ window.onload = () => {
     timeToReadInput.setAttribute("value", `${readingTime} ${getMinuteDeclension(readingTime)}`);
   }
 
-  fullText.addEventListener("input", analyzeText);
+  if (fullText) {
+    fullText.addEventListener("input", analyzeText);
+
+  }
 
   //TOAST
 

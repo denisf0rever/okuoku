@@ -16,6 +16,46 @@
       <main class="wrapper__main main">
         <div class="main__wrapper">
           <h1 class="main__title">Статьи</h1>
+          <div class="main__blocks-wrapper">
+            <ul class="main__blocks">
+              <li class="main__block color-block">
+                <div class="color-block__wrapper" style="background-color: #ffe2e6">
+                  <img src="/images/dashboard/edit.svg" alt="" class="color-block__img"
+                    style="background-color: #f9597c">
+                  <div class="color-block__big-text">300</div>
+                  <div class="color-block__title">Total sales</div>
+                  <div class="color-block__small-text">+8% from yesterday</div>
+                </div>
+              </li>
+              <li class="main__block color-block">
+                <div class="color-block__wrapper" style="background-color: #fff4de">
+                  <img src="/images/dashboard/edit.svg" alt="" class="color-block__img"
+                    style="background-color: #fe947a">
+                  <div class="color-block__big-text">300</div>
+                  <div class="color-block__title">Total sales</div>
+                  <div class="color-block__small-text">+8% from yesterday</div>
+                </div>
+              </li>
+              <li class="main__block color-block">
+                <div class="color-block__wrapper" style="background-color: #dcfce7">
+                  <img src="/images/dashboard/edit.svg" alt="" class="color-block__img"
+                    style="background-color: #3cd958">
+                  <div class="color-block__big-text">300</div>
+                  <div class="color-block__title">Total sales</div>
+                  <div class="color-block__small-text">+8% from yesterday</div>
+                </div>
+              </li>
+              <li class="main__block color-block">
+                <div class="color-block__wrapper" style="background-color: #f4e8ff">
+                  <img src="/images/dashboard/edit.svg" alt="" class="color-block__img"
+                    style="background-color: #bf84ff">
+                  <div class="color-block__big-text">300</div>
+                  <div class="color-block__title">Total sales</div>
+                  <div class="color-block__small-text">+8% from yesterday</div>
+                </div>
+              </li>
+            </ul>
+          </div>
           <p><a href="{{ route('dashboard.article.add-article') }}">Добавить статью</a></p>
           <section class="main__info info">
             <div class="info__wrapper">

@@ -68,6 +68,33 @@
       gap: 10px;
     }
   }
+  .main{
+    &__blocks{
+      justify-content: center;
+    }
+  }
+  .color-block{
+    &__wrapper{
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+    }
+    &__img{
+      width: 20px;
+      height: 20px;
+      padding: 3px;
+    }
+    &__big-text{
+      font-size: 14px;
+    }
+    &__title{
+      font-size: 12px;
+    }
+    &__small-text{
+      font-size: 10px;
+    }
+  }
+  
 }
 
 @media (max-width: 540px) {
