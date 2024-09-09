@@ -129,8 +129,7 @@ class PostController extends Controller
 		
 		$date = $createdAt->translatedFormat('j F Y') . ' года';
 		
-		//$article->view()->increment('views');
-		
+		$article->increment('views');
 		$this->incrementView($id);
 		
 		return view('articles.item', compact('article', 'date'));

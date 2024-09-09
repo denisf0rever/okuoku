@@ -40,8 +40,13 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 	
-	public function view()
+	public function views()
     {
-        return $this->belongsTo(PostViews::class);
+        return $this->hasMany(PostViews::class);
+    }
+	
+	public function keyword()
+    {
+        return $this->hasOne(PostPhrase::class);
     }
 }

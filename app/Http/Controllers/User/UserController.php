@@ -77,7 +77,7 @@ class UserController extends Controller
 		$date = $createdAt->translatedFormat('j F Y') . ' года';
 		
 		$user->increment('views');
-
+		
 		return view('user.profile.item', compact('user', 'date'));
     }
 	
@@ -109,6 +109,8 @@ class UserController extends Controller
 			'avatar' => 'image|mimes:jpeg,png,jpg|max:2048',
 			'webp_avatar' => 'image|mimes:webp|max:2048'
         ]);
+		
+		
 			
 		$user = User::query()
             ->where('id', $id)
@@ -126,18 +128,18 @@ class UserController extends Controller
 			$user->webp_avatar = $avatarWebp;
 		}
 		
-		$is_priority = $request->has('is_active') ? 1 : 0;
+		$is_priority = $request->has('is_priority') ? 1 : 0;
 		$is_active = $request->has('is_active') ? 1 : 0;
 				
 		$user->email = $request->input('email');
 		$user->username = $request->input('username');
-		$user->password = Hash::make($data['password']);
+		//$user->password = Hash::make($data['password']);
 		$user->role = $request->input('role');
 		$user->name = $request->input('name');
 		$user->last_name = $request->input('last_name');
 		$user->middle_name = $request->input('middle_name');
-		$user->is_priority = $is_priority;
-		$user->is_active = $is_active;
+		$user->is_priority = $request->input('is_priority');
+		$user->is_active = $request->input('is_active');
 		$user->city = $request->input('city');
 		$user->phone = $request->input('phone');
 		$user->save();

@@ -51,9 +51,14 @@ Route::middleware(['auth', 'access'])->group(function () {
 	Route::post('/article/create', [PostController::class, 'create'])->name('dashboard.article.create-article');
 	Route::get('/article/delete/{id}', [PostController::class, 'destroy'])->name('dashboard.article.destroy');
 	
-	// Аналитика
-	Route::get('/analytics/articles/', [AnalyticsController::class, 'index'])->name('dashboard.analytics');
-	Route::get('/analytics/articles/{id}', [AnalyticsController::class, 'show'])->name('dashboard.analytics.specialization');
+	// Аналитика: статьи
+	Route::get('/dashboard/analytics/articles/', [AnalyticsController::class, 'index'])->name('dashboard.analytics');
+	Route::get('/dashboard/dashboard/analytics/articles/{id}', [AnalyticsController::class, 'show'])->name('dashboard.analytics.specialization');
+	Route::get('/dashboard/analytics/articles/{id}/edit', [AnalyticsController::class, 'edit'])->name('dashboard.analytics.specialization.edit');
+	Route::get('/dashboard/analytics/article/{id}/phrase-create', [AnalyticsController::class, 'store'])->name('dashboard.analytics.phrase.add');
+	Route::post('/analytics/create', [AnalyticsController::class, 'create'])->name('dashboard.analytics.phrase.create');
+	Route::post('/analytics/phrase/{id}', [AnalyticsController::class, 'update'])->name('dashboard.analytics.phrase.update');
+	Route::get('/analytics/delete/{id}', [AnalyticsController::class, 'destroy'])->name('dashboard.analytics.phrase.destroy');
 	
 	// Статьи: категории
 	Route::get('/dashboard/categories', [CatergoryController::class, 'index'])->name('dashboard.categories');
