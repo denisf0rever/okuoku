@@ -104,8 +104,8 @@ class UserController extends Controller
             'middle_name' => 'string|max:255',
             'city' => 'string|max:255',
             'phone' => 'string|max:255',
-			'is_priority' => 'string',
-			'is_active' => 'string',
+			'is_priority' => 'in:1,0',
+			'is_active' => 'in:1,0',
 			'avatar' => 'image|mimes:jpeg,png,jpg|max:2048',
 			'webp_avatar' => 'image|mimes:webp|max:2048'
         ]);

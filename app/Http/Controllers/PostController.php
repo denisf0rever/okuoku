@@ -238,21 +238,19 @@ class PostController extends Controller
 		}
     }
 	
-	 public function incrementView(string $id)
+	 public function incrementView($articleId)
     {
         // Найти статью по ID
-        $article = Post::query()
-            ->where('id', $id)
-            ->firstOrFail();
+        $article = Post::find($articleId);
 
         if ($article) {
-            $view = PostViews::create([
-                'post_id' => $id,
+            PostViews::create([
+                'post_id' => $articleId,
                 'created_at' => Carbon::now(),
             ]);
 
             // Увеличить количество просмотров в таблице статей
-            $view->increment('views');
+            $article->increment('views');
 
             return response()->json([
                 'message' => 'Просмотр добавлен и количество просмотров увеличено.',

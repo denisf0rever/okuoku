@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomePageController;
 use App\Http\Controllers\Post\PostController;
+use App\Http\Controllers\Analytics\AnalyticsController;
 use App\Http\Controllers\Post\CatergoryController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\AuthController;
@@ -49,6 +50,10 @@ Route::middleware(['auth', 'access'])->group(function () {
 	Route::get('/dashboard/article/add-article', [PostController::class, 'store'])->name('dashboard.article.add-article');
 	Route::post('/article/create', [PostController::class, 'create'])->name('dashboard.article.create-article');
 	Route::get('/article/delete/{id}', [PostController::class, 'destroy'])->name('dashboard.article.destroy');
+	
+	// Аналитика
+	Route::get('/analytics/articles/', [AnalyticsController::class, 'index'])->name('dashboard.analytics');
+	Route::get('/analytics/articles/{id}', [AnalyticsController::class, 'show'])->name('dashboard.analytics.specialization');
 	
 	// Статьи: категории
 	Route::get('/dashboard/categories', [CatergoryController::class, 'index'])->name('dashboard.categories');

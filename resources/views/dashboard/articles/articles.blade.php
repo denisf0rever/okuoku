@@ -19,24 +19,24 @@
           <div class="main__blocks-wrapper">
             <ul class="main__blocks">
               <li class="main__block color-block">
-                <div class="color-block__wrapper" style="background-color: #ffe2e6">
+                <a href="{{ route('dashboard.article.add-article') }}" class="color-block__wrapper" style="background-color: #ffe2e6">
                   <img src="/images/dashboard/edit.svg" alt="" class="color-block__img"
                     style="background-color: #f9597c">
-                  <div class="color-block__big-text">300</div>
-                  <div class="color-block__title">Total sales</div>
-                  <div class="color-block__small-text">+8% from yesterday</div>
-                </div>
+                  <div class="color-block__big-text">Добавить статью</div>
+                  <div class="color-block__title"></div>
+                  <div class="color-block__small-text">Всего добавлено: {{ $total }}</div>
+                </a>
               </li>
               <li class="main__block color-block">
-                <div class="color-block__wrapper" style="background-color: #fff4de">
-                  <img src="/images/dashboard/edit.svg" alt="" class="color-block__img"
+                <a href="{{ route('dashboard.analytics') }}" class="color-block__wrapper" style="background-color: #fff4de">
+                  <img src="/images/dashboard/analytics-article.svg" alt="" class="color-block__img"
                     style="background-color: #fe947a">
-                  <div class="color-block__big-text">300</div>
-                  <div class="color-block__title">Total sales</div>
-                  <div class="color-block__small-text">+8% from yesterday</div>
-                </div>
+                  <div class="color-block__big-text">Аналитика статей</div>
+                  <div class="color-block__title"> </div>
+                  <div class="color-block__small-text">Раз в неделю</div>
+                </a>
               </li>
-              <li class="main__block color-block">
+              <!--<li class="main__block color-block">
                 <div class="color-block__wrapper" style="background-color: #dcfce7">
                   <img src="/images/dashboard/edit.svg" alt="" class="color-block__img"
                     style="background-color: #3cd958">
@@ -53,18 +53,16 @@
                   <div class="color-block__title">Total sales</div>
                   <div class="color-block__small-text">+8% from yesterday</div>
                 </div>
-              </li>
+              </li>-->
             </ul>
           </div>
-          <p><a href="{{ route('dashboard.article.add-article') }}">Добавить статью</a></p>
           <section class="main__info info">
             <div class="info__wrapper">
               <div class="info__element">
                 <h3 class="info__title">Информация о статьях</h3>
                 <div class="info__text-wrapper">
                   <div class="info__data">
-                    <span class="info__text"><strong>{{ $total }} </strong>{{ Str::plural('article', $total) }} на
-                      сайте</span>
+                    <span class="info__text"></span>
                   </div>
                   <div class="info__data">
                     <span class="info__text"><strong>52 768 </strong>дублирующихся description</span>

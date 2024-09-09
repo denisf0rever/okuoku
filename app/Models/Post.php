@@ -39,4 +39,9 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+	
+	public function view()
+    {
+        return $this->belongsTo(PostViews::class);
+    }
 }

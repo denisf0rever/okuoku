@@ -83,7 +83,7 @@
 					<div class="form__tab">
                       <ul class="form__inputs">
                         <li class="form__input-wrapper">
-                          <label class="form__label" for="is_priority">Получать уведомления о платных консультациях</label>
+							<label class="form__label" for="is_priority">Получать уведомления о платных консультациях</label>
 							@if ($user->is_priority)
 							<input class="form__input" type="checkbox" id="is_priority" name="is_priority" value="1" checked>
 							@else
@@ -106,14 +106,10 @@
                       <span class="form__status-title" for="status">Выберите категорию</span>
                       <img src="/images/dashboard/expand-more.svg" alt="" class="form__status-arrow">
                       <div class="form__status-current-text">Выберите категорию</div>
-                      <input class="form__status-current @error('role')input-error @enderror" name="role" type="text" value="0" readonly>
+                      <input class="form__status-current @error('role')input-error @enderror" name="role" type="text" value="{{ $user->role ? $user->role : 0 }}" readonly>
                       <ul id="status" class="form__status-select form__status-hide">
                         @foreach($roles as $role)
-							@if ($user->role == $role->id)
-							<li class="form__status-option form__status-option-active" value="{{ $role->id }}" selected>{{ $role->role_name }}</li>
-							@else
 							<li class="form__status-option" value="{{ $role->id }}">{{ $role->role_name }}</li>
-							@endif
                         @endforeach
                       </ul>
                     </div>
