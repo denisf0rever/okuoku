@@ -119,25 +119,22 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
+		Carbon::setLocale('ru');
+		
         $article = Post::query()
             ->where('id', $id)
             ->firstOrFail();
 			
-		$dateString = $article->created_at;
-		$createdAt = Carbon::parse($dateString);
-		\Carbon\Carbon::setLocale('ru');
+		$created_at = $article->created_at;
+		$carbonDate = Carbon::parse($created_at);
 		
-		$date = $createdAt->translatedFormat('j F Y') . ' года';
+		$date = $carbonDate->translatedFormat('j F Y') . ' года';
 		
-		$article->increment('views');
 		$this->incrementView($id);
 		
 		return view('articles.item', compact('article', 'date'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         $article = Post::query()
@@ -148,10 +145,7 @@ class PostController extends Controller
 
 		return view('dashboard.articles.edit-article', ['article' => $article, 'categories' => $categories]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
+	
     public function update(Request $request, string $id)
     {	
         $data = $request->validate([
@@ -251,7 +245,7 @@ class PostController extends Controller
             ]);
 
             // Увеличить количество просмотров в таблице статей
-            $view->increment('views');
+            $article->increment('views');
 
             return response()->json([
                 'message' => 'Просмотр добавлен и количество просмотров увеличено.',

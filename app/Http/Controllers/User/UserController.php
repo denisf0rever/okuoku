@@ -97,7 +97,7 @@ class UserController extends Controller
          $data = $request->validate([
             'email' => 'string|max:255',
             'username' => 'string|max:255',
-            'password' => 'max:255',
+            'password' => 'nullable|max:255',
             'role' => 'string|max:1',
             'name' => 'string|max:255',
             'last_name' => 'string|max:255',
@@ -110,8 +110,6 @@ class UserController extends Controller
 			'webp_avatar' => 'image|mimes:webp|max:2048'
         ]);
 		
-		
-			
 		$user = User::query()
             ->where('id', $id)
             ->firstOrFail();
@@ -130,18 +128,21 @@ class UserController extends Controller
 		
 		$is_priority = $request->has('is_priority') ? 1 : 0;
 		$is_active = $request->has('is_active') ? 1 : 0;
-				
-		$user->email = $request->input('email');
-		$user->username = $request->input('username');
-		//$user->password = Hash::make($data['password']);
-		$user->role = $request->input('role');
-		$user->name = $request->input('name');
-		$user->last_name = $request->input('last_name');
-		$user->middle_name = $request->input('middle_name');
-		$user->is_priority = $request->input('is_priority');
-		$user->is_active = $request->input('is_active');
-		$user->city = $request->input('city');
-		$user->phone = $request->input('phone');
+		
+		if ($request->filled('password')) {
+			$user->password = Hash::make($data['password']);
+		}
+		
+		$user->email = $data['email'];
+		$user->username = $data['username'];
+		$user->role = $data['role'];
+		$user->name = $data['name'];
+		$user->last_name = $data['last_name'];
+		$user->middle_name = $data['middle_name'];
+		$user->is_priority = $data['is_priority'];
+		$user->is_active = $data['is_active'];
+		$user->city = $data['city'];
+		$user->phone = $data['phone'];
 		$user->save();
 		
 		return redirect()->back()->with('success', 'Пользователь успешно обновлен');

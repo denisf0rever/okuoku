@@ -8,7 +8,6 @@
 
 <body>
   @include('dashboard.parts.header')
-
   <div class="wrapper">
     <div class="wrapper__wrapper container">
       @include('dashboard.parts.sidebar')
@@ -35,10 +34,9 @@
             </div>
           </section>
 
-
           <section class="main__pages pages">
             <div class="pages__wrapper">
-              <h2 class="pages__title">Заголовки страниц</h2>
+              <h2 class="pages__title">Ключевые фразы</h2>
               <div class="pages__inner">
                 <div class="pages__titles">
                   <span class="pages__title-id">ID</span>
