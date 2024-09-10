@@ -26,7 +26,7 @@
                   <div class="info__data">
                     <span class="info__text"><strong>{{ $totalArticles }}</strong> всего статей на сайте</span>
                   </div>
-				   <div class="info__data">
+                  <div class="info__data">
                     <span class="info__text"><strong>52 768 </strong> всего было просмотрено статей</span>
                   </div>
                 </div>
@@ -40,33 +40,47 @@
               <div class="pages__inner">
                 <div class="pages__titles">
                   <span class="pages__title-id">ID</span>
-                  <span class="pages__title-name">Название</span>
-                  <span class="pages__title-name">Ключевая фраза</span>
+                  <span class="pages__title-small-name">Название</span>
+                  <span class="pages__title-small-name">Ключевая фраза</span>
                   <span class="pages__title-number">Всего просмотров</span>
-                  <span class="pages__title-number">Просмотров за последние 7 дней</span>
+                  <span class="pages__title-number-big">Просмотров за последние 7 дней</span>
+                  <span class="pages__title-status">
+                    <span>статус</span>
+                  </span>
+                  <span class="pages__title-options">Опции</span>
                 </div>
                 <ul class="pages__list">
                   @foreach ($articles as $article)
                   <li class="pages__item">
                     <span class="pages__views-id">{{ $article->id }}</span>
-                    <a class="pages__name" href="{{ route('articles.item', $article->id)}}" target="_blank"><span>{{ $article->h1 }}</span></a>
-                    <span class="pages__views-number">
-					@isset ($article->keyword->key)
-					<a href="https://wordstat.yandex.ru/?region=all&view=table&words={{ $article->keyword->key }}" target="_blank">{{ $article->keyword->key }}</a>
-					@endif</span>
+                    <a class="pages__small-name" href="{{ route('articles.item', $article->id)}}"
+                      target="_blank"><span>{{ $article->h1 }}</span></a>
+                    <span class="pages__small-name">
+                      @isset ($article->keyword->key)
+                      <a href="https://wordstat.yandex.ru/?region=all&view=table&words={{ $article->keyword->key }}"
+                        target="_blank">{{ $article->keyword->key }}</a>
+                      @endif</span>
                     <span class="pages__views-number">{{ $article->views }}</span>
-                    <span class="pages__views-number">{{ $post_views }}</span>
+                    <span class="pages__views-number-big">{{ $post_views }}</span>
+                    <span class="pages__status">
+                      <!-- 
+                    pages__status-green
+                    pages__status-yellow
+                    pages__status-red
+                      -->
+                      <div class="pages__status-green"></div>
+                    </span>
                     <div class="pages__icons">
                       <div class="pages__icon">
-					 @isset ($article->keyword->key)
-						<a href="{{ route('dashboard.analytics.specialization.edit', $article->id)}}" target="_blank">
+                        @isset ($article->keyword->key)
+                        <a href="{{ route('dashboard.analytics.specialization.edit', $article->id)}}" target="_blank">
                           <img src="/images/dashboard/edit.svg" alt="" class="pages__icon-img">
                         </a>
-						@else
-						<a href="{{ route('dashboard.analytics.phrase.add', $article->id)}}" target="_blank">
+                        @else
+                        <a href="{{ route('dashboard.analytics.phrase.add', $article->id)}}" target="_blank">
                           <img src="/images/dashboard/add.svg" alt="" class="pages__icon-img">
                         </a>
-						@endif
+                        @endif
                       </div>
                       <div class="pages__icon">
                         <a href="{{ route('dashboard.analytics.phrase.destroy', $article->id) }}">
@@ -82,6 +96,6 @@
           </section>
         </div>
       </main>
-     
+
     </div>
   </div>

@@ -28,8 +28,15 @@ h1{
   margin: 0;
 }
 
+html{
+  height: 100%;
+}
+
 body{
   font-family: 'YS', -apple-system, system-ui, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .container{
@@ -104,6 +111,7 @@ body{
 
 .wrapper{
   background-color: #2f343a;
+  flex-grow: 1;
   &__wrapper{
     display: flex;
     padding-top: 20px;
@@ -422,6 +430,7 @@ body{
     font-weight: 500;
     font-size: 22px;
     color: #000;
+    margin: 0 0 10px 0;
   }
   &__list{
     display: flex;
@@ -442,8 +451,23 @@ body{
     width: 10%;
     text-align: start;
   }
+  &__small-name{
+    width: 20%;
+    word-wrap: break-word;
+  }
+  &__status{
+    text-align: center;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   &__views-number{
     width: 10%;
+    text-align: center;
+  }
+  &__views-number-big{
+    width: 20%;
     text-align: center;
   }
   &__login{
@@ -470,16 +494,14 @@ body{
       display: inline-block;
     }
   }
-
   &__icon-img{
     width: 100%;
     height: 100%;
   }
   &__titles{
-    margin-top: 50px;
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     color: $grey;
     min-width: 750px; 
   }
@@ -487,12 +509,39 @@ body{
     width: 10%;
     padding-right: 10px;
   }
+  &__title-status{
+    width: 10%;
+    text-align: center;
+    cursor: pointer;
+    & span{
+      position: relative;
+      display: inline-block;
+      padding-right: 15px;
+      &::after{
+        position: absolute;
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: #000;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+      }
+    }
+  }
+  &__title-small-name{
+    width: 20%;
+  }
   &__title-name{
     width: 60%;
     padding-right: 10px;
   }
   &__title-number{
     width: 10%;
+    text-align: center;
+  }
+  &__title-number-big{
+    width: 20%;
     text-align: center;
   }
   &__title-options{
@@ -510,6 +559,24 @@ body{
   }
   &__link{
     width: 60%;
+  }
+  &__status-red{
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  &__status-yellow{
+    width: 15px;
+    height: 15px;
+    background-color: yellow;
+    border-radius: 50%;
+  }
+  &__status-green{
+    width: 15px;
+    height: 15px;
+    background-color: green;
+    border-radius: 50%;
   }
 }
 
