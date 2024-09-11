@@ -21,11 +21,17 @@ class AnalyticsController extends Controller
 			
 		$totalArticles = Post::count();
 		
-		$post_views = DB::table('post_views')
+		$postViews = DB::table('post_views')
+			->select('post_id', DB::raw('count(*) as views'))
 			->where('created_at', '>=', Carbon::now()->subDays(7))
-			->count();
+			->whereIn('post_id', $articles->pluck('id'))
+			->groupBy('post_id')
+			->get();
+	
+		$post_views = $postViews->keyBy('post_id');
 		
 		return view('dashboard.analytics.analytics', compact('articles', 'totalArticles', 'post_views'));
+		
     }
 	
 	public function show(string $id)

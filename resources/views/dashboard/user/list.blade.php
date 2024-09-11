@@ -16,7 +16,19 @@
       <main class="wrapper__main main">
         <div class="main__wrapper">
           <h1 class="main__title">Список пользователей</h1>
-          <p><a href="{{ route('dashboard.user.add-user') }}">Добавить пользователя</a></p>
+		   <div class="main__blocks-wrapper">
+            <ul class="main__blocks">
+              <li class="main__block color-block">
+                <a href="{{ route('dashboard.user.add-user') }}" class="color-block__wrapper" style="background-color: #ffe2e6">
+                  <img src="/images/dashboard/edit.svg" alt="" class="color-block__img"
+                    style="background-color: #f9597c">
+                  <div class="color-block__big-text">Добавить пользователя</div>
+                  <div class="color-block__title"></div>
+                  <div class="color-block__small-text">Всего добавлено: </div>
+                </a>
+              </li>
+            </ul>
+          </div>
           <section class="main__info info">
             <div class="info__wrapper">
               <div class="info__element">

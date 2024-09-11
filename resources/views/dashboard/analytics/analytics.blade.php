@@ -61,7 +61,7 @@
                         target="_blank">{{ $article->keyword->key }}</a>
                       @endif</span>
                     <span class="pages__views-number">{{ $article->views }}</span>
-                    <span class="pages__views-number-big">{{ $post_views }}</span>
+                    <span class="pages__views-number-big">{{ $post_views->get($article->id)->views ?? 0 }}</span>
                     <span class="pages__status">
                       <!-- 
                     pages__status-green
