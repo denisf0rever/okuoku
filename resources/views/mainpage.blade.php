@@ -2,7 +2,7 @@
 @section('title', 'Консультация офтальмолога онлайн: круглосуточно по телефону и в чате')
 @section('description', '')
 @section('keywords', '')
-@section('canonical', 'profile/'. '')
+@section('canonical', '')
 	
 	@section('content')
     @include('parts.sidebar__mainpage')
