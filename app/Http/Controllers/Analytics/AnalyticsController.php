@@ -31,7 +31,6 @@ class AnalyticsController extends Controller
 		$post_views = $postViews->keyBy('post_id');
 		
 		return view('dashboard.analytics.analytics', compact('articles', 'totalArticles', 'post_views'));
-		
     }
 	
 	public function show(string $id)
