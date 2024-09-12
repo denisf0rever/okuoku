@@ -14,8 +14,7 @@ class PostViews extends Model
 	protected $table = 'post_views';
 	  
 	protected $fillable = [
-		'post_id',
-		'views'
+		'post_id'
 	];
 	
 	public function articles()

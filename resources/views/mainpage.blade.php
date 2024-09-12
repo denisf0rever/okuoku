@@ -15,7 +15,7 @@
                 <span class="banner__subtitle">круглосуточно в чате либо телефону</span>
               </div>
               <div class="banner__buttons">
-                <div class="banner__join-btn banner__btn">Задать вопрос</div>
+                <a href="{{ route('consult.form') }}" class="banner__join-btn banner__btn">Задать вопрос</a>
                 <div class="banner__enter-btn banner__btn">Войти</div>
               </div>
               <img src="images/placeholder.png" alt="" class="banner__img">

@@ -8,6 +8,7 @@ use App\Http\Controllers\Post\CatergoryController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegistrationController;
+use App\Http\Controllers\Consultation\ConsultationController;
 use App\Http\Controllers\ImageController;
 
 Route::get('/', [HomePageController::class, 'index'])->name('homepage');
@@ -16,6 +17,7 @@ Route::get('/home', function () {
     return view('dashboard.main');
 });
 
+	// Авторизирация
 	Route::get('/login', [AuthController::class, 'index'])->name('login');
 	Route::post('/login/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
 	Route::get('/register', [RegistrationController::class, 'show'])->name('registration');
@@ -27,6 +29,16 @@ Route::get('/home', function () {
 	Route::get('/article/{id}', [PostController::class, 'show'])->name('articles.item');
 	Route::get('/category/{id}', [CatergoryController::class, 'show'])->name('category.item');
 	
+	// Консультации
+	Route::get('/consultation', [ConsultationController::class, 'index'])->name('consult.form');
+	Route::get('/consultation/{id}', [ConsultationController::class, 'show'])->name('consult.item');
+	Route::post('/consultation/create', [ConsultationController::class, 'create'])->name('consult.create');
+	
+	
+	// ПУЗ Route::get('/consultation/detail/{slug}', [\App\Http\Controllers\Consultation\Public\ConsultationPage::class, 'show'])->name('consultation-page');
+	// ПУЗ Route::get('/profile/{slug}', [\App\Http\Controllers\User\Profile\MainPage::class, 'show'])->name('profile-main');
+
+
 	// Профиль
 	Route::get('/profile/{id}', [\App\Http\Controllers\User\UserController::class, 'show'])->name('user.profile.item');
 	
