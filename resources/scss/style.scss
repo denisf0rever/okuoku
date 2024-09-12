@@ -176,6 +176,13 @@ body{
     padding: 20px;
     gap: 50px 5%;
   }
+  &__container-fullscreen{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 100%;
+    padding: 20px;
+    gap: 50px 0;
+  }
   &__navigation{
     grid-row: 1 / 2;
     grid-column: 1 / 2;
