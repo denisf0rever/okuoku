@@ -68,7 +68,7 @@
                             src="/images/dashboard/edit.svg" alt="" class="pages__icon-img"></a>
                       </div>
                       <div class="pages__icon">
-                        <a href="{{ route('dashboard.category.destroy', $category->id) }}"><img
+                        <a href="{{ route('dashboard.category.destroy', $category->id) }}" id="delete-link"><img
                             src="/images/dashboard/del.svg" alt="" class="pages__icon-img"></a>
                       </div>
                     </div>

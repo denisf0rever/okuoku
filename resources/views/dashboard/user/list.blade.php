@@ -16,10 +16,11 @@
       <main class="wrapper__main main">
         <div class="main__wrapper">
           <h1 class="main__title">Список пользователей</h1>
-		   <div class="main__blocks-wrapper">
+          <div class="main__blocks-wrapper">
             <ul class="main__blocks">
               <li class="main__block color-block">
-                <a href="{{ route('dashboard.user.add-user') }}" class="color-block__wrapper" style="background-color: #ffe2e6">
+                <a href="{{ route('dashboard.user.add-user') }}" class="color-block__wrapper"
+                  style="background-color: #ffe2e6">
                   <img src="/images/dashboard/edit.svg" alt="" class="color-block__img"
                     style="background-color: #f9597c">
                   <div class="color-block__big-text">Добавить пользователя</div>
@@ -82,8 +83,8 @@
                             src="/images/dashboard/edit.svg" alt="" class="pages__icon-img"></a>
                       </div>
                       <div class="pages__icon">
-                        <a href="{{ route('dashboard.user.destroy', $user->id) }}"><img src="/images/dashboard/del.svg"
-                            alt="" class="pages__icon-img"></a>
+                        <a href="{{ route('dashboard.user.destroy', $user->id) }}" id="delete-link"><img
+                            src="/images/dashboard/del.svg" alt="" class="pages__icon-img"></a>
                       </div>
                     </div>
                   </li>

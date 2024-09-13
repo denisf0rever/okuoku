@@ -140,4 +140,78 @@ window.onload = () => {
     setTimeout(hideToast, 5000);
   }
 
+
+  //Status sort
+
+
+  const pagesList = document.querySelector('.pages__list');
+  const statusButton = document.querySelector('#pages-status');
+  const titleButton = document.querySelector('#pages-title');
+  const pagesItem = Array.from(document.querySelectorAll('.pages__item'));
+
+  const defaultList = [...pagesItem];
+
+  const sortStatus = (direction, item) => {
+
+    // Сортируем массив
+    const sortedStatus = item.sort((a, b) => {
+      const statusA = a.querySelector('#status').getAttribute('status-data');
+      const statusB = b.querySelector('#status').getAttribute('status-data');
+
+      if (direction === 'asc') return statusA - statusB;
+      else if (direction === 'desc') return statusB - statusA;
+    });
+
+    // Очищаем текущий список элементов в pagesList
+    pagesList.innerHTML = '';
+
+    // Вставляем отсортированные элементы обратно
+    sortedStatus.forEach(item => {
+      pagesList.appendChild(item); // Перемещаем каждый элемент в контейнер
+    });
+  }
+
+
+
+  if (statusButton) {
+    statusButton.onclick = () => {
+      if (pagesList.getAttribute('status-sort') === 'asc') {
+        pagesList.setAttribute('status-sort', 'desc');
+        sortStatus('desc', pagesItem);
+      }
+      else if (pagesList.getAttribute('status-sort') === 'desc') {
+        pagesList.setAttribute('status-sort', 'asc');
+        sortStatus('asc', pagesItem);
+      }
+    }
+  }
+
+  if (titleButton) {
+    titleButton.onclick = () => {
+      // Очищаем текущий список элементов в pagesList
+      pagesList.innerHTML = '';
+
+      // Вставляем отсортированные элементы обратно
+      defaultList.forEach(item => {
+        pagesList.appendChild(item); // Перемещаем каждый элемент в контейнер
+      });
+    }
+  }
+
+  //delete popup
+
+  const deleteLinks = document.querySelectorAll('#delete-link');
+
+  if (deleteLinks.length > 0) {
+    deleteLinks.forEach(el => {
+      el.onclick = (event) => {
+        event.preventDefault();
+        const userChoice = window.confirm('Вы уверены, что хотите продолжить?');
+        if (userChoice) {
+          window.location.href = el.href;
+        }
+      };
+    });
+  }
+
 }
