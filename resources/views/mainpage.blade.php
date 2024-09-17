@@ -230,9 +230,9 @@
           <div class="question-slide__wrapper">
             <span class="question-slide__time">1 час назад</span>
             <h4 class="question-slide__title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-            <div class="question-slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non illum sunt
+            <div class="question-slide__text">{{ Str::limit('Lorem ipsum dolor sit amet consectetur adipisicing elit. Non illum sunt
               dolore saepe! Tempore totam fugiat fugit, impedit distinctio beatae dolores! Facilis sit enim accusantium
-              porro, quia tempore omnis vero!</div>
+			porro, quia tempore omnis vero!', 255, preserveWords: true) }}</div>
             <a href="/" class="question-slide__link">1 ответ</a>
           </div>
         </li>
@@ -383,12 +383,12 @@
 <section class="main__question questions">
   <div class="questions__wrapper">
     <div class="questions__inner  container-small">
-      <h2 class="questions__title">Частые вопросы</h2>
+      <h2 class="questions__title">Обратиться к офтальмологу онлайн возможно в следующих случаях:</h2>
       <ul class="questions__list">
         <li class="questions__item question">
           <div class="question__wrapper">
             <div class="question__inner">
-              <span class="question__title">Обратиться к офтальмологу онлайн возможно в следующих случаях:</span>
+              <span class="question__title"></span>
               <div class="question__button">
                 <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"
                   class="Accordion__icon">
@@ -400,21 +400,64 @@
             </div>
             <div class="question__ansver-wrapper">
               <span class="question__ansver-text">
-                <p> 1. Консультация по неотложным ситуациям при появлении жалоб
-                  (покраснение глаз, слезотечение, нарушение зрения, боли в
-                  глазах и т.д.), если нет возможности показаться врачу. Врач офтальмолог подскажет, определит
-                  необходимые
-                  действия и
-                  назначит лечение.</p>
-                <p> 2. Интерпретация результатов обследований, раннее выданных заключений.</p>
-                <p> 3. Получение второго мнения по волнующим вопросам по лечению и прогнозу.</p>
-                <p> 4. Проконсультироваться с офтальмологом можно и по телефону. В этом случае можно задать все
-                  интересующие
-                  вопросы и
-                  получить ответы врача.
-                  Консультация опытного офтальмолога онлайн - это удобный способ быстро получить квалифицированную
-                  консультацию, когда нет
-                  возможности посетить врача.</p>
+                <p>Консультация по неотложным ситуациям при появлении жалоб (покраснение глаз, слезотечение, нарушение зрения, боли в глазах и т.д.), если нет возможности показаться врачу. Врач офтальмолог подскажет, определит необходимые действия и назначит лечение.</p>
+              </span>
+            </div>
+          </div>
+        </li>
+		<li class="questions__item question">
+          <div class="question__wrapper">
+            <div class="question__inner">
+              <div class="question__button">
+                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"
+                  class="Accordion__icon">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M14.7071 5.29289C15.0976 5.68342 15.0976 6.31658 14.7071 6.70711L8.70711 12.7071C8.31658 13.0976 7.68342 13.0976 7.29289 12.7071L1.29289 6.70711C0.902368 6.31658 0.902369 5.68342 1.29289 5.29289C1.68342 4.90237 2.31658 4.90237 2.70711 5.29289L8 10.5858L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289Z"
+                    fill="currentColor"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="question__ansver-wrapper">
+              <span class="question__ansver-text">
+                <p>Интерпретация результатов обследований, раннее выданных заключений.</p>
+              </span>
+            </div>
+          </div>
+        </li>
+		<li class="questions__item question">
+          <div class="question__wrapper">
+            <div class="question__inner">
+              <div class="question__button">
+                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"
+                  class="Accordion__icon">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M14.7071 5.29289C15.0976 5.68342 15.0976 6.31658 14.7071 6.70711L8.70711 12.7071C8.31658 13.0976 7.68342 13.0976 7.29289 12.7071L1.29289 6.70711C0.902368 6.31658 0.902369 5.68342 1.29289 5.29289C1.68342 4.90237 2.31658 4.90237 2.70711 5.29289L8 10.5858L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289Z"
+                    fill="currentColor"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="question__ansver-wrapper">
+              <span class="question__ansver-text">
+                <p>Получение второго мнения по волнующим вопросам по лечению и прогнозу.</p>
+              </span>
+            </div>
+          </div>
+        </li>
+		<li class="questions__item question">
+          <div class="question__wrapper">
+            <div class="question__inner">
+              <div class="question__button">
+                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"
+                  class="Accordion__icon">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M14.7071 5.29289C15.0976 5.68342 15.0976 6.31658 14.7071 6.70711L8.70711 12.7071C8.31658 13.0976 7.68342 13.0976 7.29289 12.7071L1.29289 6.70711C0.902368 6.31658 0.902369 5.68342 1.29289 5.29289C1.68342 4.90237 2.31658 4.90237 2.70711 5.29289L8 10.5858L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289Z"
+                    fill="currentColor"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="question__ansver-wrapper">
+              <span class="question__ansver-text">
+               <p>Проконсультироваться с офтальмологом можно и по телефону. В этом случае можно задать все интересующие вопросы и получить ответы врача. Консультация опытного офтальмолога онлайн - это удобный способ быстро получить квалифицированную консультацию, когда нет возможности посетить врача.</p>
               </span>
             </div>
           </div>

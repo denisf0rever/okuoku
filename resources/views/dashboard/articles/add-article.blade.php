@@ -36,36 +36,36 @@
                         <li class="form__input-wrapper">
                           <label class="form__label" for="title">Заголовок документа (title)</label>
                           <input class="form__input @error('title')input-error @enderror" type="text" id="title"
-                            name="title" value="{{ old("title") }}">
+                            name="title" value="{{ old('title') }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="title">Заголовок статьи (h1)</label>
-                          <input class="form__input @error('h1')input-error @enderror" type="text" id="h1" name="h1" value="{{ old("h1") }}">
+                          <input class="form__input @error('h1')input-error @enderror" type="text" id="h1" name="h1" value="{{ old('h1') }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="subtitle">Подзаголовок</label>
                           <input class="form__input @error('subtitle')input-error @enderror" type="text" id="subtitle"
-                            name="subtitle" value="{{ old("subtitle") }}">
+                            name="subtitle" value="{{ old('subtitle') }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="Meta-description">Метаописание</label>
                           <input class="form__input @error('metadescription')input-error @enderror" type="text"
-                            id="Meta-description" name="metadescription" value="{{ old("metadescription") }}">
+                            id="Meta-description" name="metadescription" value="{{ old('metadescription') }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="Metakeys">Метаключи</label>
                           <input class="form__input @error('metakey')input-error @enderror" type="text" id="Metakeys"
-                            name="metakey" value="{{ old("metakey") }}">
+                            name="metakey" value="{{ old('metakey') }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="authorID">ID Автора</label>
                           <input class="form__input @error('author_id')input-error @enderror" type="text" id="author_id"
-                            name="author_id" value="{{ old("author_id") }}">
+                            name="author_id" value="{{ old('author_id') }}">
                         </li>
                         <li class="form__input-wrapper">
                           <label class="form__label" for="reading-time">Время прочтения</label>
                           <input class="form__input @error('reading-time')input-error @enderror" type="text"
-                            id="reading-time" name="reading_time" value="{{ old("reading_time") }}">
+                            id="reading-time" name="reading_time" value="{{ old('reading_time') }}">
                         </li>
                       </ul>
                       <label class="form__label-photo">
@@ -89,10 +89,10 @@
                       <img src="/images/dashboard/expand-more.svg" alt="" class="form__status-arrow">
                       <div class="form__status-current-text">Выберите категорию</div>
                       <input class="form__status-current @error('category')input-error @enderror" name="category"
-                        type="text" value="{{ old("category") }}" readonly>
+                        type="text" value="{{ old('category') }}" readonly>
                       <ul id="status" class="form__status-select form__status-hide">
                         @foreach($categories as $category)
-                        <li class="form__status-option" value="{{ $category->id ? $category->id : old("category") }}">{{ $category->short_title }}</li>
+                        <li class="form__status-option" value="{{ $category->id ? $category->id : old('category') }}">{{ $category->short_title }}</li>
                         @endforeach
                       </ul>
                     </div>
@@ -101,17 +101,17 @@
                 <div class="form__textarea-wrapper">
                   <div class="form__textarea-title">Краткое описание</div>
                   <textarea name="short_text" id="short_text"
-                    class="form__textarea @error('short_text')input-error @enderror" value="{{ old("short_text") }}">{{ old("short_text") }}</textarea>
+                    class="form__textarea @error('short_text')input-error @enderror" value="{{ old('short_text') }}">{{ old('short_text') }}</textarea>
                 </div>
                 <div class="form__textarea-wrapper">
                   <div class="form__textarea-title">Содержание статьи</div>
                   <textarea name="content" id=""
-                    class="form__textarea @error('content')input-error @enderror" value="{{ old("content") }}">{{ old("content") }}</textarea>
+                    class="form__textarea @error('content')input-error @enderror" value="{{ old('content') }}">{{ old('content') }}</textarea>
                 </div>
                 <div class="form__textarea-wrapper">
                   <div class="form__textarea-title">Полный текст</div>
                   <textarea name="full_text" id="full-text"
-                    class="form__textarea @error('full_text')input-error @enderror" value="{{ old("full_text") }}">{{ old("full_text") }}</textarea>
+                    class="form__textarea @error('full_text')input-error @enderror" value="{{ old('full_text') }}">{{ old('full_text') }}</textarea>
                   <input class="form__submit" type="submit"></input>
                 </div>
               </form>

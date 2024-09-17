@@ -11,7 +11,7 @@ class ConsultationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class ConsultationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'email' => 'required|string|max:255',
+            'username' => 'required|string|max:255',
+            'title' => 'required|string|min:5',
+            'consultation_text' => 'required|string|min:10',
+            'age' => 'string|max:200',
+            'city_id' => 'required|string|max:255',
+			'category' => 'required|string|max:100',
+			'image' => 'image|mimes:jpg,jpeg,png,pdf,doc,docx|max:2048'
         ];
     }
 }

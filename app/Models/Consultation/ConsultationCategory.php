@@ -5,16 +5,18 @@ namespace App\Models\Consultation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Consultation extends Model
+class ConsultationCategory extends Model
 {
     use HasFactory;
 	
-	protected $table = 'sf_consultation_comment';
+	public $timestamps = false;
 	
+	protected $table = 'sf_consultation_rubric';
+	  
 	protected $fillable = [];
 	
-	public function category()
+	public function consultation()
     {
-        return $this->belongsTo(ConsultationCategory::class);
+        return $this->hasMany(Consultation::class);
     }
 }

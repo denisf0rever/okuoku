@@ -8,11 +8,9 @@
 @include('parts.sidebar__fullscreen')
 <section class="main__content-block content-block">
   <div class="content-block__wrapper">
-    <h1 class="content-block__header">Заявка на онлайн консультацию</h1>
+    <h1 class="content-block__header"> </h1>
     <div class="content-block__subtitle-wrapper">
-      <form> 
-		<textarea></textarea>
-	  </form>
+      <span class="content-block__subtitle"> </span>
     </div>
   </div>
 </section>

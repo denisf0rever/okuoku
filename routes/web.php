@@ -13,10 +13,6 @@ use App\Http\Controllers\ImageController;
 
 Route::get('/', [HomePageController::class, 'index'])->name('homepage');
 
-Route::get('/home', function () {
-    return view('dashboard.main');
-});
-
 	// Авторизирация
 	Route::get('/login', [AuthController::class, 'index'])->name('login');
 	Route::post('/login/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
@@ -30,9 +26,10 @@ Route::get('/home', function () {
 	Route::get('/category/{id}', [CatergoryController::class, 'show'])->name('category.item');
 	
 	// Консультации
-	Route::get('/consultation', [ConsultationController::class, 'index'])->name('consult.form');
+	Route::get('/consultation', [ConsultationController::class, 'index'])->name('consult.list');
+	Route::get('/consultation/create', [ConsultationController::class, 'form'])->name('consult.form');
 	Route::get('/consultation/{id}', [ConsultationController::class, 'show'])->name('consult.item');
-	Route::post('/consultation/create', [ConsultationController::class, 'create'])->name('consult.create');
+	Route::post('/consultation/post', [ConsultationController::class, 'create'])->name('consult.create');
 	
 	
 	// ПУЗ Route::get('/consultation/detail/{slug}', [\App\Http\Controllers\Consultation\Public\ConsultationPage::class, 'show'])->name('consultation-page');
@@ -52,8 +49,8 @@ Route::middleware(['guest'])->group(function () {
 });
 	
 Route::middleware(['auth', 'access'])->group(function () {
-    Route::get('/dashboard', function () {
-		return view('dashboard.main');})->name('dashboard.main');
+    Route::get('/dashboard', fn() => view('dashboard.main'));
+	Route::get('/home', fn() => view('dashboard.main'));
 	
 	// Статьи
 	Route::get('/dashboard/article', [PostController::class, 'index'])->name('dashboard.article');
