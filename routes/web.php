@@ -49,7 +49,7 @@ Route::middleware(['guest'])->group(function () {
 });
 	
 Route::middleware(['auth', 'access'])->group(function () {
-    Route::get('/dashboard', fn() => view('dashboard.main'));
+    Route::get('/dashboard', fn() => view('dashboard.main'))->name('dashboard.main');
 	Route::get('/home', fn() => view('dashboard.main'));
 	
 	// Статьи
