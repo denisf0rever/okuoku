@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Listeners;
+namespace App\Listeners\Consultation;
 
 use App\Events\ConsultationCreated;
 use Illuminate\Contracts\Queue\ShouldQueue;

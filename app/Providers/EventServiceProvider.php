@@ -7,7 +7,7 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 use App\Events\ConsultationCreated;
-use App\Listeners\ConsultationCreatedNotification;
+use App\Listeners\Consultation\ConsultationCreatedNotification;
 
 class EventServiceProvider extends ServiceProvider
 {
