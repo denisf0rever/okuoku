@@ -9,7 +9,6 @@ use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\Consultation\ConsultationController;
-use App\Http\Controllers\ImageController;
 
 Route::get('/', [HomePageController::class, 'index'])->name('homepage');
 
@@ -48,7 +47,7 @@ Route::middleware(['guest'])->group(function () {
 	Route::get('/chat', [\App\Http\Controllers\Chat\ChatController::class, 'endPoint']);
 });
 	
-Route::middleware(['auth', 'access'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', fn() => view('dashboard.main'))->name('dashboard.main');
 	Route::get('/home', fn() => view('dashboard.main'));
 	
